@@ -1,6 +1,6 @@
 <apex:component controller="cc_lol_ctrl_ProductDetailInclude">
   <script id="LOL-ProductDetail-Desktop" type="text/template" >
-          <!--SampleComment-->
+          <!--SampleComment From GIT-->
         <div class="product_detail_container product_type_standard phoneProductItem">
             <h2 class="title">{{this.product.prodBean.name}}</h2>
             <div class="product_detail" >

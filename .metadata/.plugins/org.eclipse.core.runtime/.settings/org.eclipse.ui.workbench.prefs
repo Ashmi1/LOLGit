@@ -1,3 +1,4 @@
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
 PLUGINS_NOT_ACTIVATED_ON_STARTUP=org.eclipse.m2e.discovery;
+UIActivities.com.salesforce.ide.activities.activity.contextualLaunch=false
 eclipse.preferences.version=1
