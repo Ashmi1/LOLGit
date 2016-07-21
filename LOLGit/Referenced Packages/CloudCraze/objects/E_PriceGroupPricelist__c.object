@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Junction between Price group and Pricelist</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>EffectiveEnd__c</fullName>
+        <defaultValue>DATETIMEVALUE(&apos;2099-12-31&apos;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Date and Time at which this entry is expires</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and Time at which this entry is expires</inlineHelpText>
+        <label>Effective End</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveStart__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Date and Time at which this entry is takes effect</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and Time at which this entry is takes effect</inlineHelpText>
+        <label>Effective Start</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines if the entry is available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines if the entry is available.</inlineHelpText>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PriceGroupPricelistID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External ID field</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External ID field</inlineHelpText>
+        <label>Price Group Pricelist ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PriceGroup__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Mapping to the price group for this entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mapping to the price group for this entry.</inlineHelpText>
+        <label>CC Price Group</label>
+        <referenceTo>E_PriceGroup__c</referenceTo>
+        <relationshipLabel>CC Price Group Pricelists</relationshipLabel>
+        <relationshipName>PriceGroupPricelists</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Pricelist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Mapping to the price list for this entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mapping to the price list for this entry.</inlineHelpText>
+        <label>CC Price List</label>
+        <referenceTo>E_PriceList__c</referenceTo>
+        <relationshipLabel>CC Price Group Pricelists</relationshipLabel>
+        <relationshipName>PriceGroupPricelists</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Ordering of the pricelists in a price group</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Ordering of the pricelists in a price group</inlineHelpText>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Storefront to which this association applies.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Storefront to which this association applies.</inlineHelpText>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Price Group Pricelist</label>
+    <nameField>
+        <displayFormat>PGP-{0000000000}</displayFormat>
+        <label>CC Price Group Pricelist Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Price Group Pricelists</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

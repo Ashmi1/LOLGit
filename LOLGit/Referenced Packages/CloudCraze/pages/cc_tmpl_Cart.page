@@ -1,0 +1,55 @@
+<apex:page id="cc_tmpl_Cart" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" controller="ccrz.cc_ctrl_StorefrontTemplate" >
+
+<apex:composition template="ccrz__cc_tmpl_Storefront">
+
+	<apex:define name="htmlhead">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<apex:insert name="meta" />
+	</apex:define>
+
+	<apex:define name="htmlbody">
+		<div class="container hidden-phone">
+			<div class="row-fluid">
+				<div class="span12 header">
+					<apex:insert name="header" />
+				</div>
+			</div>
+
+			<div class="navbar main_navigation_container">
+				<div class="navbar-inner">
+					<div class="container">
+						<apex:insert name="menu" />
+					</div>
+				</div>
+			</div>
+
+			<div class="home_slider hidden-phone">
+				<apex:insert name="splash" />
+				<apex:insert name="breadcrumb" />
+				
+				<apex:insert name="ProductSearch"/>
+			</div>
+
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span9">
+						<div class="left_column_large">
+							<apex:insert name="Banner" />
+							<apex:insert name="Body" />
+							<apex:insert name="CrossSell" />
+						</div>
+					</div>
+					<div class="span3 visible-desktop">
+						<div class="right_column">
+							<apex:insert name="ContactUs" />
+							<apex:insert name="PromosRight" />
+						</div>
+					</div>
+					<apex:include pageName="{!storefrontFooter}"/>
+				</div> <!-- ./row-fluid -->
+			</div> <!-- ./container-fluid -->
+		</div> <!-- container -->
+	</apex:define>
+</apex:composition>
+
+</apex:page>

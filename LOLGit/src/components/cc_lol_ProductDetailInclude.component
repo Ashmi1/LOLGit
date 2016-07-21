@@ -1,0 +1,326 @@
+<apex:component controller="cc_lol_ctrl_ProductDetailInclude">
+  <script id="LOL-ProductDetail-Desktop" type="text/template" >
+          <!--SampleComment-->
+        <div class="product_detail_container product_type_standard phoneProductItem">
+            <h2 class="title">{{this.product.prodBean.name}}</h2>
+            <div class="product_detail" >
+                <div class="alert alert-error messagingSection-Error" style="display: none"></div>
+                <div class="alert alert-info messagingAction-Info" style="display: none">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+                <div class="prod_media">
+                    {{#if this.mediaWrappers.[SVG Interactive Diagram]}}
+                        {{#each this.mediaWrappers.[SVG Interactive Diagram]}}
+                            <div class="interactive">{{displaySVG this 'mainProdImage prodDetail'}}</div>
+                        {{/each}}
+                    {{/if}}
+                    <div id="altImageModal" class="modal hide fade in" tabindex="-1" role="dialog">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;       </button>
+                            <h4 class="modal-title" id="myModalLabel"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <img class="modalImg" src=""/>
+                            <p class="modalText"></p>
+                        </div>
+                    </div>
+                    {{#if this.product.mediaWrapper }}
+                        <div class="product_detail_viewport" id="photoContainer">
+                            <div>{{displayImage this.product.mediaWrapper 'mainProdImage prodDetail'}}</div>
+                            {{#if this.mediaWrappers.[Alternate Images]}}
+                                <div class="altImages">
+                                    <img class="alternate" src="{{productImage ../product.mediaWrapper}}" data-id="{{../product.mediaWrapper.altMessage}}"/>
+                                    {{#each this.mediaWrappers.[Alternate Images]}}
+                                        <img class="alternate" src="{{productImage this}}" data-id="{{this.altMessage}}"/>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                        </div>
+                    {{else}}
+                        {{#if this.mediaWrappers.[SVG Interactive Diagram]}}
+                        {{else}}
+                            <div class="product_detail_viewport" id="photoContainer">
+                                <div>{{displayImage this.product.mediaWrapper 'mainProdImage prodDetail'}}</div>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                </div>
+                <div class="product_detail_item wishFinder" data-sku="{{this.product.prodBean.sku}}">
+                    <div class="product_title">{{this.product.prodBean.name}}</div>
+                    {{#ifDisplay 'PD.DsplSku'}}
+                        <div class="sku"><div class="label">{{pageLabelMap 'ProductDetailsInc_SKU'}}</div><div class="value">{{this.product.prodBean.sku}}</div></div>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PD.DsplUOM'}}
+                        <div class="uom"><div class="label">{{pageLabelMap 'ProductDetails_UnitOfMeasure'}}</div><div class="value">{{pageLabelPrefixMap 'UOM_' this.product.prodBean.UnitOfMeasure}}</div></div>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PD.DsplAvlb'}}
+                        <div class="inventory">
+                            <div class="label">{{pageLabelMap 'ProductDetails_Availability'}}</div>
+                            {{#ifStoreSetting 'InventoryCheckFlag__c'}}
+                                <div class="value">{{this.product.inventory}}</div>
+                            {{else}}
+                                <div class="value">{{pageLabelMap this.product.availMsg}}</div>
+                            {{/ifStoreSetting}}
+                        </div>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PR.Enabled'}}
+                        <div id="avgRating" class="rateit" data-rateit-value="{{this.product.avgRating}}" data-rateit-ispreset="true" data-rateit-readonly="true">
+                            <div class="label">{{pageLabelMap 'NumberofReviews' this.numberOfReviews }}</div>
+                        </div>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PD.DsplSDesc'}}
+                        <div class="shortDesc"><div class="pblock">{{{this.product.prodBean.shortDesc}}}</div></div>
+                    {{/ifDisplay}}
+                    {{#if this.product.showPricing}}
+                        {{#ifDisplay 'PD.DsplPrc'}}
+                            {{#if this.product.price}}
+                                <div class="price_block">
+                                    {{#ifDisplay 'PD.DsplListPrc'}}
+                                        {{#if this.product.basePrice}}
+                                        <!-- Commented for LOL -->
+                                            <div class="baseprice"><div class="label">{{pageLabelMap 'ProductDetails_ListPrice'}}</div> <!-- <div class="value">{{price this.product.basePrice}}</div> --> </div>
+                                        {{/if}}
+                                    {{/ifDisplay}}
+                                    <!-- Commented for LOL -->
+                                    <div class="price"><div class="label">{{pageLabelMap 'Price'}}</div> <!-- <div class="value">{{price this.product.price}}</div> --> </div>
+                                    {{#ifDisplay 'PD.DsplSvPrc'}}
+                                        {{#if this.product.savings}}
+                                            <div class="savings"><div class="label">{{pageLabelMap 'YouSave'}}</div><div class="value">{{price this.product.savings}}</div></div>
+                                        {{/if}}
+                                    {{/ifDisplay}}
+                                </div>
+                            {{/if}}
+                        {{/ifDisplay}}
+                    {{/if}}
+                    {{#if this.product.canAddtoCart}}
+                        <div class="quantity_block">
+                            {{#if this.product.qtySkipIncrement}}
+                                <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}" class="plus_minus minusFF">
+                            {{/if}}
+                            {{#ifNotEquals this.product.qtySingleIncrement 1}}
+                                <input type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}" class="plus_minus minus">
+                                <input type="text" readonly="true" name="qty" value="0" class="entry plus_minus" />
+                                <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}" class="plus_minus plus">
+                            {{else}}
+                                <div class="label">{{pageLabelMap 'Qty'}}</div><input type="text" id="qty" name="qty" value="1" class="input-text entry plus_minus" maxlength="7" />
+                            {{/ifNotEquals}}
+                            {{#if this.product.qtySkipIncrement}}
+                                <input type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}" class="plus_minus plusFF">
+                            {{/if}}
+                            <input type="hidden" name="qtyIncrement" value="{{this.product.qtySingleIncrement}}" class="item_qtyIncrement" />
+                            <input type="hidden" name="qtySkipIncrement" value="{{this.product.qtySkipIncrement}}" class="item_qtySkipIncrement" />
+                        </div>
+                        {{#unless this.showNewSubscriptionSelection}}
+                            {{#if this.product.prodBean.showSubscriptionSelection}}
+                                <div class="subscriptionSelectionDiv">
+                                    <p class="subscription_selection"><span class="subscriptionLabel">{{pageLabelMap 'Subscribe_And_Save_Label'}}</span>
+                                    <select class="subscriptionFrequencySelection" data-subscription="{{this.product.prodBean.sku}}">
+                                    {{#each this.product.prodBean.subscriptionFrequencies}}
+                                        <option value="{{safeQuote this}}">{{pageLabelMapMultiString 'Subscribe_And_Save_' this}}</option>
+                                    {{/each}}
+                                    </select>
+                                    </p>
+                                </div>
+                            {{/if}}
+
+                            <div class="wishButtons plus_minus"></div>
+
+                            <div class="action" >
+                                <button type="button" class="btn btn-primary addItem" data-sku="{{this.product.prodBean.sku}}">{{pageLabelMap 'Component_MiniwishList_AddToCart'}}</button>
+                            </div>
+                        {{/unless}}
+                    {{/if}}
+                </div>
+            </div>
+
+            {{#if this.showNewSubscriptionSelection}}
+                {{#if this.product.canAddtoCart}}
+                    <div class="subscriptionSelectionDiv clearfix">
+                        <h2>{{pageLabelMap 'Subscribe_And_Save_Label'}}</h2>
+                        {{#each this.subProdTerms}}
+                            {{#if this.CC_NO_SUBSCRIPTION}}
+                                <div class="item_container">
+                                    <div class="control">
+                                        <label class="radio name">
+                                        <input value="nosuboption" data-nme="nosuboption" type="radio" name="subOptionGuider{{this.productSKU}}" {{this.checked}}/>                                 
+                                        {{pageLabelMap 'Prod_NoSubscriptionOption' (price this.productPrice)}}</label>
+                                </div>
+                            </div>
+                            {{else}}
+                                <div class="item_container">
+                                    <div class="control">
+                                        <label class="radio name">
+                                        <input value="{{this.sfid}}" data-nme="{{this.name}}" type="radio" name="subOptionGuider{{this.productSKU}}" {{this.checked}}/>                 
+                                        {{#if this.modifierSubscriptions}}
+                                            {{insertTokens this.pdpDisplayName this.displayName (price this.productPrice) (price this.subscriptionPrice) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.installmentFrequencyUOM) this.orderFrequency this.installmentFrequency this.installmentCount this.orderCount (price this.modifierSubscriptions.[0].productPrice) (price this.modifierSubscriptions.[0].subscriptionPrice) this.modifierSubscriptions.[0].orderCount this.modifierSubscriptions.[0].installmentCount}}
+                                        {{else}}
+                                            {{insertTokens this.pdpDisplayName this.displayName (price this.productPrice) (price this.subscriptionPrice) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.installmentFrequencyUOM) this.orderFrequency this.installmentFrequency this.installmentCount this.orderCount}}
+                                        {{/if}}
+                                        </span></label>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/each}}   
+                        <div class="action pull-right" >
+                            <button type="button" class="btn btn-primary addItem" data-sku="{{this.product.prodBean.sku}}">{{pageLabelMap 'Component_MiniwishList_AddToCart'}}</button>
+                        </div>                          
+                    </div>
+                {{/if}}
+            {{/if}}
+        </div>
+
+        <div class="tabSection"></div>
+        <div class="widgetSection"></div>
+    </script>
+
+    <script id="LOL-ProductDetail-Mobile" type="text/template">
+        <div class="product_detail_container product_type_standard_phone">
+            <h2 class="title">{{this.product.prodBean.name}}</h2>
+            <div class="product_detail">
+                <div class="alert alert-error messagingSection-Error" style="display: none"></div>
+                <div class="alert alert-info messagingAction-Info" style="display: none"></div>
+                <div class="product_detail_item phoneProductItem wishFinder" data-sku="{{this.product.prodBean.sku}}">
+                    <div class="product_detail_viewport" id="photoContainer">
+                        <div>{{displayImage this.product.mediaWrapper 'mainProdImage prodDetail'}}</div>
+                    </div>
+                    <p class="product_title">{{this.product.prodBean.name}}</p>
+                    {{#ifDisplay 'PD.DsplSku'}}
+                        <p><span><strong>{{pageLabelMap 'ProductDetailsInc_SKU'}}:</strong>&nbsp;</span><span id="product_detail_sku">{{this.product.prodBean.sku}}</span></p>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PD.DsplUOM'}}
+                        <p><span><strong>{{pageLabelMap 'ProductDetails_UnitOfMeasure'}}:</strong>&nbsp;{{pageLabelPrefixMap 'UOM_' this.product.prodBean.UnitOfMeasure}}</span></p>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PD.DsplAvlb'}}
+                        <p class="spacer">
+                            <span>
+                                {{#ifStoreSetting 'InventoryCheckFlag__c'}}
+                                    <strong>{{pageLabelMap 'ProductDetails_Availability'}}:</strong>&nbsp;{{this.product.inventory}}
+                                {{else}}
+                                    <strong>{{pageLabelMap 'ProductDetails_Availability'}}:</strong>&nbsp;{{pageLabelMap this.product.availMsg}}
+                                {{/ifStoreSetting}}
+                            </span>
+                        </p>
+                    {{/ifDisplay}}
+                    {{#if this.product.showPricing}}
+                        {{#ifDisplay 'PD.DsplPrc'}}
+                            {{#if this.product.price}}
+                                <p><span>
+                                    {{#ifDisplay 'PD.DsplListPrc'}}
+                                        {{#if this.product.basePrice}}
+                                        <!-- Commented for LOL -->
+                                            <!-- <del>{{price this.product.basePrice}}</del>&nbsp; -->
+                                        {{/if}}
+                                    {{/ifDisplay}}
+                                    <!-- Commented for LOL -->
+                                    <!-- <strong class="price">{{price this.product.price}}</strong> -->
+                                </span></p>
+                            {{/if}}
+                        {{/ifDisplay}}
+                        {{#ifDisplay 'PD.DsplSvPrc'}}
+                            {{#if this.product.savings}}
+                                <p><span><strong>{{pageLabelMap 'YouSave'}}:</strong>{{price this.product.savings}}</span><p>
+                            {{/if}}
+                        {{/ifDisplay}}
+                    {{/if}}
+                    {{#ifDisplay 'PR.Enabled'}}
+                        <div id="avgRating" class="rateit" data-rateit-value="{{this.product.avgRating}}" data-rateit-ispreset="true" data-rateit-readonly="true">
+                            {{pageLabelMap 'NumberofReviews' this.numberOfReviews }}
+                        </div>
+                    {{/ifDisplay}}
+                    {{#if this.product.canAddtoCart}}
+                        {{#ifDisplay 'PD.DsplAddCart' }}
+                                <p class="plus_minus">
+                                    {{#if this.product.qtySkipIncrement}}
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}" class="plus_minus minusFF">
+                                    {{/if}}
+                                    <input type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}" class="plus_minus minus">
+                                    {{#ifNotEquals this.product.qtySingleIncrement 1}}
+                                    <input type="text" readonly="true" name="qty" value="0" class="entry plus_minus" maxlength="7" />
+                                    {{else}}
+                                    <input type="text" name="qty" value="1" class="input-text entry plus_minus" maxlength="7" />
+                                    {{/ifNotEquals}}
+                                    <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}" class="plus_minus plus">
+                                    {{#if this.product.qtySkipIncrement}}
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}" class="plus_minus plusFF">
+                                    {{/if}}
+                                    <input type="hidden" name="qtyIncrement" value="{{this.product.qtySingleIncrement}}" class="item_qtyIncrement" />
+                                    <input type="hidden" name="qtySkipIncrement" value="{{this.product.qtySkipIncrement}}" class="item_qtySkipIncrement" />
+                                </p>
+                                {{#unless this.showNewSubscriptionSelection}}
+                                {{#if this.product.prodBean.showSubscriptionSelection}}
+                                    <p class="subscription_selection">{{pageLabelMap 'Subscribe_And_Save_Label'}}
+                                        <select class="subscriptionFrequencySelection" data-subscription="{{this.product.prodBean.sku}}">
+                                            {{#each this.product.prodBean.subscriptionFrequencies}}
+                                            <option value="{{safeQuote this}}">{{pageLabelMapMultiString 'Subscribe_And_Save_' this}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </p>
+                                {{/if}}
+                                <p>
+                                    <button type="button" class="btn btn-primary addItem" data-sku="{{this.product.prodBean.sku}}">{{pageLabelMap 'Component_MiniwishList_AddToCart'}}</button>
+                                </p>
+                                {{/unless}}
+                                {{#if this.showNewSubscriptionSelection}}
+                                    {{#if this.product.canAddtoCart}}
+                                        <div class="subscriptionSelectionDiv clearfix">
+                                            <h2>{{pageLabelMap 'Subscribe_And_Save_Label'}}</h2>
+                                                {{#each this.subProdTerms}}
+                                                    {{#if this.CC_NO_SUBSCRIPTION}}
+                                                        <div class="item_container">
+                                                            <div class="control">
+                                                                <label class="radio name">
+                                                                    <input value="nosuboption" data-nme="nosuboption" type="radio" name="subOptionGuider{{this.productSKU}}" {{this.checked}}/>                                 
+                                                                    {{pageLabelMap 'Prod_NoSubscriptionOption' (price this.productPrice)}}</label>
+                                                            </div>
+                                                        </div>
+                                                    {{else}}
+                                                        <div class="item_container">
+                                                            <div class="control">
+                                                                <label class="radio name">
+                                                                    <input value="{{this.sfid}}" data-nme="{{this.name}}" type="radio" name="subOptionGuider{{this.productSKU}}" {{this.checked}}/>                 
+                                                                        {{#if this.modifierSubscriptions}}
+                                                                            {{insertTokens this.pdpDisplayName this.displayName (price this.productPrice) (price this.subscriptionPrice) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.installmentFrequencyUOM) this.orderFrequency this.installmentFrequency this.installmentCount this.orderCount (price this.modifierSubscriptions.[0].productPrice) (price this.modifierSubscriptions.[0].subscriptionPrice) this.modifierSubscriptions.[0].orderCount this.modifierSubscriptions.[0].installmentCount}}
+                                                                        {{else}}
+                                                                            {{insertTokens this.pdpDisplayName this.displayName (price this.productPrice) (price this.subscriptionPrice) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' this.installmentFrequencyUOM) this.orderFrequency this.installmentFrequency this.installmentCount this.orderCount}}
+                                                                        {{/if}}
+                                                                </span></label>
+                                                           </div>
+                                                      </div>
+                                                   {{/if}}
+                                            {{/each}}   
+                                        <p>
+                                            <button type="button" class="btn btn-primary addItem" data-sku="{{this.product.prodBean.sku}}">{{pageLabelMap 'Component_MiniwishList_AddToCart'}}</button>
+                                        <p>                         
+                                    </div>
+                                {{/if}}
+                            {{/if}}
+                        {{/ifDisplay}}
+                    {{/if}}
+                    {{#unless this.showNewSubscriptionSelection}}
+                    <div class="wishFinder" data-sku="{{this.product.prodBean.sku}}">
+                        <p class="wishButtons"></p>
+                    </div>
+                    {{/unless}}
+                    {{#ifDisplay 'PD.DsplSDesc'}}
+                        <p class="shortDesc plus_minus"><br/>{{{this.product.prodBean.shortDesc}}}</p>
+                    {{/ifDisplay}}
+                </div>
+            </div>
+        </div>
+        <div class="tabSection"></div>
+        <div class="widgetSection"></div>
+    </script>
+    
+    <script>
+       
+        jQuery(function($){
+        	alert('Hello'); 
+        
+            CCRZ.uiProperties.productDetailView.desktop.tmpl = 'LOL-ProductDetail-Desktop';
+            CCRZ.uiProperties.productDetailView.phone.tmpl = 'LOL-ProductDetail-Mobile';
+           
+        });
+        
+    </script>
+    
+</apex:component>

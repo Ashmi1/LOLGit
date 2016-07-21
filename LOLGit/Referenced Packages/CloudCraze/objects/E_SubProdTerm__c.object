@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>CloudCraze product subscription definition.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AutoRenew__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If a subscription should auto-renew after it ends.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check to have the subscription auto-renew.</inlineHelpText>
+        <label>Auto Renew</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CCProduct__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For recurring Order subscriptions this is the product that will be ordered.</description>
+        <externalId>false</externalId>
+        <label>CC Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>CC SubProdTerms</relationshipLabel>
+        <relationshipName>SubProdTerms</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CCSubProdTerm__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The parent subscription for which this is a modifier.  For top level subscription data this field should be null.  Allows for adding Modifier CC Sub Prod Terms to a main CC SubProdTerm.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For modifier terms, specify the CC Sub Prod Term this is modifying</inlineHelpText>
+        <label>CC SubProdTerm</label>
+        <referenceTo>E_SubProdTerm__c</referenceTo>
+        <relationshipLabel>CC SubProdTerms</relationshipLabel>
+        <relationshipName>CCSubProdTerms</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CartDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text Version of the Cart Display Name. Content in this field will override the content in the standard field.</description>
+        <externalId>false</externalId>
+        <label>Cart Display Name RT</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CartDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information in the Cart and during Checkout.  If this field is blank then Product Detail Display Name is used.</description>
+        <externalId>false</externalId>
+        <label>Cart Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text enabled version of Display Name. If text is included here will override the standard Display Name Field.</description>
+        <externalId>false</externalId>
+        <label>Display Name RT</label>
+        <length>256</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of this subscription.  Used as a parameter for other Display Name fields.</description>
+        <externalId>false</externalId>
+        <label>Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveEnd__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The last DateTime that this subscription will be available.</description>
+        <externalId>false</externalId>
+        <label>Effective End</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveStart__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The first DateTime that this subscription will be available.</description>
+        <externalId>false</externalId>
+        <label>Effective Start</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EmailDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text Version of the Email Display Name. Content in this field will override the content in the standard field.</description>
+        <externalId>false</externalId>
+        <label>Email Display Name RT</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EmailDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information in the order confirmation email. If this field is blank then will try to fall Back to Order Display Name followed by Cart Display Name followed by Product Detail Display Name.</description>
+        <externalId>false</externalId>
+        <label>Email Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Set to true if this subscription is enabled.  False otherwise.</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IgnoreInstallmentFrequencyFields__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When checked the Installment Frequency and Installment Frequency UOM fields are ignored an instead the Order Frequency and Order Frequency UOM fields are used for both Orders and Installments</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check to have Order frequency determine Installment frequency.</inlineHelpText>
+        <label>Ignore Installment Frequency Fields</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InstallmentCount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of installments/payments billed for this subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of installments/payments billed for this subscription.</inlineHelpText>
+        <label>Installment Count</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InstallmentFrequencyUOM__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unit of Measure for Installment Frequency.  Possible values are Daily, Weekly, Monthly, Yearly. Capitalization is taken into account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unit of Measure for Installment Frequency. Possible values are Daily, Weekly, Monthly, Yearly. Capitalization is taken into account.</inlineHelpText>
+        <label>Installment Frequency UOM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InstallmentFrequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Frequency of Installment/Billing when combined with the Unit of Measure</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Frequency of Installment/Billing when combined with the Unit of Measure</inlineHelpText>
+        <label>Installment Frequency</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CCSPT-{00000000}</description>
+        <displayFormat>CCSPT-{00000000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto-generated unique name.</inlineHelpText>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>OrderCount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of orders to place/ship as part of this subscription</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of orders to place/ship as part of this subscription</inlineHelpText>
+        <label>Order Count</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text Version of the Order Display Name. Content in this field will override the content in the standard field.</description>
+        <externalId>false</externalId>
+        <label>Order Display Name RT</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information in the order.  If this field is blank then Product Detail Display Name is used.</description>
+        <externalId>false</externalId>
+        <label>Order Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderFrequencyUOM__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unit of Measure for the Frequency of Order component of a Subscription.  Possible values are Daily, Weekly, Monthly, Yearly. Capitalization is taken into account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unit of Measure for Order Frequency. Possible values are Daily, Weekly, Monthly, Yearly. Capitalization is taken into account.</inlineHelpText>
+        <label>Order Frequency UOM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderFrequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The frequency of the order component of a Subscription</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used in conjunction with UOM, order frequency is how often the service/product is performed/sent. Must be a whole number.</inlineHelpText>
+        <label>Order Frequency</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductDetailDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text Version of the Product Detail Display Field. Content in this field will override the content in the standard field.</description>
+        <externalId>false</externalId>
+        <label>Product Detail Display Name RT</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ProductDetailDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information on the product detail page.</description>
+        <externalId>false</externalId>
+        <label>Product Detail Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductListDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For future use.  Do not use.</description>
+        <externalId>false</externalId>
+        <label>Product List Display Name RT</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ProductListDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For future use.  Do not use.</description>
+        <externalId>false</externalId>
+        <label>Product List Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines the order the subscription options appear in the the store. They appear in sequence order Low to High.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the order the subscription options appear in the the store. They appear in sequence order Low to High.</inlineHelpText>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The storefront to which this subscription is available.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubProdTermId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External ID For SubProdTerms.  This id is not used by CloudCraze.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External ID for use with integrations.</inlineHelpText>
+        <label>SubProdTerm Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>CC SubProdTerm</label>
+    <nameField>
+        <label>CC SubProdTerm Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CC SubProdTerms</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

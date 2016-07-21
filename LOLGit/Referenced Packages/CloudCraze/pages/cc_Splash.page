@@ -1,0 +1,5 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" >
+<div style="clear:both; float:left" >
+<apex:flash src="{!URLFOR($Resource.ccrz__CC_Flash,'HomeFlashNew.swf')}" width="1000" height="150" />
+</div>
+</apex:page>

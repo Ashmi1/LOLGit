@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Used to store address information.  Associated with Carts, Orders, Invoices, Subscriptions, Payments, etc.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AddrReadOnly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field indicates whether this address is read only.</description>
+        <externalId>false</externalId>
+        <label>AddrReadOnly</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AddressFirstline__c</fullName>
+        <deprecated>false</deprecated>
+        <description>First line of the street address.</description>
+        <externalId>false</externalId>
+        <label>Address Firstline</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AddressSecondline__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Second line of the street address.</description>
+        <externalId>false</externalId>
+        <label>Address Secondline</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AddressThirdline__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Third line of the street address.</description>
+        <externalId>false</externalId>
+        <label>Address Thirdline</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <deprecated>false</deprecated>
+        <description>City for the address.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CompanyName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company name associated with this address.</description>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactAddrId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External unique external id used for data loading.  Not used by CloudCraze.</description>
+        <externalId>true</externalId>
+        <label>Contact Addr Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>CountryISOCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ISO code associated with the country.</description>
+        <externalId>false</externalId>
+        <label>Country ISO Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Descriptive country name.  Typically country ISO code is used.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DaytimePhone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Main phone number for the address.</description>
+        <externalId>false</externalId>
+        <label>Daytime Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email address associated with the address.</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FirstName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person first name associated with the address.</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HomePhone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Secondary phone associated with the address.</description>
+        <externalId>false</externalId>
+        <label>Home Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>LastName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person last name associated with the address.</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MailStop__c</fullName>
+        <deprecated>false</deprecated>
+        <description>MailStop</description>
+        <externalId>false</externalId>
+        <label>Mail Stop</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MiddleName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person middle name associated with the address.</description>
+        <externalId>false</externalId>
+        <label>Middle Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partner_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>External Id used to tie the address to another system.  This id is carried through from the address book to the eventual order.</description>
+        <externalId>false</externalId>
+        <label>Partner_Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PostalCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Postal Code associated with the address.</description>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShippingComments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If the user enters any shipping comments during checkout those comments will be in this field on the shipping address associated with the order.</description>
+        <externalId>false</externalId>
+        <label>Shipping Comments</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>StateISOCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For US and Canadian addresses this is the two letter ISO code for the state.</description>
+        <externalId>false</externalId>
+        <label>State ISO Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For non-US or non-Canadian addresses this is the name of the state for the address.</description>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Contact Address</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>FirstName__c</columns>
+        <columns>LastName__c</columns>
+        <columns>AddressFirstline__c</columns>
+        <columns>AddressSecondline__c</columns>
+        <columns>City__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>Contact Auto Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Contact Addresss</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>E_Order__c.ShipAmount__c</field>
+    </columns>
+    <columns>
+        <field>E_Order__c.ShipDiscountAmount__c</field>
+    </columns>
+    <columns>
+        <field>E_Order__c.User__c</field>
+    </columns>
+    <columns>
+        <field>E_Order__c.Account__c</field>
+    </columns>
+    <description>Orders with Shipping Discounts</description>
+    <filter>
+        <criteriaItems>
+            <column>E_Order__c.ShipDiscountAmount__c</column>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Orders with Shipping Discounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$E_Order__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

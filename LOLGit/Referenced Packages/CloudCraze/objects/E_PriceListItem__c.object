@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Represents an entry in the Pricelist.  Each pricelist object is made up of 1 or more pricelist item objects.  This item objects contain a reference to the product and hold a price value (0, in the case where only entitlements are being used).  The products referenced within these items will be displayed in search and product listings on the external site.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <defaultValue>DATEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The end date for the price list item.  The end date is the date at which the item will no longer be available.  For example if the end date is July 1, 2015 then the price list item is valid on June 30, 2015 but no longer valid on July 1, 2015.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MaxQty__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Maximum Quantity</description>
+        <externalId>false</externalId>
+        <label>Max Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinQty__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Minimum Quantity</description>
+        <externalId>false</externalId>
+        <label>Min Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds the price for the item. If pricing is not being utilized, fill in a default value, such as 0.</description>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PricelistItemId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External reference id for this entry</description>
+        <externalId>true</externalId>
+        <label>Pricelist Item Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Pricelist__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Required - The reference to the pricelist</description>
+        <externalId>false</externalId>
+        <label>Pricelist</label>
+        <referenceTo>E_PriceList__c</referenceTo>
+        <relationshipLabel>Price List Items</relationshipLabel>
+        <relationshipName>E_PriceListItems1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Required - The reference to the product entry</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Price List Items</relationshipLabel>
+        <relationshipName>E_PriceListItems</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RecurringPrice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Should be checked if this PriceListItem is pricing a SubProdTerm</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if this price is for a subscription term AND this is the recurring price for that term.</inlineHelpText>
+        <label>Recurring Price</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The start date for which this item record is active. This is the first date the item will be active</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SubProdTerm__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The subscription term this price is associated with.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the subscription term this price is associated with.</inlineHelpText>
+        <label>SubProdTerm</label>
+        <referenceTo>E_SubProdTerm__c</referenceTo>
+        <relationshipLabel>CC Price List Items</relationshipLabel>
+        <relationshipName>E_PriceListItems</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UnitOfMeasure__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unit of Measure for this price.  This field in combination with the product can give UOM specific pricing.  This field is optional, and allows for general pricing for a product independent of UOM.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unit of Measure for this price.  This field in combination with the product can give UOM specific pricing.  This field is optional, and allows for general pricing for a product independent of UOM.</inlineHelpText>
+        <label>Unit Of Measure</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Price List Item</label>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>PriceListItemAutoNumber</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Price List Items</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Pricelist__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>StartDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EndDate__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

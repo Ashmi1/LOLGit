@@ -1,0 +1,90 @@
+<apex:page id="cc_tmpl_Catalog" controller="ccrz.cc_ctrl_StorefrontTemplate"
+	docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+
+<apex:composition template="ccrz__cc_tmpl_Storefront">
+
+	<apex:define name="htmlhead">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<apex:insert name="meta" />
+	</apex:define>
+
+	<apex:define name="htmlbody">
+		<div class="container hidden-phone">
+			<div class="row-fluid">
+				<div class="span12 header">
+					<apex:insert name="header" />
+				</div>
+			</div>
+
+			<div class="menu_container">
+				<apex:insert name="menu" />
+			</div>
+
+			<div class="home_slider">
+				<apex:insert name="splash" />
+				<div id="breadcrumb_desktop_container">
+					<apex:insert name="breadcrumb" />
+				</div>
+			</div>
+
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span3 hidden-tablet">
+						<div class="left_column">
+							<apex:insert name="WidgetBoxL" />
+							<apex:insert name="ProductSearch" />
+							<apex:insert name="PhoneSplash"/>
+							<div id="categories-left-nav"></div> <!-- placeholder for category tree in left nav -->
+							<apex:insert name="ContactUs" />
+							<apex:insert name="PromosLeft" />
+							<!-- <apex:insert name="AdBox" /> // renamed to PromosLeft -->
+							<apex:insert name="LeftNavX" />
+						</div>
+					</div>
+
+					<div class="span6">
+						<div class="center_column">
+							<apex:insert name="WidgetBoxC" />
+							<apex:insert name="Banner" />
+							<apex:insert name="ProductSpotlight" />
+							<apex:insert name="Body" />
+							<apex:insert name="PromosCenter" />
+							<apex:insert name="FeaturedProducts" />
+							<apex:insert name="GuideProducts" />
+							<apex:insert name="UpsellProducts" />
+							<apex:insert name="ProductReviews" />
+							<apex:insert name="CenterX" />
+						</div>
+					</div>
+
+					<div class="span3">
+						<div class="right_column">
+							<apex:insert name="WidgetBoxR" />
+							<apex:insert name="MiniCartBox" />
+							<div id="categories-right-nav"></div> <!-- placeholder for category tree in right nav -->
+							<apex:insert name="SocialShareBox" />
+							<apex:insert name="MiniQuickOrderBox" />
+							<c:cc_SFLiveChatWidget />
+							<apex:insert name="MiniWishListBox" />
+							<apex:insert name="SocialFacebookBox" />
+							<apex:insert name="PromosRight" />
+							<!-- <apex:insert name="PromotionsBox" /> // renamed to PromosRight
+							<apex:insert name="AdBox2" /> // renamed to PromosRight -->
+							<apex:insert name="RightNavX" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row-fluid clear">
+					<div class="span12 footerBrowser">
+						<apex:include pageName="{!storefrontFooter}"/>
+					</div>
+				</div>
+
+			</div> <!-- /.container-fluid -->
+
+		</div> <!-- /.container -->
+	</apex:define>
+
+</apex:composition>
+</apex:page>

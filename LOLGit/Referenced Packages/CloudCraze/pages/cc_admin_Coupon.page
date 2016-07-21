@@ -1,0 +1,341 @@
+<!--  
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without 
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page standardController="ccrz__E_Coupon__c" extensions="ccrz.cc_ctrl_CouponAdmin,ccrz.cc_ctrl_LocaleExtension" language="{!userLanguageCode}" >
+<script type="text/javascript" src="{!URLFOR($Resource.CC_Admin_Static, 'js/libs/jquery.min.js')}"></script>
+
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+    setupRuleType();
+    setRequired();
+    setupRelation();
+    setupsourceRelation();
+        
+        
+	jQuery(".couponCodeClass").change(function() {
+        var cc = jQuery(".couponCodeClass");
+        if(!jQuery(".couponNameClass").val()) {
+        	jQuery(".couponNameClass").val(cc.val());
+        }
+    });
+         
+    jQuery(".ruleTypeClass").change(function() {
+        setupRuleType();
+    });
+
+    jQuery(".couponRelationClass").change(function() {
+        setupRelation();
+    });
+    
+    jQuery(".sourcecouponRelationClass").change(function() {
+        setupsourceRelation();
+    });
+
+    function showHideTargetProduct(sel)
+    {
+         if (sel == true)
+        {
+            jQuery(".targetProductClass").show();
+            jQuery(".targetSpecClass").hide();
+            swapTargetProduct(false);
+        }
+        else
+        {
+            jQuery(".targetProductClass").hide();
+            jQuery(".targetSpecClass").show();
+        }
+    }
+    
+    function showHidesourceProduct(sel)
+    {
+        if (sel == true)
+        {
+            jQuery(".sourceProductClass").show();
+            jQuery(".sourceSpecClass").hide();
+            swapsourceProduct(false);
+        }
+        else
+        {
+            jQuery(".sourceProductClass").hide();
+            jQuery(".sourceProductUploadClass").hide();
+            jQuery(".sourceSpecClass").show();
+        }
+    }
+
+	 function swapTargetProduct(sel)
+    {
+        if (sel == true)
+        {
+            //jQuery(".targetProductUploadClass").show();
+            jQuery(".targetProductClass").hide();
+        }
+        else
+        {
+            //jQuery(".targetProductUploadClass").hide();
+            jQuery(".targetProductClass").show();
+        }
+    }
+    
+    function swapsourceProduct(sel)
+    {
+        if (sel == true)
+        {
+            //jQuery(".sourceProductUploadClass").show();
+            jQuery(".sourceProductClass").hide();
+        }
+        else
+        {
+            //jQuery(".sourceProductUploadClass").hide();
+            jQuery(".sourceProductClass").show();
+        }
+    }
+    
+
+     function showHideTargetSpec(sel)
+    {
+        if (sel == true)
+        {
+            jQuery(".targetSpecClass").show();
+        }
+        else
+        {
+            jQuery(".targetSpecClass").hide();
+        }
+    }
+    
+     function showsourceTargetSpec(sel)
+    {
+       
+        if (sel == true)
+        {
+            jQuery(".sourceSpecClass").show();
+        }
+        else
+        {
+            jQuery(".sourceSpecClass").hide();
+        }
+    }
+
+
+    function setupRuleType() {
+        var sel = jQuery(".ruleTypeClass").val();
+        jQuery(".valueTypeClass").removeAttr('readonly');
+        jQuery(".discountAmountClass").removeAttr('readonly');
+    
+    
+        if (sel == "CartTotal")
+        {
+            jQuery(".cartTotalClass").show();
+            jQuery(".discountAmountClass").show();
+            jQuery("#TargetSpec").hide();
+            
+        }
+        else if (sel == "General")
+        {
+            jQuery(".cartTotalClass").hide();
+            jQuery(".discountAmountClass").show();
+            jQuery("#TargetSpec").show();
+            
+        }
+        else if (sel == "Shipping")
+        {
+            jQuery(".cartTotalClass").hide();
+            jQuery(".discountAmountClass").show();
+            jQuery(".discountAmountClass").val('100');
+            jQuery(".discountAmountClass").attr('readonly', 'readonly');
+            jQuery(".cartTotalClass").show();
+    
+            jQuery(".valueTypeClass").val('Percentage');
+            jQuery(".valueTypeClass").attr('readonly', 'readonly');
+            
+        }
+        else
+        {
+            jQuery(".cartTotalClass").hide();
+            jQuery(".discountAmountClass").hide();
+        }
+    }
+    
+    function setupRelation() {
+        // show hide in case page refreshes
+       
+        var selRelation = jQuery(".couponRelationClass").val();
+        showHideTargetProduct('Product' == selRelation);
+        showHideTargetSpec('SPEC' == selRelation);
+        if(selRelation.length > 0) {
+            jQuery(".ruleTypeClass option[value='General']").attr('selected', 'selected');
+            setupRuleType();
+        }
+    }
+    
+    function setupsourceRelation() {
+        // show hide in case page refreshes
+        var selRelation = jQuery(".sourcecouponRelationClass").val();
+        showHidesourceProduct('Product' == selRelation);
+        showsourceTargetSpec('SPEC' == selRelation);
+        if(selRelation.length > 0) {
+             
+            jQuery(".ruleTypeClass option[value='General']").attr('selected', 'selected');
+            setupRuleType();
+        }
+    }
+    
+    function setRequired() {
+        jQuery(".required > .lookupInput").wrap('<div class="requiredInput"></div>').before('<div class="requiredBlock"></div>');
+        jQuery(".required :input").wrap('<div class="requiredInput"></div>').before('<div class="requiredBlock"></div>');
+        jQuery(":input.required").wrap('<div class="requiredInput"></div>').before('<div class="requiredBlock"></div>');
+    }
+});
+    
+    </script>
+    
+<script type="text/javascript">
+    function numbersonly(e){
+       var unicode=e.charCode? e.charCode : e.keyCode
+       if (unicode!=8){ //if the key isn't the backspace key (which we should allow)
+          if (unicode<48||unicode>57) //if not a number
+                return false //disable key press
+          }
+      }
+      
+</script> 
+
+    <apex:form id="couponForm">
+    <apex:outputPanel rendered="{!messages.size>0}" id="msgTable"> 
+    <table width="550px"><tr>
+        <td width="5px">
+            <b>&nbsp;</b>
+        </td>
+        <td width="490px" align="left">
+            <apex:dataList value="{!messages}" var="message" id="theList">
+                <apex:outputText style="color:red" value="* {!message}"/>
+            </apex:dataList>
+        </td>
+        <td width="5px">
+            <b>&nbsp;</b>
+        </td>
+    </tr></table><br/>
+    </apex:outputPanel>
+    <apex:pageBlock id="couponBlock" title="Coupon" mode="edit">
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!saveCoupon}" value="{!$Label.Coupon_Save}"/>
+            <apex:commandButton action="{!Cancel}" value="{!$Label.Coupon_Cancel}"/>             
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection id="CouponCodeBlockSection" title="Coupon Code" columns="1">
+            <apex:inputField styleClass="couponCodeClass" value="{!ccrz__E_Coupon__c.ccrz__CouponCode__c}"/>
+            <apex:inputField styleClass="couponNameClass" value="{!ccrz__E_Coupon__c.ccrz__CouponName__c}"/>
+        </apex:pageBlockSection>
+         
+        <apex:pageBlockSection id="couponBlockSection" title="Coupon" columns="2">
+        	<apex:inputField styleClass="ruleTypeClass" required="true" value="{!ccrz__E_Coupon__c.ccrz__RuleType__c}" id="ruleType"/>
+            
+            <apex:inputField value="{!ccrz__E_Coupon__c.ccrz__StartDate__c}"/>
+            <apex:inputField value="{!ccrz__E_Coupon__c.ccrz__MaxUse__c}"/>
+            <apex:inputField value="{!ccrz__E_Coupon__c.ccrz__EndDate__c}"/>
+            <apex:inputField value="{!ccrz__E_Coupon__c.ccrz__Storefront__c}"/>
+            <apex:inputField value="{!ccrz__E_Coupon__c.ccrz__CurrencyISOCode__c}"/>
+            
+            <apex:pageBlockSectionItem >
+               <apex:outputLabel value="{!$Label.Coupon_DiscountType}" for="discountTypeList"/>
+               <apex:inputfield id="discountTypeList" required="true" value="{!ccrz__E_Coupon__c.ccrz__CouponType__c}" /> 
+           </apex:pageBlockSectionItem>
+           
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Coupon_MinQty}" for="minQty"/>
+                <apex:inputField value="{!ccrz__E_Coupon__c.ccrz__MinQty__c}" id="minQty"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="discountAmountClass" style="display:none" value="{!$Label.Coupon_DiscountAmt}" for="discountAmount"/>
+            	<apex:inputField styleClass="discountAmountClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__DiscountAmount__c}" id="discountAmount"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="cartTotalClass" style="display:none" value="{!$Label.Coupon_CartTotal}" for="cartTotal"/>
+            	<apex:inputField styleClass="cartTotalClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__CartTotalAmount__c}" id="cartTotal"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+         
+        <div id="TargetSpec" style="display:none;">
+           
+            
+            <apex:pageBlockSection title="Target Spec or Product" columns="2">
+            <apex:pageblocksectionitem dataStyleClass="required">
+            <apex:outputLabel value="Target Relation" for="CouponRelation"/> 
+            <apex:inputField styleClass="couponRelationClass"  id="CouponRelation"  value="{!ccrz__E_Coupon__c.ccrz__TargetRelation__c}" />
+            </apex:pageblocksectionitem>
+            <apex:pageblocksectionitem >
+            </apex:pageblocksectionitem>    
+                <apex:pageBlockSectionItem dataStyleClass="required">
+                    <apex:outputLabel styleClass="targetSpecClass" style="display:none" value="Target Spec" for="targetSpec"/>
+                    <apex:inputField styleClass="targetSpecClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__TargetSpec__c}" id="targetSpec" required="false"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem dataStyleClass="required">
+                    <apex:outputLabel styleClass="targetSpecClass" style="display:none" value="Target Spec Value" for="targetSpecValue"/>
+                    <apex:inputField styleClass="targetSpecClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__TargetSpecValue__c}" id="targetSpecValue"/>
+                </apex:pageBlockSectionItem>    
+                
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="targetProductClass" style="display:none" value="Target Product" for="targetProduct"/>
+                <apex:inputField styleClass="targetProductClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__TargetProduct__c}" id="targetProduct"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="targetProductClass" style="display:none" value="Target Product Quantity" for="targetProductQuantity"/>
+                <apex:inputField styleClass="targetProductClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__TargetQty__c}" id="targetProductQuantity"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="targetSpecClass" style="display:none" value="Target Spec Quantity" for="targetProductQuantity"/>
+                <apex:inputField styleClass="targetSpecClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__TargetSpecQty__c}" id="targetSpecQuantity"/>
+            </apex:pageBlockSectionItem>
+   
+            </apex:pageBlockSection>
+           
+             <apex:pageBlockSection title="Source Spec or Product" columns="2">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Source Relation" for="CouponRelation"/> 
+                <apex:inputField styleClass="sourcecouponRelationClass" id="sourceCouponRelation"  value="{!ccrz__E_Coupon__c.ccrz__SourceRelation__c}" />
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageblocksectionitem >
+            </apex:pageblocksectionitem>        
+                
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="sourceSpecClass" style="display:none" value="Source Spec" for="sourceSpecId"/>
+                <apex:inputField value="{!ccrz__E_Coupon__c.ccrz__SourceSpec__c}" styleClass="sourceSpecClass" style="display:none" id="sourceSpecId" required="false"/> 
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="sourceSpecClass" style="display:none" value="Source Spec Value" for="sourceSpecValue"/>
+                <apex:inputField styleClass="sourceSpecClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__SourceSpecValue__c}" id="sourceSpecValue"/>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="sourceProductClass" style="display:none" value="Source Product" for="sourceProduct"/>
+                <apex:inputField styleClass="sourceProductClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__SourceProduct__c}" id="sourceProduct"/>
+            </apex:pageBlockSectionItem>
+            
+            
+            
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="sourceProductClass" style="display:none" value="Source Minimum Product Quantity" for="sourceProductQuantity"/>
+                <apex:inputField styleClass="sourceProductClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__SourceMinQty__c}" id="sourceProductQuantity"/>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem dataStyleClass="required">
+                <apex:outputLabel styleClass="sourceSpecClass" style="display:none" value="Source Minimum Spec Quantity" for="sourceSpecQuantity"/>
+                <apex:inputField styleClass="sourceSpecClass" style="display:none" value="{!ccrz__E_Coupon__c.ccrz__SourceSpecMiniQty__c}" id="sourceSpecQuantity"/>
+            </apex:pageBlockSectionItem>
+       
+       </apex:pageBlockSection>    
+        </div>
+        
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

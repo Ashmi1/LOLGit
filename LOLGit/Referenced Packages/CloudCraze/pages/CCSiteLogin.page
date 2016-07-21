@@ -1,0 +1,58 @@
+<!--
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page id="loginPage" controller="ccrz.cc_ctrl_SiteLogin" applyHtmlTag="false" extensions="ccrz.cc_ctrl_LocaleExtension" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" language="{!userLanguageCode}" action="{!forwardIfLoggedIn}">
+<apex:composition template="{!IF(pageTemplate != null, pageTemplate, 'cc_tmpl_OneColRD')}">
+
+	<apex:define name="meta">
+		<title><apex:outputText value="{!PageTitle}" /></title>
+		<meta name="description" content="{!HTMLENCODE(metaDescription)}" />
+		<meta name="keywords" content="{!HTMLENCODE(metaKeywords)}" />
+	</apex:define>
+
+	<apex:define name="splash">
+		<c:cc_Hero divClass="main_page_title MyAccount {!userLanguageCode}" rendered="{!widgetConfiguration[LOWER('BN.Enabled')]}" />
+	</apex:define>
+
+	<apex:define name="breadcrumb">
+		<apex:outputPanel rendered="{!IF(storefront.ShowBreadcrumbOnLoginReg__c, true, false)}">
+			 <c:cc_MiniBreadCrumb pdelegate="{!SiteLoginController}" plevel1DisplayName="Login"/>
+		</apex:outputPanel>
+	</apex:define>
+
+	<apex:define name="body">
+        <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIB.Enabled')]}" >
+            <apex:include pageName="{!widgetConfiguration[LOWER('BIB.PIName')]}" />
+        </apex:outputPanel>
+        <div id="login_main_content" />
+        <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIE.Enabled')]}" >
+	       <apex:include pageName="{!widgetConfiguration[LOWER('BIE.PIName')]}" />
+	   </apex:outputPanel>
+	</apex:define>
+
+	<apex:define name="htmlbodyX">
+        <script>
+            var forgotPassword = function() {
+                document.location = "{!$Page.CCForgotPassword}?cartID={!JSENCODE(currentCartID)}";
+            }
+        </script>
+
+        <!-- common components -->
+        <c:cc_PageMessagesRD />
+        <c:cc_headerRD ccCtrl="{!SiteLoginController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+        <c:cc_topMenuRD ccCtrl="{!SiteLoginController}" rendered="{!widgetConfiguration[LOWER('TM.Enabled')]}" />
+        <c:cc_productSearchWidget pCcCtrl="{!SiteLoginController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+
+        <!-- page-specific components -->
+        <c:cc_SiteLoginRD />
+    </apex:define>
+
+</apex:composition>
+</apex:page>

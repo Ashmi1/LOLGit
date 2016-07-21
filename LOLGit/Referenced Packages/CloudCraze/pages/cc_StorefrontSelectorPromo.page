@@ -1,0 +1,52 @@
+<!--
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page showHeader="true" sidebar="true" standardController="ccrz__E_Promo__c" extensions="ccrz.cc_ctrl_StorefrontSelector">
+
+	<c:cc_StorefrontSelector obj="{!ccrz__E_Promo__c}" ctrl="{!extnController}"/>
+
+	<!--
+	<apex:outputPanel >
+		<apex:form >
+			<apex:panelGrid columns="3" id="TitlePanel" style="margin-left:auto;margin-right:auto;">
+				<apex:panelGroup >
+					<b><apex:outputText >Storefronts</apex:outputText></b><br/>
+				</apex:panelGroup>
+				<apex:panelGroup >&nbsp;</apex:panelGroup>
+				<apex:panelGroup >&nbsp;</apex:panelGroup>
+			</apex:panelGrid>
+			<apex:panelGrid columns="3" id="SelectPanel" style="margin-left:auto;margin-right:auto;">
+				<apex:panelGroup >
+					<i><apex:outputText value="disabled:"/></i><br/>
+					<apex:selectList id="SelectOne" value="{!leftSelected}" multiselect="true" style="width:100px" size="5">
+						<apex:selectOptions value="{!unselectedvalues}" />
+					</apex:selectList>
+				</apex:panelGroup>
+				<apex:panelGroup >
+					<br/><br/>
+					<apex:commandButton value=">>" action="{!selectClick}" rerender="SelectPanel"/>
+					<br/><br/>
+					<apex:commandButton value="<<" action="{!unselectClick}" rerender="SelectPanel"/>
+				</apex:panelGroup>
+				<apex:panelGroup >
+					<i><apex:outputText value="enabled:"/></i><br/>
+					<apex:selectList id="SelectTwo" value="{!rightSelected}" multiselect="true" style="width:100px" size="5">
+						<apex:selectOptions value="{!selectedvalues}" />
+					</apex:selectList>
+				</apex:panelGroup>
+			</apex:panelGrid>
+			<apex:panelGrid style="margin-left:auto;margin-right:auto;">
+				<apex:commandButton value="Update Enabled Storefronts" action="{!updateStorefronts}"/>
+				<apex:messages />
+			</apex:panelGrid>
+		</apex:form>
+	</apex:outputPanel>
+	-->
+</apex:page>

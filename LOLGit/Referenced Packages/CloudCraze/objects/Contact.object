@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CompanyName__c</fullName>
+        <defaultValue>$User.CompanyName</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:Used in request for quote form</description>
+        <externalId>false</externalId>
+        <label>CompanyName</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CompanyType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:Deprecated</description>
+        <externalId>false</externalId>
+        <label>CompanyType</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Type1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>IsPortalUser__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze: Deprecated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>True if contact is a portal user, False otherwise</inlineHelpText>
+        <label>Portal User</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SelfRegistered__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:Boolean determining if the user is a portal user self registered through the site. (Deprecated)</description>
+        <externalId>false</externalId>
+        <label>Self Registered</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <webLinks>
+        <fullName>CSR_Flow</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>CSR Flow</masterLabel>
+        <openType>newWindow</openType>
+        <page>cc_admin_CSRFlow</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+</CustomObject>

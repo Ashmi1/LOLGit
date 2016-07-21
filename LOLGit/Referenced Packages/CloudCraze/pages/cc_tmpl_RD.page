@@ -1,0 +1,4 @@
+<apex:page id="cc_tmpl_RD" controller="ccrz.cc_ctrl_StorefrontTemplate" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+	<apex:composition template="ccrz__cc_tmpl_Storefront">
+	</apex:composition>
+</apex:page>

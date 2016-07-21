@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Private caches hold cached data that is safe for external consumption.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BuildGroup__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Build Group is used to group caches that are built as part of the same process.  Caches are typically built from a batch job and the Batch Group provides a way to identify all caches built as part of the same batch.  For all caches built as part of the same job the Build Group should be the same.</description>
+        <externalId>true</externalId>
+        <label>Build Group</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BuildTimestamp__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Build Timestamp provides a way to timestamp caches that are built as part of the same process.  Caches are typically built using a batch job and the Build Timestamp provides a way to note those caches built around the same time.  For all caches built as part of the same job the Build Timestamp should be the same.</description>
+        <externalId>false</externalId>
+        <label>Build Timestamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CacheId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External id used for data loading.</description>
+        <externalId>true</externalId>
+        <label>CacheId</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>CacheName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name or type of this cache.  In combination with storefront, locale, page name, and effective start this should form the unique identifier for a cache.</description>
+        <externalId>true</externalId>
+        <label>Cache Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveEnd__c</fullName>
+        <defaultValue>NOW() + 18250</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The date/time at which point this cache is no longer valid.</description>
+        <externalId>false</externalId>
+        <label>Effective End</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveStart__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The effective start date/time which this cache is visible.</description>
+        <externalId>false</externalId>
+        <label>Effective Start</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Is this cache entry enabled?</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Locale__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Locale for this cache.  Null is considered the default locale, i.e. non-locale specific.</description>
+        <externalId>true</externalId>
+        <label>Locale</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pagename__c</fullName>
+        <defaultValue>&apos;All&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The page that this cache specifically applies to.  Null or &apos;All&apos; is considered as the default applying to all pages.</description>
+        <externalId>true</externalId>
+        <label>Pagename</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SequencePriority__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>SequencePriority</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <defaultValue>&apos;global&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Private Cache</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CacheName__c</columns>
+        <columns>Storefront__c</columns>
+        <columns>Pagename__c</columns>
+        <columns>Locale__c</columns>
+        <columns>EffectiveStart__c</columns>
+        <columns>EffectiveEnd__c</columns>
+        <columns>Enabled__c</columns>
+        <columns>SequencePriority__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PC-{0000000000}</displayFormat>
+        <label>CC Private Cache Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Private Caches</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>cc_admin_CategoryMedia</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>cc_admin_CategoryMedia</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>cc_admin_CategoryMedia</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Associated images for a Category</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AltMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Alternate text - this is the message to display if the image cannot be found or rendered by the browser</description>
+        <externalId>false</externalId>
+        <label>AltMessage</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CategoryMediaId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External id for this entry - can be used for updates</description>
+        <externalId>true</externalId>
+        <label>Category Media Ext Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reference to the category entry to which this media corresponds</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>E_Category__c</referenceTo>
+        <relationshipLabel>Category Media</relationshipLabel>
+        <relationshipName>Category_Medias</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Flag determining whether or not this media record is active</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The last date for which this media record is active. This is the last date the image will be displayed</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FilePath__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Full file path for the image. If this is an attachment, then it would be the file name only. If it is a static resource, then the path within the resource</description>
+        <externalId>false</externalId>
+        <label>File Path</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Locale__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Locale corresponding to this entry. Different locales can have different category images</description>
+        <externalId>false</externalId>
+        <label>Locale</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MediaType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines where this image is displayed. Values are &quot;Category Image&quot; and &quot;Category Image Thumbnail&quot;</description>
+        <externalId>false</externalId>
+        <label>Media Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Category Image</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Category Image Thumbnail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductMediaSource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Source of the image. Values are &quot;URL&quot;, &quot;Static Resource&quot; and &quot;Attachment&quot;</description>
+        <externalId>false</externalId>
+        <label>Category Media Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Static Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>URI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <defaultValue>500</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The start date for which this media record is active. This is the first date the image will be displayed</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>StaticResourceName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of a static resource that contains this media.</description>
+        <externalId>false</externalId>
+        <label>Static Resource Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>URI__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If the source is a URL, contains the full URL to the image. This should reference a location with secure storage (SSL defined)</description>
+        <externalId>false</externalId>
+        <label>URI</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Category Media</label>
+    <nameField>
+        <displayFormat>CM-{0000}</displayFormat>
+        <label>Category Media Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Category Media</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

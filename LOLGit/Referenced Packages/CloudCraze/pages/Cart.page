@@ -1,0 +1,110 @@
+<!--
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page id="Cart" controller="ccrz.cc_ctrl_CartRD" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false"  cache="false" extensions="ccrz.cc_ctrl_LocaleExtension" language="{!userLanguageCode}">
+
+    <apex:composition template="{!IF(pageTemplate != null, pageTemplate, 'cc_tmpl_TwoColRD')}">
+        <apex:define name="meta">
+            <title><apex:outputText value="{!PageTitle}" /></title>
+            <meta name="description" content="{!HTMLENCODE(metaDescription)}" />
+            <meta name="keywords" content="{!HTMLENCODE(metaKeywords)}" />
+        </apex:define>
+        <apex:define name="header">
+            
+        </apex:define>
+        <apex:define name="menu">
+            
+        </apex:define>
+        <apex:define name="splash">
+        	<c:cc_Hero divClass="{!LOWER(pageName)} {!userLanguageCode}" rendered="{!widgetConfiguration[LOWER('BN.Enabled')]}" />
+        </apex:define>
+        <apex:define name="breadcrumb">
+            
+        </apex:define>
+        <apex:define name="WidgetBoxL">
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('CWL.Enabled')]}" >
+                <apex:include pageName="{!widgetConfiguration[LOWER('CWL.PIName')]}" />
+            </apex:outputPanel>
+        </apex:define>
+        <apex:define name="ProductSearch">
+        </apex:define>
+        <apex:define name="MiniQuickOrderBox">
+            <div class="quick-order"></div>
+        </apex:define>
+        <apex:define name="ContactUs">
+            <c:cc_SFLiveChatWidget />
+        </apex:define>
+
+        <apex:define name="body">
+            <apex:outputText rendered="{!exceptionFlag}">
+                <div class="warning"><apex:outputText value=" {!exceptionMessage}"/></div>
+            </apex:outputText>
+            <apex:outputText rendered="{!notOrdProdExist}">
+                <div class="warning"><apex:outputText value=" {!notOrdProdMessage}"/></div>
+            </apex:outputText>
+            <apex:outputText rendered="{!nonStdProdExist}">
+                <div class="warning"><apex:outputText value=" {!nonStdProdMessage}"/></div>
+            </apex:outputText>
+            <apex:dynamicComponent componentValue="{!pageLog}"/>
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIB.Enabled')]}" >
+                <apex:include pageName="{!widgetConfiguration[LOWER('BIB.PIName')]}" />
+            </apex:outputPanel>
+            <div class="cartContainer"></div>
+            <div class="featured-prod"></div>
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIE.Enabled')]}" >
+                <apex:include pageName="{!widgetConfiguration[LOWER('BIE.PIName')]}" />
+            </apex:outputPanel>
+        </apex:define>
+
+        <apex:define name="htmlbodyX">
+            <script>
+                CCRZ.pagevars.currentCartID = "{!JSENCODE(ccCartId)}";
+				
+                var showCategories = true;
+                var productList = function(categoryId) {
+                    document.location = "{!JSENCODE($Page.Products)}?viewState=ListView&cartID=" + CCRZ.pagevars.currentCartID + "&categoryId=" + categoryId + getCSRQueryString();
+                }
+                
+                var productDetails = function(productId) {
+                    document.location = "{!JSENCODE($Page.ProductDetails)}?viewState=DetailView&cartID=" + CCRZ.pagevars.currentCartID + "&sku=" + productId + getCSRQueryString();
+                }
+                var homePage = function() {
+                    document.location = "{!JSENCODE($Page.HomePage)}?cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                }
+                var checkout = function() {
+                    document.location = "{!JSENCODE($Page.CheckoutNew)}?cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                }
+                jQuery(document).ready(function() {
+                    jQuery('.carousel-inner .item:first-child').addClass('active');
+                    jQuery('.carousel').carousel();
+                });
+            </script>
+
+            <!-- common components -->
+            <c:cc_PageMessagesRD />
+            <c:cc_headerRD ccCtrl="{!CartController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+            <c:cc_topMenuRD ccCtrl="{!CartController}" rendered="{!widgetConfiguration[LOWER('TM.Enabled')]}" />
+            <c:cc_CategoryTreeRD rendered="{!widgetConfiguration[LOWER('CT.Enabled')]}" />
+            <c:cc_WishlistPicker rendered="{!widgetConfiguration[LOWER('WL.PkrOn')]}" />
+            <c:cc_MiniQuickOrderRD rendered="{!widgetConfiguration[LOWER('QO.Enabled')]}" />
+            <c:cc_ProductSearchWidgetNavRD ccCtrl="{!CartController}" rendered="{!widgetConfiguration[LOWER('SB.Enabled')]}" />
+            <c:cc_productSearchWidget pCcCtrl="{!CartController}" rendered="{!IF(OR(widgetConfiguration[LOWER('H.Enabled')] == 'TRUE', widgetConfiguration[LOWER('SB.Enabled')] == 'TRUE'), true, false)}" />
+            <c:cc_SpotlightProductsRD RelatedProducts="true" rendered="{!widgetConfiguration[LOWER('RP.Enabled')]}"/>
+            <c:cc_promoRD pageLoc="Shopping Cart" rendered="{!widgetConfiguration[LOWER('PM.Enabled')]}" />
+            <c:cc_EffectiveAccountSelector rendered="{!widgetConfiguration[LOWER('EFF.Enabled')]}" readOnly="true" />
+
+            <!-- page-specific components -->
+            <c:cc_CartIncRD2 />
+            <c:cc_CommonTemplates />
+            <c:cc_CartOrderEmailer pTypeDesc="" pParam="" pParamVal="" pRef="" />
+        </apex:define>
+
+    </apex:composition>
+</apex:page>

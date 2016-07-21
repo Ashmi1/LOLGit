@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>cc_admin_PromoI18N</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>cc_admin_PromoI18N</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>cc_admin_PromoI18N</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Locale-specific version of promotion.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AttachmentId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If ImageSource__c is an attachment, then this field holds the Salesforce ID of the attachment. Attachments could be different based on the locale and are defined in the CC Promo Screen.</description>
+        <externalId>false</externalId>
+        <label>AttachmentId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CC_Promotion__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reference to the CC Promotion record that is being localized.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Parent Promotion</inlineHelpText>
+        <label>CC Promotion</label>
+        <referenceTo>E_Promo__c</referenceTo>
+        <relationshipLabel>CC Promotions i18n</relationshipLabel>
+        <relationshipName>CC_Promotions_i18n</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of the Promotion in the language referenced by the locale. (NOT CURRENTLY USED)</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ExternalLink__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When set AND Link Type is set to URL on the CC Promo record, then clicking this promotion will redirect to the given URL.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>External Ink</inlineHelpText>
+        <label>ExternalLink</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ImageSource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>One of Attachment, URI, Static Resource, Override Static Resource, Splash Static Resource, Splash Override Static Resource. Only Attachment, URI, and Static Resource are currently used. The ImageSource__c field indicates where to find the location of the image to be displayed for the promotion. If Attachment then the image is stored as an attachment to the object. If URI then use the ImageURI__c field. If StaticResource then use the ImageURI__c field but within the indicated Static Resource using the StaticResource__c field. Currently, ImageSource__c on the I18n record is overridden by the ImageSource__c on the CC Promo record.</description>
+        <externalId>false</externalId>
+        <label>Image Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Attachment</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>URI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Static Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Override Static Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Splash Static Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Splash Override Static Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ImageURI__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URI of the image. If ImageSource__c is URI then this is the HREF pointing to the image. If ImageSource__c is Static Resource then this is a relative reference inside the indicated Static Resource.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Image URI pointing to image hosted in external site</inlineHelpText>
+        <label>ImageURI</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Locale__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Locale that is being defined by this entry.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Current user&apos;s locale such as en-US</inlineHelpText>
+        <label>Locale</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StaticResource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the Static Resource that the image is kept within if ImageSource__c is Static Resource.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>1. Use prefix &quot;c__&quot; for static resource defined in subscriber org
+2. StaticResource without prefix refers to static resource inside managed package</inlineHelpText>
+        <label>Static Resource</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Promotion i18n</label>
+    <nameField>
+        <displayFormat>PROM-{0000}</displayFormat>
+        <label>Promotion i18n Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Promotions i18n</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

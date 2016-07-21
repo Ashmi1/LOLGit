@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Used to determine alternative pricing for accounts outside of the standard account grouping.  Primary uses are for contracts, relative (upgrade/downgrade), segmented and contextual based pricing.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>EffectiveEnd__c</fullName>
+        <defaultValue>DATETIMEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Date at which this entry is expires</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date at which this entry is expires</inlineHelpText>
+        <label>Effective End</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveStart__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Date and Time at which this entry is takes effect</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and Time at which this entry is takes effect</inlineHelpText>
+        <label>Effective Start</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines if the entry is available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines if the entry is available.</inlineHelpText>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GroupName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Naming for this price group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Naming for this price group.</inlineHelpText>
+        <label>Group Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GroupType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Categorization of the price group.  This may contain values such as Contract, Upgrade, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Categorization of the price group.  This may contain values such as Contract, Upgrade, etc.</inlineHelpText>
+        <label>Group Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PriceGroupID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External ID field</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External ID field</inlineHelpText>
+        <label>Price Group ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>CC Price Group</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PG-{0000000000}</displayFormat>
+        <label>CC Price Group Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Price Groups</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

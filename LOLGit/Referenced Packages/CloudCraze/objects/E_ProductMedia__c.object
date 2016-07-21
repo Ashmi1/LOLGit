@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Encapsulates media such as hero, thumbnail images, product brochures, owner&apos;s manuals, assembly guides, and videos associated with a product. Media&apos;s source could be in a form of attachment, static resource, or external resource(URI).</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AltMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used in the alt attribute of the Image tag to provide search optimization.</description>
+        <externalId>false</externalId>
+        <label>AltMessage</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Flag determining whether or not this media record is active</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <defaultValue>DATEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The last date for which this media record is active. This is the last date the image will be displayed</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FilePath__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Full file path for the image. If this is an attachment, then it would be the file name only. If it is a static resource, then the path within the resource</description>
+        <externalId>false</externalId>
+        <label>File Path</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Locale__c</fullName>
+        <defaultValue>&quot;en_US&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Locale corresponding to this entry. Different locales can have different product images</description>
+        <externalId>false</externalId>
+        <label>Locale</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MediaType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines where this image is displayed. Values are &quot;Product Image&quot;, &quot;Product Image Thumbnail&quot;, &quot;Product Search Image&quot;, &quot;Alternate Image&quot;</description>
+        <externalId>false</externalId>
+        <label>Media Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Alternate Images</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alternate Thumbnails</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Datasheets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Safety Documents</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Brochures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Search Image</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Owner&apos;s Manuals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assembly Guides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JPG Image</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Image</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Image Thumbnail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flash Files</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SVG Interactive Diagram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field acts as a tool-tip when the user mouse overs the image of the product. Used for optimization in the search engine.</description>
+        <externalId>false</externalId>
+        <label>Product_Description</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ProductMediaId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External id for this entry - can be used for updates</description>
+        <externalId>true</externalId>
+        <label>Product Media Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ProductMediaSource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Source of the image. Values are &quot;URL&quot;, &quot;Static Resource&quot; and &quot;Attachment&quot;</description>
+        <externalId>false</externalId>
+        <label>Product Media Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Static Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>URI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reference to the category entry to which this media corresponds</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>E_ProductMedias</relationshipLabel>
+        <relationshipName>E_ProductMedias</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <defaultValue>500</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines the ordering of the images in the case of Alternate images on the product detail page</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The start date for which this media record is active. This is the first date the image will be displayed</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>StaticResourceName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Pointing to static resource containing the images</description>
+        <externalId>false</externalId>
+        <inlineHelpText>1. Use prefix &quot;c__&quot; for static resource defined in subscriber org
+2. StaticResource name without prefix refers to static resource inside managed package</inlineHelpText>
+        <label>Static Resource Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>URI__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If the source is a URL, contains the full URL to the image. This should reference a location with secure storage (SSL defined)</description>
+        <externalId>false</externalId>
+        <label>URI</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Product Media</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>MediaType__c</columns>
+        <columns>ProductMediaSource__c</columns>
+        <columns>Product__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>Product Media Auto Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Product Media</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Datasheet</fullName>
+        <active>true</active>
+        <description>Datasheet</description>
+        <label>Datasheet</label>
+        <picklistValues>
+            <picklist>MediaType__c</picklist>
+            <values>
+                <fullName>Alternate Images</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alternate Thumbnails</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assembly Guides</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Datasheets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flash Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPG Image</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner%27s Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Image</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Image Thumbnail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Search Image</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safety Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Brochures</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProductMediaSource__c</picklist>
+            <values>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Static Resource</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Image</fullName>
+        <active>true</active>
+        <description>Image</description>
+        <label>Image</label>
+        <picklistValues>
+            <picklist>MediaType__c</picklist>
+            <values>
+                <fullName>Alternate Images</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alternate Thumbnails</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assembly Guides</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Datasheets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flash Files</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JPG Image</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner%27s Manuals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Image</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Image Thumbnail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Search Image</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SVG Interactive Diagram</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safety Documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Brochures</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ProductMediaSource__c</picklist>
+            <values>
+                <fullName>Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Static Resource</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>MediaType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>FilePath__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ProductMediaSource__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

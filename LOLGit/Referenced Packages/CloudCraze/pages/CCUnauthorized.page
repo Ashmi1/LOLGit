@@ -1,0 +1,118 @@
+<!--
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page id="CCUnauthorized" controller="ccrz.cc_ctrl_HomePage" extensions="ccrz.cc_ctrl_LocaleExtension" applyHtmlTag="false"
+	docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" language="{!userLanguageCode}">
+
+	<apex:composition template="{!IF(pageTemplate != null, pageTemplate, 'cc_tmpl_OneColRD')}">
+
+		<apex:define name="meta">
+			<title><apex:outputText value="{!PageTitle}" /></title>
+			<meta name="description" content="{!HTMLENCODE(metaDescription)}" />
+			<meta name="keywords" content="{!HTMLENCODE(metaKeywords)}" />
+		</apex:define>
+
+		<apex:define name="body">
+			<div class="cc-exception"/>
+
+			<script id="CCException-Desktop" type="text/template">
+				<h1>
+					{{pageLabelMap 'Site_Authorization_Required'}}
+				</h1>
+				<p>
+					<img src="{{pageLabelMap 'Site_Img_Path'}}/warning.gif"/>
+					<span class="title">{{pageLabelMap 'Site_Authorization_Required'}}</span>
+				</p>
+				<p>
+					{{pageLabelMap 'Site_Login_Or_Register_First'}}
+				</p>
+				<p>
+
+				</p>
+				<p>
+					{{pageLabelMap 'Site_Get_In_Touch' 'mailto:{!$Site.AdminEmailAddress}' 'email us'}}
+				</p>
+			</script>
+
+			<script id="CCException-Mobile" type="text/template">
+				<div class="content_container">
+					<div class="span12">
+						<div class="single_column_layout">
+							<div class="main_content_single_column_container">
+								<h1>
+									{{pageLabelMap 'Site_Authorization_Required'}}
+								</h1>
+								<p>
+									<img src="{{pageLabelMap 'Site_Img_Path'}}/warning.gif"/>
+									<span class="title">{{pageLabelMap 'Site_Authorization_Required'}}</span>
+								</p>
+								<p>
+									{{pageLabelMap 'Site_Login_Or_Register_First'}}
+								</p>
+								<p>
+
+								</p>
+								<p>
+									{{pageLabelMap 'Site_Get_In_Touch' 'mailto:{!$Site.AdminEmailAddress}' 'email us'}}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</script>
+
+			<script type="text/javascript">
+				jQuery(function($) {
+					CCRZ.views.CCExceptionView = Backbone.View.extend({
+						templateDesktop : CCRZ.util.template(CCRZ.uiProperties.CCExceptionView.desktop.tmpl),
+						templateMobile : CCRZ.util.template(CCRZ.uiProperties.CCExceptionView.phone.tmpl),
+						initialize : function() {
+							this.render();
+						},
+						render : function() {
+							var v = this;
+							if (CCRZ.display.isPhone()) {
+								this.setElement($(CCRZ.uiProperties.CCExceptionView.phone.selector));
+								this.$el.html(v.templateMobile());
+							} else {
+								this.setElement($(CCRZ.uiProperties.CCExceptionView.desktop.selector));
+								this.$el.html(v.templateDesktop());
+							}
+						},
+						renderViewChanged : function() {
+							if (this.viewChanged()) {
+								this.render();
+							}
+						},
+						viewChanged : function() {
+							if (this.currentView !== CCRZ.display.currentView) {
+								this.currentView = CCRZ.display.currentView;
+								return true;
+							}
+							return false;
+						}
+					});
+					var ccExceptionView = new CCRZ.views.CCExceptionView();
+					CCRZ.dynamicViews.push(ccExceptionView);
+				});
+			</script>
+			<p>
+				<apex:messages />
+			</p>
+		</apex:define>
+
+		<apex:define name="htmlbodyX">
+            <!-- common components -->
+            <c:cc_headerRD ccCtrl="{!HomePageController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+            <c:cc_topMenuRD ccCtrl="{!HomePageController}" rendered="{!widgetConfiguration[LOWER('TM.Enabled')]}" />
+            <c:cc_productSearchWidget pCcCtrl="{!HomePageController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+		</apex:define>
+	</apex:composition>
+</apex:page>

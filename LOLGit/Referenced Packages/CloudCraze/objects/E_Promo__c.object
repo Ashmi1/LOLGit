@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The E_Promotion__c object contains promotion related data.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>When set AND Link Type is set to Category then clicking this promotion will redirect to the referenced CC Category.</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>E_Category__c</referenceTo>
+        <relationshipLabel>CC Promotions</relationshipLabel>
+        <relationshipName>CC_Promotions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Coupon__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>NOT CURRENTLY USED.</description>
+        <externalId>false</externalId>
+        <label>Coupon</label>
+        <referenceTo>E_Coupon__c</referenceTo>
+        <relationshipLabel>Promotions</relationshipLabel>
+        <relationshipName>Promotions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>True if this promotion is enabled and will be displayed.</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <defaultValue>DATEVALUE(&apos;2099-12-31&apos;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>After this date the promotion will no longer be displayed.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ExternalLink__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When set AND Link Type is set to URL then clicking this promotion will redirect to the given URL.</description>
+        <externalId>false</externalId>
+        <label>External Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Graphic_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>One of image, slider, or swf. NOT CURRENTLY USED.</description>
+        <externalId>false</externalId>
+        <label>Graphic Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>image</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>slider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>swf</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ImageSource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>One of Attachment, URI, Static Resource, Override Static Resource, Splash Static Resource, Splash Override Static Resource. Only Attachment, URI, and Static Resource are currently used. The ImageSource__c field indicates where to find the location of the image to be displayed for the promotion. If Attachment then the image is stored as an attachment to the object. If URI then use the ImageURI__c field. If StaticResource then use the ImageURI__c field but within the indicated Static Resource using the StaticResource__c field.</description>
+        <externalId>false</externalId>
+        <label>Image Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Attachment</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>URI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Static Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Override Static Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Splash Static Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Splash Override Static Resource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ImageURI__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URI of the image. If ImageSource__c is URI then this is the href pointing to the image. If ImageSource__c is Static Resource then this is a relative reference inside the indicated Static Resource.</description>
+        <externalId>false</externalId>
+        <label>Image URI</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LinkType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>One of None, Category, Product, or URL. Category is not currently supported.</description>
+        <externalId>false</externalId>
+        <label>Link Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Category</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>URL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>LocationType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>One of Banner, Left Nav, Right Nav, Splash, Splash Phone, or Mobile. Controls the location within a page of the promotion.</description>
+        <externalId>false</externalId>
+        <label>Location Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Banner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Left Nav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Right Nav</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Splash</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Splash Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>LongDesc__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Long Description(NOT CURRENTLY USED.)</description>
+        <externalId>false</externalId>
+        <label>Long Description</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NewWindowProperty__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NOT CURRENTLY USED.</description>
+        <externalId>false</externalId>
+        <label>New Window Property</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NewWindow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Open link in a new window if checked. Otherwise, open in the same window.</description>
+        <externalId>false</externalId>
+        <label>New Window</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PageLocation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>One of Landing Page, Product Detail, Shopping Cart, Order Review, Order Confirmation, Product List Page, Category Landing Page, All Pages. Indicates on which page the promotion should appear.</description>
+        <externalId>false</externalId>
+        <label>Page Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Landing Page</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Detail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shopping Cart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Confirmation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product List Page</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Category Landing Page</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>All Pages</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductRelated__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( Product__c  != null, &apos;true&apos;, &apos;false&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Related</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>References a CC Product such that if the LinkType__c field is Product then clicking the promotion will link to that product.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Promotions</relationshipLabel>
+        <relationshipName>Promotions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PromoId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External Id for E_Promo__c used in data export/import</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External Id for E_Promo__c used in data export/import</inlineHelpText>
+        <label>Promotion Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Script__c</fullName>
+        <deprecated>false</deprecated>
+        <description>HTML Script(NOT CURRENTLY USED)</description>
+        <externalId>false</externalId>
+        <label>Script</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Display order of the promotion within a group of promotions.</description>
+        <externalId>false</externalId>
+        <label>Location Display Sequence</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShortDesc__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Short Description(NOT CURRENTLY USED)</description>
+        <externalId>false</externalId>
+        <label>Short Desc</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SplashRotate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Splash Rotate</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The date before which the promotion will not be displayed.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>StaticResource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the Static Resource that the image is kept within if ImageSource__c is Static Resource.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>1. Use prefix &quot;c__&quot; for static resource defined in subscriber org
+2. StaticResource without prefix refers to static resource inside managed package</inlineHelpText>
+        <label>StaticResource</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StorefrontMS__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Storefront(s) that the image will be displayed on.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <picklist>
+            <picklistValues>
+                <fullName>DefaultStore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NOT CURRENTLY USED</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>True__c</fullName>
+        <deprecated>false</deprecated>
+        <description>True - This field is used internally within the product.</description>
+        <externalId>false</externalId>
+        <formula>TRUE</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>True</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>CC Promotion</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Product__c</columns>
+        <columns>StaticResource__c</columns>
+        <columns>PageLocation__c</columns>
+        <columns>ImageSource__c</columns>
+        <columns>LocationType__c</columns>
+        <columns>Enabled__c</columns>
+        <columns>Sequence__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>CloudBurst</fullName>
+        <columns>NAME</columns>
+        <columns>PageLocation__c</columns>
+        <columns>LocationType__c</columns>
+        <columns>Sequence__c</columns>
+        <columns>StaticResource__c</columns>
+        <columns>Enabled__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>CloudBurst</value>
+        </filters>
+        <label>CloudBurst</label>
+    </listViews>
+    <listViews>
+        <fullName>Landing_Page</fullName>
+        <columns>NAME</columns>
+        <columns>LocationType__c</columns>
+        <columns>ImageSource__c</columns>
+        <columns>StaticResource__c</columns>
+        <columns>ImageURI__c</columns>
+        <columns>Enabled__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PageLocation__c</field>
+            <operation>equals</operation>
+            <value>Landing Page</value>
+        </filters>
+        <label>Landing Page</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CC Promotions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PageLocation__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LocationType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>StartDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>EndDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Enabled__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>LocationType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Coupon__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PageLocation__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>StartDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>EndDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Enabled__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

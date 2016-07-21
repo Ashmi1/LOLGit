@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object used to map products to specifications.  These allows you to associated any number of additional attributes to the product using the common specifications referenced in the Spec table above.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ProductID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reference to the product object</description>
+        <externalId>false</externalId>
+        <formula>Product__c + &apos;-&apos; +  Spec__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ProductID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Item</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Product Specs</relationshipLabel>
+        <relationshipName>Product_Specs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>SpecValue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value that we are associating to this pairing. For example, if the specification is Processor Speed, the value might be 2.4GHz</description>
+        <externalId>false</externalId>
+        <label>SpecValue</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Spec__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reference to the specification object</description>
+        <externalId>false</externalId>
+        <label>Spec</label>
+        <referenceTo>E_Spec__c</referenceTo>
+        <relationshipLabel>Product Specs</relationshipLabel>
+        <relationshipName>Product_Specs</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>CC Product Spec</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>ProductID__c</columns>
+        <columns>Product__c</columns>
+        <columns>Spec__c</columns>
+        <columns>SpecValue__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PS-{0000000}</displayFormat>
+        <label>Product Spec Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Product Specs</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Spec__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SpecValue__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Product__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Spec__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SpecValue__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Spec__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SpecValue__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

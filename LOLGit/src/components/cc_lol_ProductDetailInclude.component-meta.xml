@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>37.0</apiVersion>
+    <description>The visualforce component is to override the price field, to display a defined price value for product.</description>
+    <label>cc_lol_ProductDetailInclude</label>
+</ApexComponent>

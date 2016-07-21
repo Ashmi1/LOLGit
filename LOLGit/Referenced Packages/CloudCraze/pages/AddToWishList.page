@@ -1,0 +1,13 @@
+<!--  
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without 
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page sidebar="true" showHeader="false" controller="ccrz.cc_ctrl_AddToCart" extensions="ccrz.cc_ctrl_LocaleExtension" action="{!addToWishList}" language="{!userLanguageCode}">
+
+</apex:page>

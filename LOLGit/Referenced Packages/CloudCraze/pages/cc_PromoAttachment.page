@@ -1,0 +1,31 @@
+<apex:page showHeader="true" sidebar="true" standardController="ccrz__E_Promo__c" extensions="ccrz.cc_ctrl_PromoAttachment,ccrz.cc_ctrl_LocaleExtension">
+	<style>
+	 .bPageBlock .pbTitle { width: 80%; } 
+	</style>
+	<apex:form > 
+		<apex:pageBlock >
+	        <apex:pageBlockSection columns="1">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Please select a language..." />
+				    <apex:SelectList value="{!selectedLoacle}" size="1">
+				      <apex:selectOptions value="{!LanguageOptionsList}"></apex:selectOptions>
+				    </apex:SelectList>
+			    </apex:pageBlockSectionItem>
+			    <apex:pageBlockSectionItem >
+				    <apex:outputLabel value="Please select a image file..." />
+				    <apex:inputFile value="{!content}" filename="{!nameFile}" /> 
+			    </apex:pageBlockSectionItem>
+			    <apex:pageBlockSectionItem >
+			    	<apex:outputLabel value="" />
+					<apex:commandButton action="{!attach}" value="Upload File" id="theButton" style="width:70px;"/>
+				</apex:pageBlockSectionItem>
+				
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+	<apex:outputPanel rendered="{!refreshPage}">
+	   <script>
+	      window.top.location='/{!E_Promo__c.id}';
+	   </script>
+</apex:outputPanel>
+</apex:page>

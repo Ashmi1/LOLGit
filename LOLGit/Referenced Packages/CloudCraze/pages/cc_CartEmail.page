@@ -1,0 +1,127 @@
+<apex:page id="CartEmail" docType="html-5.0" controller="ccrz.cc_ctrl_Cart" extensions="ccrz.cc_ctrl_Header">
+	<apex:composition template="ccrz__cc_tmpl_StorefrontPDF">
+		
+		<apex:define name="htmlbodyX">
+			
+			<apex:outputPanel id="mainBody" layout="none">
+			<div class="main_content_large_left_container" style="width: 702px;">
+				<div style="width: 702px;">
+					<apex:image width="702px" id="sitelogo" value="{!JSENCODE(StorefrontHeaderLogo)}" rendered="{!StorefrontHeaderLogo!='NotAvailable'}"/>
+				</div>
+				<h1 >{!pageLabelMap['CartInc_ShoppingCart']}</h1>&nbsp;&nbsp;<apex:outputLink value="{!storefront.ccrz__Punch_In_Base_URL__c}{!$Page.ccrz__CCSiteLogin}?cartID={!JSENCODE(currentCartID)}&{!JSENCODE(ipAddressLocationKey)}={!JSENCODE(ipAddressLocation)}&{!JSENCODE(CSRQueryString)}&startURL={!$Page.ccrz__Cart}?viewState=InfoView&store={!JSENCODE(storeID)}&{!JSENCODE(ipAddressLocationKey)}={!JSENCODE(ipAddressLocation)}&cartID={!JSENCODE(currentCartID)}">{!pageLabelMap['CartOrderEmailer_GoToThisCart']}</apex:outputLink><br/><br/>
+				<p><strong>{!pageLabelMap['CartOrderEmailer_GeneratedBy']}</strong> <apex:outputText value="{!$User.FirstName}"/>&nbsp;<apex:outputText value="{!$User.LastName}"/></p>
+				<p><strong>{!pageLabelMap['CartOrderEmailer_Date']}</strong> {!NOW()}</p>
+				<table class="shopping_cart" style="width: 702px;" border="1" cellSpacing="0" cellPadding="0">
+					<tbody>
+						<tr >
+							<th>{!pageLabelMap['CartInc_ProductName']}</th>
+							<apex:outputText rendered="{!IF(storefront.ccrz__Display_Pricing__c,true,false)}">
+								<th width="86">{!pageLabelMap['CartInc_Price']}</th>
+							</apex:outputText>
+							<th width="92">{!pageLabelMap['CartInc_Qty']}</th>
+							<th width="86">{!pageLabelMap['CartInc_Discount']}</th>
+							<apex:outputText rendered="{!IF(storefront.ccrz__Display_Pricing__c,true,false)}">
+								<th width="87" class="right_align">{!pageLabelMap['CartInc_Total']}</th>
+							</apex:outputText>
+						</tr>
+						<apex:repeat value="{!cartListViewData}" var="pc" id="theTable">
+							<tr>
+			                    <td>
+			                    	<p>
+			                    		<apex:outputText value="{!pc.productName}" />
+			                    	</p>
+			                    	<p>
+				                    	<apex:outputPanel rendered="{!IF( (NOT(ISNULL(couponId))) &&
+				                            NOT(applyToAll) &&
+				                            LEN(pc.appliedCoupon)>0 &&
+				                            pc.appliedCoupon==couponId,
+				                            true,false)}"
+				                            styleClass="cartCouponName">
+				                            <br/>
+				                            <apex:outputText value="{0}: {1}" >
+												<apex:param value="{!pageLabelMap['CartInc_Coupon']}"/>
+						       					<apex:param value="{!couponName}"/>
+						       				</apex:outputText>
+				                        </apex:outputPanel>
+									</p>
+									<p><span><strong>{!pageLabelMap['CartInc_SKU']} </strong><apex:outputText value="{!pc.SKU}"/></span></p>
+									<p>	
+			                        	<c:cc_RichText text="{!pc.productDescription}" />
+			                        </p>
+								</td>
+								<apex:outputPanel layout="none" rendered="{!IF((pc.mockproduct.ProductType=='Kit') || (pc.mockproduct.ProductType=='Dynamic Kit') || (pc.mockproduct.ProductType=='Assembly') || ((pc.parentProductType=='Bundle') && (pc.cartItemType=='Minor')), false, true)}">
+									<td>
+										<apex:outputPanel layout="none" rendered="{!IF(storefront.ccrz__Display_Pricing__c && pc.pricingTiers.size == 0,true,false)}">
+											<apex:outputPanel rendered="{!pc.cartItemType!='Coupon'}">
+				                                 <c:cc_CurrencyFormatter amount="{!pc.price}" />
+				                             </apex:outputPanel>
+										</apex:outputPanel>
+									</td>
+								</apex:outputPanel>
+								<apex:outputPanel layout="none" rendered="{!IF((pc.mockproduct.ProductType=='Kit') || (pc.mockproduct.ProductType=='Dynamic Kit') || (pc.mockproduct.ProductType=='Assembly') || ((pc.parentProductType=='Bundle')), true,false)}">
+			                    	<td>&nbsp;</td>
+			                    </apex:outputPanel>
+			                    <td> <!-- qty column -->
+									<apex:outputText rendered="{!IF(pc.cartItemType=='Major', true, false)}">
+										<apex:outputText value="{!pc.quantity}"/>
+									</apex:outputText>
+			                    </td>
+			                    <td>
+				                    <apex:outputPanel rendered="{!NOT(cartHasCouponLineItem)}">
+										<apex:outputPanel rendered="{!IF(pc.cartItemType=='Minor' || pc.mockproduct.ProductType=='Dynamic Kit', false, true)}">
+										    <c:cc_CurrencyFormatter amount="{!pc.absoluteDiscount}" />
+										</apex:outputPanel>
+										<apex:outputPanel rendered="{!IF(pc.cartItemType=='Coupon', true, false)}">
+										    <c:cc_CurrencyFormatter amount="{!pc.absoluteDiscount}" />
+										</apex:outputPanel>
+									</apex:outputPanel>
+									<apex:outputPanel rendered="{!(cartHasCouponLineItem)}">
+										<apex:outputPanel rendered="{!IF(pc.cartItemType=='Coupon', true, false)}">
+										    <c:cc_CurrencyFormatter amount="{!pc.price}" rendered="{!IF((pc.parentProductType=='Bundle') && (pc.cartItemType=='Minor'), false, true)}"/>
+										</apex:outputPanel>
+									</apex:outputPanel>
+			                    </td>
+			                    <apex:outputText rendered="{!IF(storefront.ccrz__Display_Pricing__c,true,false)}">
+			                        <td>
+			                            <apex:outputPanel rendered="{!IF(pc.cartItemType=='Coupon', true, false)}">
+			                                <c:cc_CurrencyFormatter amount="{!pc.SubAmount}" rendered="{!IF((pc.parentProductType=='Bundle') && (pc.cartItemType=='Minor'), false, true)}"/>
+			                            </apex:outputPanel>
+			                            <apex:outputPanel rendered="{!IF(pc.cartItemType!='Coupon', true, false)}">
+			                                <c:cc_CurrencyFormatter amount="{!pc.SubAmount}" rendered="{!IF((pc.parentProductType=='Bundle') && (pc.cartItemType=='Minor'), false, true)}"/>
+			                            </apex:outputPanel>
+			                        </td>
+			                    </apex:outputText>
+							</tr>
+							<apex:outputText rendered="{!IF(pc.minorLines.size > 0, true, false)}">
+				                 <tr >
+							    	<th class="included_items_border_left">{!pageLabelMap['CartInc_IncludedItems']}</th>
+							    	<th class="included_items">&nbsp;</th>
+									<th class="included_items">&nbsp;</th>
+							    	<th class="included_items">&nbsp;</th>
+							    	<th class="included_items_border_right">&nbsp;</th>
+							    </tr>
+							    <apex:repeat value="{!pc.minorLines}" var="ml" id="minorLines">
+									<tr>
+										<td >
+											<p><apex:outputText value="{!ml.productName}" /></p>
+										</td>
+										<td>&nbsp;<c:cc_CurrencyFormatter amount="{!ml.price}" rendered="{!IF((ml.parentProductType=='Bundle') && (ml.cartItemType=='Minor'), false, true)}" /></td>
+										<td>{!ml.quantity}</td>
+	                    				<td><c:cc_CurrencyFormatter amount="{!ml.absoluteDiscount}" rendered="{!IF(((ml.parentProductType=='Kit') || (ml.parentProductType=='Dynamic Kit')) && (ml.cartItemType=='Minor'), true, false)}" /></td>
+										<td>&nbsp;</td>
+									</tr>
+								</apex:repeat>
+							</apex:outputText>
+						</apex:repeat>
+					</tbody>
+				</table>
+				<apex:outputPanel id="cartTotal" rendered="{!IF(storefront.ccrz__Display_Pricing__c,true,false)}">
+				    <strong>{!pageLabelMap['CartInc_Subtotal']}:&nbsp;<c:cc_CurrencyFormatter amount="{!cartSubTotal}" /></strong>
+				</apex:outputPanel>
+			</div>
+			</apex:outputPanel>
+		</apex:define>
+		
+	</apex:composition>
+	
+</apex:page>

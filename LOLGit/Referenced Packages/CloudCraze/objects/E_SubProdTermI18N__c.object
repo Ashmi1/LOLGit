@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>CloudCraze product subscription localization definition.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CartDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text Version of the Cart Display Name. Content in this field will override the content in the standard field.</description>
+        <externalId>false</externalId>
+        <label>Cart Display Name RT</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CartDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information in the Cart and during Checkout.  If this field is blank then Product Detail Display Name is used.</description>
+        <externalId>false</externalId>
+        <label>Cart Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text Version of the Display Name Field. Content in this field will override the content in the standard field.</description>
+        <externalId>false</externalId>
+        <label>Display Name RT</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of this subscription.  Used as a parameter for other Display Name fields.</description>
+        <externalId>false</externalId>
+        <label>Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmailDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information in the order confirmation email. If this field is blank then will try to fall Back to Order Display Name followed by Cart Display Name followed by Product Detail Display Name.</description>
+        <externalId>false</externalId>
+        <label>Email Display Name RT</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EmailDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information in the order confirmation email. If this field is blank then will try to fall Back to Order Display Name followed by Cart Display Name followed by Product Detail Display Name.</description>
+        <externalId>false</externalId>
+        <label>Email Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Locale__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The locale for which this localization applies.  Localization follows the normal CloudCraze fallback rules.</description>
+        <externalId>false</externalId>
+        <label>Locale</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text Version of the Order Display Name. Content in this field will override the content in the standard field.</description>
+        <externalId>false</externalId>
+        <label>Order Display Name RT</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information in the order.  If this field is blank then Product Detail Display Name is used.</description>
+        <externalId>false</externalId>
+        <label>Order Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductDetailDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich Text Version of the Product Detail Display Field. Content in this field will override the content in the standard field.</description>
+        <externalId>false</externalId>
+        <label>Product Detail Display Name RT</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ProductDetailDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text used for Displaying subscription information on the product detail page.</description>
+        <externalId>false</externalId>
+        <label>Product Detail Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductListDisplayNameRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For future use.  Do not use.</description>
+        <externalId>false</externalId>
+        <label>Product List Display Name RT</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ProductListDisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For future use.  Do not use.</description>
+        <externalId>false</externalId>
+        <label>Product List Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubProdTerm__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The product subscription definition to which this localization applies.</description>
+        <externalId>false</externalId>
+        <label>SubProdTerm</label>
+        <referenceTo>E_SubProdTerm__c</referenceTo>
+        <relationshipLabel>CC SubProdTerm I18Ns</relationshipLabel>
+        <relationshipName>SubProdTermI18Ns</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>CC SubProdTerm I18N</label>
+    <nameField>
+        <label>CC SubProdTerm I18N Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CC SubProdTerm I18Ns</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

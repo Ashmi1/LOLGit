@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$E_Product__c.SKU__c</field>
+    </columns>
+    <columns>
+        <field>E_Order__c.Account__c</field>
+    </columns>
+    <columns>
+        <field>E_Order__c.Note__c</field>
+    </columns>
+    <columns>
+        <field>E_OrderItem__c.Price__c</field>
+    </columns>
+    <columns>
+        <field>E_OrderItem__c.Quantity__c</field>
+    </columns>
+    <columns>
+        <field>E_OrderItem__c.AbsoluteDiscount__c</field>
+    </columns>
+    <columns>
+        <field>E_OrderItem__c.SubAmount__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Item by order</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$E_Order__c$E_OrderItem__c@E_OrderItem__c.Product__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>E_Order__c.OrderDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

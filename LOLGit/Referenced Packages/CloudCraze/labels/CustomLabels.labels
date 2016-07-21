@@ -1,0 +1,3113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AccoAccountInformation_RequiredField_TaxExempt</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation RequiredField TaxExempt</shortDescription>
+        <value>Tax Exempt attachment is required.</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_Invalid_Address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation Invalid Address</shortDescription>
+        <value>Invalid Address</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_RequiredField_CompanyName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation RequiredField CompanyName</shortDescription>
+        <value>Company Name is required.</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_RequiredField_Currency</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation_RequiredField_Currency</shortDescription>
+        <value>Currency is required.</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_RequiredField_FirstName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation RequiredField FirstName</shortDescription>
+        <value>First Name is required.</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_RequiredField_Language</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation_RequiredField_Language</shortDescription>
+        <value>Language is required.</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_RequiredField_LastName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation RequiredField LastName</shortDescription>
+        <value>Last Name is required.</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_RequiredField_Phone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation RequiredField Phone</shortDescription>
+        <value>Phone is required.</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_RequiredField_PrimaryPhoneNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation RequiredField PrimaryPhoneNumber</shortDescription>
+        <value>Primary Phone Number is required.</value>
+    </labels>
+    <labels>
+        <fullName>AccountInformation_RequiredField_UsernameEmail</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AccountInformation_RequiredField_UsernameEmail</shortDescription>
+        <value>Username/E-Mail is required.</value>
+    </labels>
+    <labels>
+        <fullName>AddToCartStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add to cart status text</shortDescription>
+        <value>adding to cart...</value>
+    </labels>
+    <labels>
+        <fullName>AddressBook_Add_New_Address</fullName>
+        <categories>MyAccount,AddressBook</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddressBook Add New Address</shortDescription>
+        <value>Add New Address</value>
+    </labels>
+    <labels>
+        <fullName>AddressBook_Default_Address</fullName>
+        <categories>MyAccount,AddressBook</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AddressBook Default Address</shortDescription>
+        <value>* Default Address</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_BillingAddress1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField BillingAddress1</shortDescription>
+        <value>Billing Address 1 is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_BillingCity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField BillingCity</shortDescription>
+        <value>Billing City is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_BillingCountry</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField BillingCountry</shortDescription>
+        <value>Billing Country is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_BillingPostalCode</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField BillingPostalCode</shortDescription>
+        <value>Billing Postal Code is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_BillingState</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField BillingState</shortDescription>
+        <value>Billing State is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_ShippingAddress1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField ShippingAddress1</shortDescription>
+        <value>Shipping Address 1 is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_ShippingCity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField ShippingCity</shortDescription>
+        <value>Shipping City is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_ShippingCountry</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField ShippingCountry</shortDescription>
+        <value>Shipping Country is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_ShippingPostalCode</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField ShippingPostalCode</shortDescription>
+        <value>Shipping Postal Code is required.</value>
+    </labels>
+    <labels>
+        <fullName>Address_RequiredField_ShippingState</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Address RequiredField ShippingState</shortDescription>
+        <value>Shipping State is required.</value>
+    </labels>
+    <labels>
+        <fullName>Admin_LoadCurrentMenuData</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hard coded text used to give instruction for loading current menu data.</shortDescription>
+        <value>Refresh the menu data in the CloudCraze® caching system. THIS IS REQUIRED in order to see the updated menus and menu items in the application user interface.</value>
+    </labels>
+    <labels>
+        <fullName>Admin_RefreshCategoryCache</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Help text in CC Admin Indexing for refresh category cache</shortDescription>
+        <value>Refresh the category tree in the CloudCraze® caching system. THIS IS REQUIRED in order to see the updated category tree in the application user interface.</value>
+    </labels>
+    <labels>
+        <fullName>Admin_RefreshProductSpecData</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Refresh Product Spec Data</shortDescription>
+        <value>Refresh the specification index in the CloudCraze® caching system. THIS IS REQUIRED in order to see the updated category and product specs in the application user interface.</value>
+    </labels>
+    <labels>
+        <fullName>Admin_reconstructBreadCrumbs</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hard-coded text used for the instruction for upload/upsert of data.</shortDescription>
+        <value>Reconstruct breadcrumbs for current categories. Changing a single category or a deleting a single category is ALREADY TAKEN CARE. Use this only for mass UPSERTS to category table or DATA LOADING in a new org.</value>
+    </labels>
+    <labels>
+        <fullName>Application_Name_Default</fullName>
+        <categories>Default value for application name custom setting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Application Name Default</shortDescription>
+        <value>Please enter your Application Name here</value>
+    </labels>
+    <labels>
+        <fullName>Attachment_Action</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label for popup button</shortDescription>
+        <value>Attach</value>
+    </labels>
+    <labels>
+        <fullName>Attachment_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label for launch button and title of attachments</shortDescription>
+        <value>Add Attachments</value>
+    </labels>
+    <labels>
+        <fullName>BillMaterials_Comments</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Bill of Materials Text</shortDescription>
+        <value>Comments</value>
+    </labels>
+    <labels>
+        <fullName>BillTo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Bill to text for various pages</shortDescription>
+        <value>Bill to</value>
+    </labels>
+    <labels>
+        <fullName>BreadCrumbInc_Home</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hyperlink  to the home Page of CloudCraze in BreadCrumbs</shortDescription>
+        <value>Home</value>
+    </labels>
+    <labels>
+        <fullName>BreadCrumbInc_SearchResults</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in the command link tag</shortDescription>
+        <value>Search Results</value>
+    </labels>
+    <labels>
+        <fullName>Cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cancel text</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>CartBlockedForConfigError</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartBlockedForConfigError</shortDescription>
+        <value>Orders cannot currently be placed at this time.</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_ApplyCoupon</fullName>
+        <categories>cart,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HardCoded text in between the div tags.</shortDescription>
+        <value>Apply Coupon</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_ApplyDiscounts</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label for Apply Discounts</shortDescription>
+        <value>Apply Discounts</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_ApplyingCoupon</fullName>
+        <categories>cart,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text between the span tags.</shortDescription>
+        <value>Applying coupon...</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Checkout</fullName>
+        <categories>cart,buttons</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text for alt</shortDescription>
+        <value>Checkout</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_ContinueShopping</fullName>
+        <categories>cart,buttons</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hard coded text in the span tag.</shortDescription>
+        <value>Continue Shopping</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Coupon</fullName>
+        <categories>cart,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text for coupon label</shortDescription>
+        <value>Coupon</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_CurrentCoupon</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text  for coupon paragraph</shortDescription>
+        <value>Current coupon</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartInc_Discount</shortDescription>
+        <value>Discount</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_EmailCart</fullName>
+        <categories>Cart, CartOrderEmailer</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartInc_EmailCart</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_EntercouponCode</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in the paragraph tag</shortDescription>
+        <value>Enter your coupon code if you have one.</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_GrandTotal</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between the strong tags</shortDescription>
+        <value>Grand Total</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_IncludedItems</fullName>
+        <categories>cart,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text for Incuded Items</shortDescription>
+        <value>Included Items</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between the facet tags</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_ProductName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between facet tags</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Qty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between the facet tags</shortDescription>
+        <value>Qty</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Remove</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hardcoded text for remove href</shortDescription>
+        <value>X</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_RequestForQuote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lable for request for quote</shortDescription>
+        <value>Request For Quote</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_SKU</fullName>
+        <categories>cart,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text for SKU</shortDescription>
+        <value>SKU:</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_SelectCoupon</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hard coded text in the value attribute of command button</shortDescription>
+        <value>Select coupon</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Shipping</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cart Inc Shipping</shortDescription>
+        <value>Shipping</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_ShoppingCart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text for label</shortDescription>
+        <value>Shopping Cart</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Subtotal</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>HardCoded text in between the td tags</shortDescription>
+        <value>Subtotal</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Total</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between the facet tags</shortDescription>
+        <value>Total</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_Update</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in alt tag</shortDescription>
+        <value>Update</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_UpdatingResults</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text for status</shortDescription>
+        <value>Updating Results</value>
+    </labels>
+    <labels>
+        <fullName>CartInc_discountCodes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between the h4 tags</shortDescription>
+        <value>Discount Codes</value>
+    </labels>
+    <labels>
+        <fullName>CartOrderEmailer_CcEmail</fullName>
+        <categories>Cart, CartOrderEmailer</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartOrderEmailer_CcEmail</shortDescription>
+        <value>Email:Cc</value>
+    </labels>
+    <labels>
+        <fullName>CartOrderEmailer_Date</fullName>
+        <categories>Cart, CartOrderEmailer</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartOrderEmailer_Date</shortDescription>
+        <value>Date:</value>
+    </labels>
+    <labels>
+        <fullName>CartOrderEmailer_Description</fullName>
+        <categories>Cart, CartOrderEmailer</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartOrderEmailer_Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>CartOrderEmailer_GeneratedBy</fullName>
+        <categories>Cart, CartOrderEmailer</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartOrderEmailer_GeneratedBy</shortDescription>
+        <value>Generated by:</value>
+    </labels>
+    <labels>
+        <fullName>CartOrderEmailer_Subject</fullName>
+        <categories>Cart, CartOrderEmailer</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartOrderEmailer_Subject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>CartOrderEmailer_ToEmail</fullName>
+        <categories>Cart, CartOrderEmailer</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CartOrderEmailer_ToEmail</shortDescription>
+        <value>Email:To</value>
+    </labels>
+    <labels>
+        <fullName>Cart_Comments_Default</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cart Comments Default</shortDescription>
+        <value>Enter comments here. These comments are visible to Corning employees.</value>
+    </labels>
+    <labels>
+        <fullName>Cart_Error_OrderNotFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cart Error OrderNotFound</shortDescription>
+        <value>Your order was not found!</value>
+    </labels>
+    <labels>
+        <fullName>Cart_OrderName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cart_OrderName</shortDescription>
+        <value>Order Name</value>
+    </labels>
+    <labels>
+        <fullName>CategoryTree_Head_Start</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text for &apos;Start&apos; at the head of the category tree</shortDescription>
+        <value>Start</value>
+    </labels>
+    <labels>
+        <fullName>ChangePassword_BackToLogin</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChangePassword Back To Login</shortDescription>
+        <value>« Back to Login</value>
+    </labels>
+    <labels>
+        <fullName>ChangePassword_EnterYourPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Enter your password text</shortDescription>
+        <value>Enter your new password below</value>
+    </labels>
+    <labels>
+        <fullName>ChangePassword_NewPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ChangePassword New Password</shortDescription>
+        <value>New Password</value>
+    </labels>
+    <labels>
+        <fullName>CheckItemsToAdd</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Check item - javascript generated text</shortDescription>
+        <value>Check items to add to the cart</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_AcceptAndProceed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text for the button Accept and proceed</shortDescription>
+        <value>Accept Terms and Proceed</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_Address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of OutputLabel</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_AddressBookDialogTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text for dialog title of address book on check out</shortDescription>
+        <value>Select a Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_BillingAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Checkout Order View Billing Address</shortDescription>
+        <value>Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_BillingShippingAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text inbetween h3 tags</shortDescription>
+        <value>Billing and Shipping Address</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_BuyerInformation</fullName>
+        <categories>cloudcraze,messages,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_BuyerInformation</shortDescription>
+        <value>Buyer Information</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_CCCardNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_CCCardNumber</shortDescription>
+        <value>Card #</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_CCCardType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_CCCardType</shortDescription>
+        <value>Card Type</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_CCExpDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_CCExpDate</shortDescription>
+        <value>Exp Date</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_City</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of Output Label</shortDescription>
+        <value>City</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_CompanyName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value field for outPut Label tag.</shortDescription>
+        <value>Company Name</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_CompleteOrder</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Checkout complete order text</shortDescription>
+        <value>Complete Order</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ContactInformation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between the h3 tags</shortDescription>
+        <value>Contact Information</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_Continue</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value field of commandButton</shortDescription>
+        <value>Continue</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ContractGuidingText</fullName>
+        <categories>Checkout,Payment</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CheckOut_ContractGuidingText</shortDescription>
+        <value>An invoice will be sent to the billing address referenced in the Contract Id you provide.</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ContractId</fullName>
+        <categories>Checkout,Payment</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CheckOut_ContractId</shortDescription>
+        <value>Contract Id</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_Country</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>text in the value attribute of output label</shortDescription>
+        <value>Country</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_CreditCard</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between label tag</shortDescription>
+        <value>Credit Card</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_EstimatedTax</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of OutpagutLabel t</shortDescription>
+        <value>Estimated Tax</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_FirstName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value field of output label</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_GeneralInformation</fullName>
+        <categories>cloudcraze,messages,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_GeneralInformation</shortDescription>
+        <value>General Information</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_LastName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value field of output label</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_POGuidingText</fullName>
+        <categories>cloudcraze,messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_POGuidingText</shortDescription>
+        <value>An invoice will be sent to your billing address reference in the Purchase Order number you provide.</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_PaymentGuidingText</fullName>
+        <categories>cloudcraze,messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_PaymentGuidingText</shortDescription>
+        <value>ChangeMe</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_PaymentInformationLeg</fullName>
+        <categories>cloudcraze,messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_PaymentInformationLeg</shortDescription>
+        <value>Payment Information</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_PaymentMethod</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_PaymentMethod</shortDescription>
+        <value>Payment Method</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_PaymentType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between h3 tags</shortDescription>
+        <value>Payment Type</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_PostalCode</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of output label tag</shortDescription>
+        <value>Postal Code</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_PrimaryPhone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>text in the value attribute of OutputLabel tag</shortDescription>
+        <value>Primary Phone</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_PurchaseOrderNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of OutputLabel tag</shortDescription>
+        <value>Purchase Order Number</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ShipComplete</fullName>
+        <categories>checkout,shipping</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Text in the value attribute of Output Label</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ShipmentInformation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between h3 tags</shortDescription>
+        <value>Shipment Information</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ShippingAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Check out Order view Shipping Address</shortDescription>
+        <value>Shipping Address</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ShippingGuidingText</fullName>
+        <categories>cloudcraze,messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_ShippingGuidingText</shortDescription>
+        <value>ChangeMe</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ShippingInformation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hardcoded text between theh3 tags</shortDescription>
+        <value>Shipping Information</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ShippingMethod</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_ShippingMethod</shortDescription>
+        <value>Shipping Method</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ShippingNotes</fullName>
+        <categories>cloudcraze,messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_ShippingNotes</shortDescription>
+        <value>Shipping Notes</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_ShippingOptions</fullName>
+        <categories>cloudcraze,messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CheckOut_ShippingOptions</shortDescription>
+        <value>Ship Complete?</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_State</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text</shortDescription>
+        <value>State</value>
+    </labels>
+    <labels>
+        <fullName>CheckOut_edit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Edit link for checkout info</shortDescription>
+        <value>(edit)</value>
+    </labels>
+    <labels>
+        <fullName>Checkout_Date_InPast</fullName>
+        <categories>Checkout,Shipping</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Checkout_Date_InPast</shortDescription>
+        <value>is in the past.</value>
+    </labels>
+    <labels>
+        <fullName>Checkout_OrderReview_ContractIdRequired</fullName>
+        <categories>Checkout,Order Review</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Checkout_OrderReview_ContractIdRequired</shortDescription>
+        <value>Contract Id is required</value>
+    </labels>
+    <labels>
+        <fullName>Checkout_OrderReview_GuidingText</fullName>
+        <categories>Checkout,Order Review</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Checkout_OrderReview_GuidingText</shortDescription>
+        <value>Disclaimer:Order Total is not inclusive of Taxes and Shipping Charges. They will be added to your Invoice.</value>
+    </labels>
+    <labels>
+        <fullName>Checkout_RequestedDeliveryDt</fullName>
+        <categories>Checkout,Shipping</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Checkout_RequestedDeliveryDt</shortDescription>
+        <value>Requested Delivery Date</value>
+    </labels>
+    <labels>
+        <fullName>Checkout_Shipping_Conditions</fullName>
+        <categories>checkout,shipping</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Checkout_Shipping_Conditions</shortDescription>
+        <value>&lt;p&gt;Delivery within 1 business day. (The transit time begins the first full shipping day after the package leaves our facility.)&lt;/p&gt;
+&lt;p&gt;No P.O Boxes or APO, FPO, or DPO&lt;/p&gt;
+&lt;p&gt;Saturday delivery available for certain locations at an additional charge.&lt;/p&gt;</value>
+    </labels>
+    <labels>
+        <fullName>Checkout_UseBillingAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Use billing address label</shortDescription>
+        <value>Use Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>Clear_Log_Job_Scheduled</fullName>
+        <categories>Scheduled Job messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Log Job Scheduled</shortDescription>
+        <value>Jobs have been scheduled to clear logs every week.</value>
+    </labels>
+    <labels>
+        <fullName>Component_ExistingCustomer_ExistingCustomer</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of output Label</shortDescription>
+        <value>Existing Customer</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_Details</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Component_GuideWidget_Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_Loading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Component_GuideWidget_Loading</shortDescription>
+        <value>Loading...</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_SelTitle</fullName>
+        <categories>Product, Dynamic Kit</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Guide Selections title</shortDescription>
+        <value>My Selections</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_TabName</fullName>
+        <categories>Product, Dynamic Kit</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Guide column Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_TabPrice</fullName>
+        <categories>Product, Dynamic Kit</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Guide column Price</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_TabQty</fullName>
+        <categories>Product, Dynamic Kit</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Guide column Quantity</shortDescription>
+        <value>Qty</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_TabSku</fullName>
+        <categories>Product, Dynamic Kit</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Guided selling part column</shortDescription>
+        <value>Part</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_Tag</fullName>
+        <categories>Product, Dynamic Kit</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Guide Selection Tag</shortDescription>
+        <value>Tag</value>
+    </labels>
+    <labels>
+        <fullName>Component_GuideWidget_Title</fullName>
+        <categories>Product, Dynamic Kit</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Guide Title</shortDescription>
+        <value>Build Your Product</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniCart_Item</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for the output text tag</shortDescription>
+        <value>item</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniCart_NoItems</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the paragraph tag</shortDescription>
+        <value>You have no items in your shopping cart.</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniCart_Subtotal</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cart component subtotal text</shortDescription>
+        <value>Cart subtotal</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniCart_Thereare</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for outputText tag</shortDescription>
+        <value>There are</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniCart_Thereis</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the outputtext tag</shortDescription>
+        <value>There is</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniCart_inyourcart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text</shortDescription>
+        <value>in your cart.</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniCart_items</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for outputlink</shortDescription>
+        <value>items</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniwishList_AddToCart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text for Add to Cart</shortDescription>
+        <value>Add to Cart</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniwishList_GotoWishlist</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>text for the output link</shortDescription>
+        <value>Go to wishlist</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniwishList_MyWishlist</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the h4 tags</shortDescription>
+        <value>My Wishlist</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniwishList_NoItems</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the h5 tags</shortDescription>
+        <value>You have no items in your wishlist.</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniwishList_RecentlyAdded</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the h5 tags</shortDescription>
+        <value>Recently Added Items</value>
+    </labels>
+    <labels>
+        <fullName>Component_MiniwishList_confirmMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Confirmation message on the alert Box</shortDescription>
+        <value>Are you sure you would like to remove this item from your wishlist?</value>
+    </labels>
+    <labels>
+        <fullName>Component_OrderShippedSummary_Carrier</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>text in div tag</shortDescription>
+        <value>Carrier:</value>
+    </labels>
+    <labels>
+        <fullName>Component_OrderShippedSummary_ShippingStatus1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in td tags</shortDescription>
+        <value>Your Order has shipped!</value>
+    </labels>
+    <labels>
+        <fullName>Component_OrderShippedSummary_ShippingStatus2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>text in td tags</shortDescription>
+        <value>Your order is being processed!</value>
+    </labels>
+    <labels>
+        <fullName>Component_OrderShippedSummary_TrackingNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in td tags</shortDescription>
+        <value>Tracking Number:</value>
+    </labels>
+    <labels>
+        <fullName>Component_RelatedItemsWidget_RelatedProducts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in h4 tags</shortDescription>
+        <value>Related Products</value>
+    </labels>
+    <labels>
+        <fullName>Component_SiteFooter_AboutUS</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>text for output link</shortDescription>
+        <value>About US</value>
+    </labels>
+    <labels>
+        <fullName>Component_SiteFooter_CloudCrazeHome</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for outputlink</shortDescription>
+        <value>CloudCraze Home</value>
+    </labels>
+    <labels>
+        <fullName>Component_SiteFooter_EDLConsulting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for output-link</shortDescription>
+        <value>EDL Consulting</value>
+    </labels>
+    <labels>
+        <fullName>Component_SiteFooter_ProductInformation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for output link</shortDescription>
+        <value>Product Information</value>
+    </labels>
+    <labels>
+        <fullName>Component_SiteFooter_Search</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for outputlink</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>Component_SiteFooter_ViewDemo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>text for output-link</shortDescription>
+        <value>View Cloud-Craze Demo</value>
+    </labels>
+    <labels>
+        <fullName>Component_Social_Follow_Twitter</fullName>
+        <categories>homepage,social</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Component_Social_Follow_Twitter</shortDescription>
+        <value>Follow @CloudBurstStore</value>
+    </labels>
+    <labels>
+        <fullName>Component_Social_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Component_SocialWidget_Title</shortDescription>
+        <value>Connect with CloudBurst</value>
+    </labels>
+    <labels>
+        <fullName>Continue_Shopping</fullName>
+        <categories>order view</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Continue Shopping</shortDescription>
+        <value>Continue Shopping</value>
+    </labels>
+    <labels>
+        <fullName>Coupon_Cancel</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Tet in the value attribute of command button.</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Coupon_CartTotal</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of Output Label</shortDescription>
+        <value>Cart Total</value>
+    </labels>
+    <labels>
+        <fullName>Coupon_DiscountAmt</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of OutputLabel</shortDescription>
+        <value>Discount Amount</value>
+    </labels>
+    <labels>
+        <fullName>Coupon_DiscountType</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of OutputLabel</shortDescription>
+        <value>Discount Type:</value>
+    </labels>
+    <labels>
+        <fullName>Coupon_MinQty</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Test in the value attribute of OutputLabel</shortDescription>
+        <value>Minimum Quantity</value>
+    </labels>
+    <labels>
+        <fullName>Coupon_Save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in the value attribute of command button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>CrossSell_AlsoConsider</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CrossSell text</shortDescription>
+        <value>You should also consider</value>
+    </labels>
+    <labels>
+        <fullName>Description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Description tab text</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>Email_Body_Default</fullName>
+        <categories>Default value for email body custom setting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Body Default</shortDescription>
+        <value>A technical exception has occurred in your application. Please find the details below for your necessary action</value>
+    </labels>
+    <labels>
+        <fullName>Email_Footer_Default</fullName>
+        <categories>Default value for email footer custom setting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Footer Default</shortDescription>
+        <value>Yours sincerely,
+[Enter your application name here]</value>
+    </labels>
+    <labels>
+        <fullName>Email_Header_Default</fullName>
+        <categories>Default value for email header custom setting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Header Default</shortDescription>
+        <value>Dear Customer</value>
+    </labels>
+    <labels>
+        <fullName>Error_PricelistAmount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Message for Pricelist</shortDescription>
+        <value>Amount is required.</value>
+    </labels>
+    <labels>
+        <fullName>Error_PricelistCode</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Message for Pricelist Code</shortDescription>
+        <value>Change Code is required.</value>
+    </labels>
+    <labels>
+        <fullName>Error_PricelistType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Message for Pricelist Type</shortDescription>
+        <value>Change Type is required.</value>
+    </labels>
+    <labels>
+        <fullName>Error_QuickOrderAdd</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error Message for Quick order Add to cart</shortDescription>
+        <value>Unknown cart with encrypted id:</value>
+    </labels>
+    <labels>
+        <fullName>Exception_InvalidSKU</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Exception Message for Invalid SKU</shortDescription>
+        <value>Invalid SKU</value>
+    </labels>
+    <labels>
+        <fullName>FeaturedProducts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Featured products text</shortDescription>
+        <value>Featured Products</value>
+    </labels>
+    <labels>
+        <fullName>Footer_TermsAndConditions</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Footer T and C text</shortDescription>
+        <value>Terms and Conditions</value>
+    </labels>
+    <labels>
+        <fullName>ForgotPassword_ForgotPassword</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an outputLink</shortDescription>
+        <value>Forgot Your Password?</value>
+    </labels>
+    <labels>
+        <fullName>ForgotPassword_PleaseEnterEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Forgot password text</shortDescription>
+        <value>Please enter your E-Mail below and we&apos;ll send you a new password.</value>
+    </labels>
+    <labels>
+        <fullName>ForgotPassword_RequiredFields</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between the paragraph tags</shortDescription>
+        <value>* Required Fields</value>
+    </labels>
+    <labels>
+        <fullName>Header_Login</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an outputlink</shortDescription>
+        <value>Login</value>
+    </labels>
+    <labels>
+        <fullName>Header_MyAccount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an outputLink</shortDescription>
+        <value>My Account</value>
+    </labels>
+    <labels>
+        <fullName>Header_MyCart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an outputlink</shortDescription>
+        <value>My Cart</value>
+    </labels>
+    <labels>
+        <fullName>Header_MyLocale</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an Label for My Locale in Header</shortDescription>
+        <value>My Locale:</value>
+    </labels>
+    <labels>
+        <fullName>Header_MyWishlist</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an outputLink</shortDescription>
+        <value>My Wishlist</value>
+    </labels>
+    <labels>
+        <fullName>Localization_ResourcesLogo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hyperlink to change the current store.</shortDescription>
+        <value>Logo</value>
+    </labels>
+    <labels>
+        <fullName>Localization_ResourcesName1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hyperlink to change the current store.</shortDescription>
+        <value>Static</value>
+    </labels>
+    <labels>
+        <fullName>Log_Email_Body</fullName>
+        <categories>Default value for email body custom setting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Log Email Body</shortDescription>
+        <value>Some one in your team requested that the logs be emailed to you. Please find below the log information</value>
+    </labels>
+    <labels>
+        <fullName>Log_Status_Completed</fullName>
+        <categories>Log status</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Log Status Completed</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>Log_Status_Logging</fullName>
+        <categories>Log Status</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Log Status Logging</shortDescription>
+        <value>Logging</value>
+    </labels>
+    <labels>
+        <fullName>MyAccountContactInc_ChangeCurrency_Dialog_Body</fullName>
+        <categories>My Account</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccountContactInc_ChangeCurrency_Dialog_Body</shortDescription>
+        <value>You&apos;re active cart was created under the current currency. Would you like to abandon this cart and continue with changing your currency?</value>
+    </labels>
+    <labels>
+        <fullName>MyAccountContactInc_ChangeCurrency_Dialog_Title</fullName>
+        <categories>My Account</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccountContactInc_ChangeCurrency_Dialog_Title</shortDescription>
+        <value>Change currency?</value>
+    </labels>
+    <labels>
+        <fullName>MyAccountContactInc_Street</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in value attribute of outputLabel</shortDescription>
+        <value>Street</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_AddressBook</fullName>
+        <categories>MyAccount</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount_AddressBook</shortDescription>
+        <value>Manage Address Book</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_ChangePassword_ChangePassword</fullName>
+        <categories>MyAccount,ChangePassword</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount ChangePassword</shortDescription>
+        <value>Change Password</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_ChangePassword_Confirm_New_Password</fullName>
+        <categories>MyAccount,ChangePassword</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount ChangePassword Confirm New Password</shortDescription>
+        <value>Confirm New Password</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_ChangePassword_Current_Password</fullName>
+        <categories>MyAccount,ChangePassword</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount ChangePassword Current Password</shortDescription>
+        <value>Current Password</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_ChangePassword_Instructions</fullName>
+        <categories>MyAccount,ChangePassword</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount ChangePassword Instructions</shortDescription>
+        <value>Password must be 8 characters or more and contain at least one number.</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_ChangePassword_New_Password</fullName>
+        <categories>MyAccount,ChangePassword</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount ChangePassword New Password</shortDescription>
+        <value>New Password</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_ChangePassword_Password_Information</fullName>
+        <categories>MyAccount,ChangePassword</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount ChangePassword Password Information</shortDescription>
+        <value>Password Information</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_MyAccount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between h3 tags</shortDescription>
+        <value>My Account</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_MyCarts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an outputlink</shortDescription>
+        <value>My Carts</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_MyOrders</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an output link</shortDescription>
+        <value>My Orders</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_MyOrders_PayBy</fullName>
+        <categories>MyAccount,MyOrders</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pay By</shortDescription>
+        <value>Pay By</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_MyOrders_Reorder</fullName>
+        <categories>myaccount,myorders</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MyAccount_MyOrders_Reorder</shortDescription>
+        <value>Reorder</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_MyOrders_ShipBy</fullName>
+        <categories>MyAccount,MyOrders</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Ship By</shortDescription>
+        <value>Ship By</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_MyWishlist</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an output link.</shortDescription>
+        <value>My Wishlist</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile</shortDescription>
+        <value>Profile</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Account_Billing_Address</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Account Billing Address</shortDescription>
+        <value>Account Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Account_Group</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Account Group</shortDescription>
+        <value>Account Group</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Account_Information</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Account Information</shortDescription>
+        <value>Account Information</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Account_Shipping_Address</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Account Shipping Address</shortDescription>
+        <value>Account Shipping Address</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Company</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Company</shortDescription>
+        <value>Company</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Contact_Information</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Contact Information</shortDescription>
+        <value>Contact Information</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Contact_Mailing_Address</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Contact Mailing Address</shortDescription>
+        <value>Contact Mailing Address</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Contact_Other_Address</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Contact Other Address</shortDescription>
+        <value>Contact Other Address</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Currency</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Currency</shortDescription>
+        <value>Currency</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Edit_Profile</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Edit Profile</shortDescription>
+        <value>Edit Profile</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Email</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_FirstName</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile First Name</shortDescription>
+        <value>First Name *</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Language</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Language</shortDescription>
+        <value>Language</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_LastName</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Last Name</shortDescription>
+        <value>Last Name *</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_MailingCity</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Mailing City</shortDescription>
+        <value>Mailing City</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_MailingCountry</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Mailing Country</shortDescription>
+        <value>Mailing Country</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_MalingState</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Mailing State</shortDescription>
+        <value>Mailing State</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_MalingStreet</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Mailing Street</shortDescription>
+        <value>Mailing Street</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_MalingZip</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Mailing Zip</shortDescription>
+        <value>Mailing Zip</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Name</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Note</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Note</shortDescription>
+        <value>(Contact customer service to modify Account Information)</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_OtherCity</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Other City</shortDescription>
+        <value>Other City</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_OtherCountry</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Other Country</shortDescription>
+        <value>Other Country</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_OtherState</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Other State</shortDescription>
+        <value>Other State</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_OtherStreet</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Other Street</shortDescription>
+        <value>Other Street</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_OtherZip</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Other Zip</shortDescription>
+        <value>Other Zip</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Phone</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Phone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_User_Information</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile User Information</shortDescription>
+        <value>User Information</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_Profile_Username</fullName>
+        <categories>MyAccount,MyProfile</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyAccount Profile Username</shortDescription>
+        <value>Username</value>
+    </labels>
+    <labels>
+        <fullName>MyAccount_contactInformation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as an outputlink</shortDescription>
+        <value>Contact Information</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_Actions</fullName>
+        <categories>MyAccount,MyCarts</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyCartsInc Actions</shortDescription>
+        <value>Actions</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_CartName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used inbetween facet tags</shortDescription>
+        <value>Cart Name</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_CartNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyCartsInc_CartNumber</shortDescription>
+        <value>Cart Number</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_CreateNew</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in value attribute of commant button</shortDescription>
+        <value>Create New Cart</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_Discounts</fullName>
+        <categories>MyAccount,MyCarts</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyCartsInc Discounts</shortDescription>
+        <value>Discounts</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_LastUpdate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in between the facet tags</shortDescription>
+        <value>Last Update</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_Status</fullName>
+        <categories>MyAccount,MyCarts</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyCartsInc Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_SubAmount</fullName>
+        <categories>MyAccount,MyCarts</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyCartsInc SubAmount</shortDescription>
+        <value>Sub Amount</value>
+    </labels>
+    <labels>
+        <fullName>MyCartsInc_Total_Amount</fullName>
+        <categories>MyAccount,MyCarts</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyCartsInc Total Amount</shortDescription>
+        <value>Total Amount</value>
+    </labels>
+    <labels>
+        <fullName>MyOrdersInc_CartListEmpty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyOrdersInc CartListEmpty</shortDescription>
+        <value>You have no open carts.</value>
+    </labels>
+    <labels>
+        <fullName>MyOrdersInc_ExtOrderNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in between the facet tags</shortDescription>
+        <value>External Number</value>
+    </labels>
+    <labels>
+        <fullName>MyOrdersInc_OrderAmount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyOrdersInc_OrderAmount</shortDescription>
+        <value>Amount</value>
+    </labels>
+    <labels>
+        <fullName>MyOrdersInc_OrderDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in between the facet  tags</shortDescription>
+        <value>Order Date</value>
+    </labels>
+    <labels>
+        <fullName>MyOrdersInc_OrderListEmpty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>MyOrdersInc_OrderListEmpty</shortDescription>
+        <value>You have not completed any orders.</value>
+    </labels>
+    <labels>
+        <fullName>MyOrdersInc_OrderNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in between the facet tags</shortDescription>
+        <value>Order Number</value>
+    </labels>
+    <labels>
+        <fullName>MyOrdersInc_Status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in between the facet tags</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>NA</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Not applicable text for various pages</shortDescription>
+        <value>N/A</value>
+    </labels>
+    <labels>
+        <fullName>No</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>OOTBImages</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OOTBImages static resource name</shortDescription>
+        <value>OOTBImages</value>
+    </labels>
+    <labels>
+        <fullName>Online_Ordering</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Online Ordering</shortDescription>
+        <value>Online Ordering</value>
+    </labels>
+    <labels>
+        <fullName>OrderConfirmation_GuidingText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderConfirmation_GuidingText</shortDescription>
+        <value>View product terms and conditions below for details on delivery of products that you have ordered.</value>
+    </labels>
+    <labels>
+        <fullName>OrderConfirmation_GuidingText2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderConfirmation_GuidingText</shortDescription>
+        <value>You can also view terms and conditions for this order, at any time, by checking Order History.
+
+We recommend you print this page for your records.</value>
+    </labels>
+    <labels>
+        <fullName>OrderConfirmation_PlacedOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Summary User Placed Order</shortDescription>
+        <value>Your order has been submitted, thank you. {0} {1}</value>
+    </labels>
+    <labels>
+        <fullName>OrderConfirmation_StatusInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderConfirmation_StatusInfo</shortDescription>
+        <value>You can view your order status at any time by checking your</value>
+    </labels>
+    <labels>
+        <fullName>OrderConfirmation_Title</fullName>
+        <categories>cart,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderConfirmation_Title</shortDescription>
+        <value>Confirmation Information</value>
+    </labels>
+    <labels>
+        <fullName>OrderShipment_Carrier</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrderShipment_Carrier</shortDescription>
+        <value>Carrier</value>
+    </labels>
+    <labels>
+        <fullName>OrderShipment_DeliveryDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrderShipment_DeliveryDate</shortDescription>
+        <value>Delivery Date</value>
+    </labels>
+    <labels>
+        <fullName>OrderShipment_ShipmentDate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrderShipment_ShipmentDate</shortDescription>
+        <value>Shipment Date</value>
+    </labels>
+    <labels>
+        <fullName>OrderShipment_ShipmentMethod</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrderShipment_ShipmentMethod</shortDescription>
+        <value>Shipment Method</value>
+    </labels>
+    <labels>
+        <fullName>OrderShipment_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Shipment Section Title</shortDescription>
+        <value>Order Shipments</value>
+    </labels>
+    <labels>
+        <fullName>OrderShipment_Track</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrderShipment_Track</shortDescription>
+        <value>Track</value>
+    </labels>
+    <labels>
+        <fullName>OrderShipment_TrackingNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>OrderShipment_TrackingNumber</shortDescription>
+        <value>Tracking Number</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_EstShip</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Estimated Shipping</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_EstTax</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Estimated Tax</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_OnHold</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Summary New On Hold Text</shortDescription>
+        <value>Your order requires verification of tax exemption. If order is not tax exempt, taxes will be charged.</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_OrderBeingProcessed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Your order is being processed!</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_OrderCompleted</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Your order is completed!</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_OrderItems</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Order  Items</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_OrderNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Order Number</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_PlaceHolder_Footer</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail Footer</shortDescription>
+        <value>Thank You!</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_PlaceHolder_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail Header</shortDescription>
+        <value>XYZ Company</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_PlacedOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Summary User Placed Order</shortDescription>
+        <value>{0} placed an order.  Current order status is: {1}.</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_Qty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Qty</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_ShipTo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Ship to</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_Subtotal</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Subtotal</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_Total</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Total</value>
+    </labels>
+    <labels>
+        <fullName>OrderSummaryNew_Totals</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order Confirmation E-Mail text</shortDescription>
+        <value>Totals</value>
+    </labels>
+    <labels>
+        <fullName>OrderView_OrderNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hard Coded text in bold tag</shortDescription>
+        <value>Your Order number is:</value>
+    </labels>
+    <labels>
+        <fullName>OrderView_ShippingDetails</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in h3 tags</shortDescription>
+        <value>Shipping Details</value>
+    </labels>
+    <labels>
+        <fullName>Paginator_ChangingView</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Products paginator status text</shortDescription>
+        <value>Changing View</value>
+    </labels>
+    <labels>
+        <fullName>Paginator_Loading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Products paginator status text</shortDescription>
+        <value>Loading</value>
+    </labels>
+    <labels>
+        <fullName>Paginator_Repaginating</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Products paginator status text</shortDescription>
+        <value>Repaginating</value>
+    </labels>
+    <labels>
+        <fullName>Paginator_Resorting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Products paginator status text</shortDescription>
+        <value>Resorting</value>
+    </labels>
+    <labels>
+        <fullName>Password_Requirements</fullName>
+        <categories>Password</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Password Requirements</shortDescription>
+        <value>Password must be 8 characters or more and contain at least one number.</value>
+    </labels>
+    <labels>
+        <fullName>PleaseWaitStatus</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Please wait status text</shortDescription>
+        <value>Please wait</value>
+    </labels>
+    <labels>
+        <fullName>Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Price text for various pages</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>PriceList_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Price List Widget Text</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetail_NotAvailable1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductDetail</shortDescription>
+        <value>Currently not available - Please contact Corning Cable Systems for more information or complete our</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetail_NotAvailable2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductDetail</shortDescription>
+        <value>and we will contact you.</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetail_RequestForm</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductDetail</shortDescription>
+        <value>request form</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetailsInc_AddWishlist</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used as outputlink</shortDescription>
+        <value>Add to WishList</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetailsInc_Documents</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductDetailsInc_Documents</shortDescription>
+        <value>Documents</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetailsInc_ItemsIncluded</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetailsInc_ItemsIncluded</shortDescription>
+        <value>Items Included</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetailsInc_Page</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>hardcoded text</shortDescription>
+        <value>page</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetailsInc_ShippingInfo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetailsInc_ShippingInfo</shortDescription>
+        <value>Shipping Info</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetailsInc_Specifications</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetailsInc_Specifications</shortDescription>
+        <value>Specifications</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_Availability</fullName>
+        <categories>ProductDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails Availability</shortDescription>
+        <value>Availability</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_Configure</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Configure alt text</shortDescription>
+        <value>Configure</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_DocumentTab_Assembly_Guides</fullName>
+        <categories>product details,document tab</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails DocumentTab Assembly Guides</shortDescription>
+        <value>Assembly Guides</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_DocumentTab_Datasheets</fullName>
+        <categories>product details,document tab</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails DocumentTab Datasheets</shortDescription>
+        <value>Datasheets</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_DocumentTab_FileName</fullName>
+        <categories>product details,document tab</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails DocumentTab FileName</shortDescription>
+        <value>Filename</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_DocumentTab_Owners_Manuals</fullName>
+        <categories>product details,document tab</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails DocumentTab Owners Manuals</shortDescription>
+        <value>Owners Manuals</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_DocumentTab_Safety_Documents</fullName>
+        <categories>product details,document tab</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails DocumentTab Safety Documents</shortDescription>
+        <value>Safety Documents</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_DocumentTab_Sales_Brochures</fullName>
+        <categories>product details,document tab</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails DocumentTab Sales Brochures</shortDescription>
+        <value>Sales Brochures</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_DocumentTab_Type</fullName>
+        <categories>product details,document tab</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails DocumentTab Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_HRelated_ProductWidget_Your_Price</fullName>
+        <categories>product details,related products</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductDetails HRelated ProductWidget Your Price</shortDescription>
+        <value>Your Price</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_Items_Included_Quantity</fullName>
+        <categories>product details,items included</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductDetails Items Included Quantity</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_ListPrice</fullName>
+        <categories>ProductDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails ListPrice</shortDescription>
+        <value>List Price</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_PPU</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Details text</shortDescription>
+        <value>Price Per Unit</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_Savings</fullName>
+        <categories>ProductDetails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductDetails Savings</shortDescription>
+        <value>Savings</value>
+    </labels>
+    <labels>
+        <fullName>ProductDetails_UnitOfMeasure</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Details text</shortDescription>
+        <value>Unit Of Measure</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_GuidingText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview GuidingText</shortDescription>
+        <value>Select your reating, with 1 being the lowest, and 5 being the highest.</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_Heading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview Heading</shortDescription>
+        <value>Customer Reviews</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_HelpfulQuestion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview HelpfulQuestion</shortDescription>
+        <value>Was this review helpful to you?</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_Outof</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview Outof</shortDescription>
+        <value>out of</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_Ques1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview Ques1</shortDescription>
+        <value>1. How do you rate this item?</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_Ques2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview Ques2</shortDescription>
+        <value>2. Please enter a title for your review?</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_Ques3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview Ques3</shortDescription>
+        <value>3. Please enter your review</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_Review</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview Review</shortDescription>
+        <value>people found the following review helpful</value>
+    </labels>
+    <labels>
+        <fullName>ProductReview_by</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductReview by</shortDescription>
+        <value>by</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_First</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>hardcoded text used for outputlink</shortDescription>
+        <value>First</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_Items</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in outputtext</shortDescription>
+        <value>Items</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_Last</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text</shortDescription>
+        <value>Last</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_ListPrice</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductsInc ListPrice</shortDescription>
+        <value>List Price:</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_NoProductsFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in outputtext tag</shortDescription>
+        <value>No products were found for the search string</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_PerPage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text</shortDescription>
+        <value>per page</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_ProductList</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductsInc ProductList</shortDescription>
+        <value>Product List</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_Relevance</fullName>
+        <categories>Products</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductsInc_Relevance</shortDescription>
+        <value>Relevance</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_Savings</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ProductsInc Savings</shortDescription>
+        <value>Savings:</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_Sortby</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>hardcoded text</shortDescription>
+        <value>Sort by</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_of</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in output text tag</shortDescription>
+        <value>of</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_show</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text</shortDescription>
+        <value>Show</value>
+    </labels>
+    <labels>
+        <fullName>ProductsInc_total</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>hardcoded text</shortDescription>
+        <value>total</value>
+    </labels>
+    <labels>
+        <fullName>Qty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Qty</shortDescription>
+        <value>Qty</value>
+    </labels>
+    <labels>
+        <fullName>QuickOrder</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>QuickOrder</shortDescription>
+        <value>Quick Order</value>
+    </labels>
+    <labels>
+        <fullName>QuickOrder_AddMore</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in command button</shortDescription>
+        <value>Add More</value>
+    </labels>
+    <labels>
+        <fullName>QuickOrder_AddToCart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>QuickOrder_AddToCart</shortDescription>
+        <value>Add To Cart</value>
+    </labels>
+    <labels>
+        <fullName>QuickOrder_QTY</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>QuickOrder_QTY</shortDescription>
+        <value>QTY:</value>
+    </labels>
+    <labels>
+        <fullName>QuickOrder_QuickOrderBoxCaption</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>hardcoded text</shortDescription>
+        <value>Have the product numbers from our catalog? Enter them below for a quicker shopping experience.</value>
+    </labels>
+    <labels>
+        <fullName>QuickOrder_SKU</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>QuickOrder_SKU</shortDescription>
+        <value>SKU:</value>
+    </labels>
+    <labels>
+        <fullName>RequestForQuoteForm_Company</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RequestForQuoteForm_Company</shortDescription>
+        <value>Company</value>
+    </labels>
+    <labels>
+        <fullName>RequestForQuoteForm_Description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RequestForQuoteForm_Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>RequestForQuoteForm_Email</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RequestForQuoteForm_Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>RequestForQuoteForm_FirstName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RequestForQuoteForm FirstName</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>RequestForQuoteForm_LastName</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RequestForQuoteForm LastName</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>RequestForQuoteForm_Phone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RequestForQuoteForm_Phone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>Required_Fields</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Required Fields</shortDescription>
+        <value>* Required Fields</value>
+    </labels>
+    <labels>
+        <fullName>SKU</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SKU text for various pages</shortDescription>
+        <value>Part Number</value>
+    </labels>
+    <labels>
+        <fullName>Schedule_Error</fullName>
+        <categories>Schedule Error, Exception</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Schedule Error</shortDescription>
+        <value>Unable to start the jobs to clear the logs. Please contact your system administrator.</value>
+    </labels>
+    <labels>
+        <fullName>Scheduled_Job_Deleted</fullName>
+        <categories>Scheduled Job Deleted Status</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Scheduled Job Deleted</shortDescription>
+        <value>DELETED</value>
+    </labels>
+    <labels>
+        <fullName>SecurityCodeRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Security Code Required</shortDescription>
+        <value>Security Code is required!</value>
+    </labels>
+    <labels>
+        <fullName>SecurityCodesDoNotmatch</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SecurityCodesDoNotmatch</shortDescription>
+        <value>Security Codes Do Not Match!</value>
+    </labels>
+    <labels>
+        <fullName>ShipTab_Coolerpak</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ShipTab_Coolerpak</shortDescription>
+        <value>Cooler pack</value>
+    </labels>
+    <labels>
+        <fullName>ShipTab_Ground</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ShipTab_Ground</shortDescription>
+        <value>Ground</value>
+    </labels>
+    <labels>
+        <fullName>ShipTab_Hazardous</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ShipTab_Hazardous</shortDescription>
+        <value>Hazardous</value>
+    </labels>
+    <labels>
+        <fullName>ShipTab_Overnight</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ShipTab_Overnight</shortDescription>
+        <value>Overnight</value>
+    </labels>
+    <labels>
+        <fullName>ShipTab_ProductWeight</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ShipTab_ProductWeight</shortDescription>
+        <value>Product Weight</value>
+    </labels>
+    <labels>
+        <fullName>ShipTab_ShipWeight</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ShipTab_ShipWeight</shortDescription>
+        <value>Shipping Weight</value>
+    </labels>
+    <labels>
+        <fullName>SieRegistration_CustomField1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lable for custom field 1</shortDescription>
+        <value>VAT Tax</value>
+    </labels>
+    <labels>
+        <fullName>SieRegistration_CustomField2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lable for custom field 2</shortDescription>
+        <value>ChangeMe</value>
+    </labels>
+    <labels>
+        <fullName>SingleProduct_Heading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Heading for Single Product</shortDescription>
+        <value>Product Spotlight</value>
+    </labels>
+    <labels>
+        <fullName>SiteLogin_CreateAccount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>text used for command button</shortDescription>
+        <value>Create an Account</value>
+    </labels>
+    <labels>
+        <fullName>SiteLogin_CreatingAccount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in p tags</shortDescription>
+        <value>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</value>
+    </labels>
+    <labels>
+        <fullName>SiteLogin_EmailAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>hardcoded text for outputlabel</shortDescription>
+        <value>E-Mail Address</value>
+    </labels>
+    <labels>
+        <fullName>SiteLogin_HaveAccount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used in paragraph tags</shortDescription>
+        <value>If you have an account with us, please log in.</value>
+    </labels>
+    <labels>
+        <fullName>SiteLogin_NewCustomers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in h4 tag</shortDescription>
+        <value>New Customers</value>
+    </labels>
+    <labels>
+        <fullName>SiteLogin_Password</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text used for outputlabel tag</shortDescription>
+        <value>Password</value>
+    </labels>
+    <labels>
+        <fullName>SiteLogin_RegConfirmation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Confirmation message for registration</shortDescription>
+        <value>You have successfully registered! Check your email for your login information.</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_AdditionalInfo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration addtional info header</shortDescription>
+        <value>Additional Information</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_BillingStateRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration required billing state address text</shortDescription>
+        <value>Please Choose a State for Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_CompanyType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration CompanyType</shortDescription>
+        <value>Company Type</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_CompanyTypeRequired</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration Required Company Type</shortDescription>
+        <value>Company Type is required.</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_Currency</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration Currency text</shortDescription>
+        <value>Currency</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_CustomField1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lable for custom field 1</shortDescription>
+        <value>Custom Field1</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_CustomField2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lable for custom field 2</shortDescription>
+        <value>Custom Field2</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_FailedPortalCreate</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration Failed create</shortDescription>
+        <value>Please try again.</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_GuidingText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Guiding Text on Registration</shortDescription>
+        <value>ChangeMe</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_Language</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration Language text</shortDescription>
+        <value>Language</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_LoginInfo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Site Registration Login Information</shortDescription>
+        <value>Login Information</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_PersonalInfo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration Personal Information text</shortDescription>
+        <value>Personal Information</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_Register</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration Breadcrum tag</shortDescription>
+        <value>Register</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_ShippingStateAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration required shipping state address text</shortDescription>
+        <value>Please Choose a State for Shipping Address</value>
+    </labels>
+    <labels>
+        <fullName>SiteRegistration_UsernameEmail</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SiteRegistration Username / E-Mail</shortDescription>
+        <value>Username/E-Mail</value>
+    </labels>
+    <labels>
+        <fullName>Skip</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Skip text</shortDescription>
+        <value>Skip</value>
+    </labels>
+    <labels>
+        <fullName>SocialProduct_Heading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Heading for Social Product</shortDescription>
+        <value>Share This Product</value>
+    </labels>
+    <labels>
+        <fullName>SpecTab_NoneFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SpecTab_NoneFound</shortDescription>
+        <value>No specifications found matching the product.</value>
+    </labels>
+    <labels>
+        <fullName>Submit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Submit text for various pages</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>TaxExempt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaxExempt</shortDescription>
+        <value>Tax Exempt</value>
+    </labels>
+    <labels>
+        <fullName>Technical_Exception</fullName>
+        <categories>Exception Category</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Technical Exception</shortDescription>
+        <value>Technical</value>
+    </labels>
+    <labels>
+        <fullName>Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Title</shortDescription>
+        <value>Title</value>
+    </labels>
+    <labels>
+        <fullName>TwoColumnTemplate_CategoryNavigation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Hardcoded text in between span tags</shortDescription>
+        <value>Categories</value>
+    </labels>
+    <labels>
+        <fullName>UserInfo_AddressBook</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for Address Book</shortDescription>
+        <value>+ Address Book</value>
+    </labels>
+    <labels>
+        <fullName>UserInfo_selectAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text for selecting the address</shortDescription>
+        <value>Select this address</value>
+    </labels>
+    <labels>
+        <fullName>Yes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Yes</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>catalogSearchInc_QuickSearch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text in command button</shortDescription>
+        <value>Go</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_cart_total_amount</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_cart_total_amount</shortDescription>
+        <value>You must enter a value for Cart Total Amount.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_discounttype</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_discounttypet</shortDescription>
+        <value>You must select a Discount Type.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_ruletype</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_ruletype</shortDescription>
+        <value>You must select a Rule Type.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_source_min_qty</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_source_min_qty</shortDescription>
+        <value>You must select a Source Minimum Quantity.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_source_product</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_source_product</shortDescription>
+        <value>You must select a Source Product.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_source_spec</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_source_spec</shortDescription>
+        <value>You must select a Source Spec.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_source_spec_min_qty</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_source_spec_min_qty</shortDescription>
+        <value>You must select a Source Spec. Minimum Quantity.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_source_spec_value</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_source_spec_value</shortDescription>
+        <value>You must enter a Source Spec. Value.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_target_min_qty</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_target_min_qty</shortDescription>
+        <value>You must select a Target Minimum Quantity.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_target_product</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_target_product</shortDescription>
+        <value>You must select a Target Product.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_target_relation_type</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_target_relation_type</shortDescription>
+        <value>You must select a Target Relation Type.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_target_spec</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_target_spec</shortDescription>
+        <value>You must select a Target Spec.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_target_spec_min_qty</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_target_spec_min_qty</shortDescription>
+        <value>You must select a Target Spec. Minimum Quantity.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_admin_missing_target_spec_value</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_admin_missing_target_spec_value</shortDescription>
+        <value>&apos;You must enter a Target Spec. Value.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_min_amount</fullName>
+        <categories>admin,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_min_amount</shortDescription>
+        <value>Your cart does not meet the minimum dollar amount required for this coupon to apply.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_min_quantity</fullName>
+        <categories>cloudcraze,messages,coupon</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>coupon_msg_min_quantity</shortDescription>
+        <value>Your cart does not contain the minimum number of items required for this coupon to apply.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_missing_source</fullName>
+        <categories>cloudcraze,messages,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_missing_source</shortDescription>
+        <value>One or more items required by this coupon are not present in your cart.</value>
+    </labels>
+    <labels>
+        <fullName>coupon_msg_missing_target</fullName>
+        <categories>cloudcraze,messages,coupon</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>coupon_msg_missing_target</shortDescription>
+        <value>The items this coupon applies to are not present in your cart.</value>
+    </labels>
+</CustomLabels>

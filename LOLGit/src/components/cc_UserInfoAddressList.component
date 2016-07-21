@@ -1,0 +1,145 @@
+<apex:component >
+<script>
+alert("Inside address list");
+</script>
+ <script id="UserInfo-AddressList-Mobile1" type="text/template">
+        <div class="change_address">
+            <a href="#modal_{{classPrefix}}" data-toggle="modal">{{pageLabelMap 'UserInfo_AddressBook'}}</a>
+        </div><br/>
+
+        <form id="{{classPrefix}}AddressForm">
+            <div class="alert alert-error {{classPrefix}}-messagingSection-Error" style="display: none"></div>
+            <label>{{pageLabelMap 'CheckOut_FirstName'}}</label>
+            <input type="text" class="{{classPrefix}}firstNameField checkout_wide contactInput" name="{{classPrefix}}Address.firstName" value="{{this.firstName}}">
+
+            <label>{{pageLabelMap 'CheckOut_LastName'}}</label>
+            <input type="text" class="{{classPrefix}}lastNameField checkout_wide contactInput" name="{{classPrefix}}Address.lastName" value="{{this.lastName}}">
+
+            <label>Company Name</label>
+            <input type="text" class="{{classPrefix}}companyField checkout_wide contactInput" name="{{classPrefix}}Address.companyName" value="{{this.companyName}}">
+
+            <label>{{pageLabelMap 'Profile_Address'}}</label>
+            <input type="text" class="{{classPrefix}}Address1 checkout_wide contactInput" name="{{classPrefix}}Address.address1" value="{{this.address1}}">
+            <input type="text" class="{{classPrefix}}Address2 checkout_wide contactInput" name="{{classPrefix}}Address.address2" value="{{this.address2}}">
+            <input type="text" class="{{classPrefix}}Address3 checkout_wide contactInput" name="{{classPrefix}}Address.address3" value="{{this.address3}}">
+
+            <label>{{pageLabelMap 'CheckOut_Country'}}</label>
+            {{{selectGeo 'country' this.countryList this.countryCode 'countryListing checkout_wide contactInput' this.classPrefix}}}
+
+            <label>{{pageLabelMap 'CheckOut_State'}}</label>
+            <div class="stateSection"></div>
+
+            <label>{{pageLabelMap 'CheckOut_City'}}</label>
+            <input type="text" placeholder="City" class="{{classPrefix}}City checkout_wide contactInput" name="{{classPrefix}}Address.city" value="{{this.city}}">
+
+            <label>{{pageLabelMap 'CheckOut_PostalCode'}}</label>
+            <input type="text" placeholder="Postal Code" class="{{classPrefix}}PostalCode checkout_wide contactInput" name="{{classPrefix}}Address.postalCode"  value="{{this.postalCode}}">
+        </form>
+
+        <div id="modal_{{classPrefix}}" class="modal hide fade in">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3>{{pageLabelMap 'UserInfo_AddressBook'}}</h3>
+            </div>
+            <div class="modal-body">
+                {{#each this.addressList}}
+                    <div class="billing_shipping_info">
+                        <div class="personal_info">
+                            {{> addressDisplay}}
+                        </div>
+                        {{#ifEquals this.partnerId ../partnerId}}
+                            <div class="select"><input name="" type="button" value="{{pageLabelMap 'CheckOut_Selected'}}" class="large_blue_button addrSelected selectAddressPhone" data-id="{{this.sfid}}"/></div>
+                        {{else}}
+                            <div class="select"><input name="" type="button" value="{{pageLabelMap 'CheckOut_Select'}}" class="large_grey_button selectAddressPhone" data-id="{{this.sfid}}"/></div>
+                        {{/ifEquals}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+
+
+    </script>
+    
+    <script id="UserInfo-AddressEdit-Desktop1" type="text/template">
+        <form id="{{classPrefix}}AddressForm" class="horizontal_form addressForm">
+            <div class="alert alert-error {{classPrefix}}-messagingSection-Error" style="display: none"></div>
+            <fieldset>
+                <legend>{{pageLabelMap sectionLabel}}</legend>
+                {{#ifEquals classPrefix 'shipping'}}
+                    <a class="copyAddress">{{pageLabelMap 'Checkout_UseBillingAddress'}}</a>
+                {{/ifEquals}}
+                <div class="change_address"><a href="#modal_{{classPrefix}}" data-toggle="modal">{{pageLabelMap 'UserInfo_AddressBook'}}</a></div>
+                <div class="clear"></div>
+                {{#ifDisplay 'SO.DsplAddrName'}}
+                    <label>{{pageLabelMap 'CheckOut_FirstName'}}
+                        <input class="{{classPrefix}}firstNameField {{classPrefix}}Field wide" name="{{classPrefix}}Address.firstName" value="{{this.firstName}}" />
+                    </label>
+                    <label>{{pageLabelMap 'CheckOut_LastName'}}
+                        <input class="{{classPrefix}}lastNameField {{classPrefix}}Field wide" name="{{classPrefix}}Address.lastName" value="{{this.lastName}}" />
+                    </label>
+                    <div class="clear"></div>
+                {{/ifDisplay}}
+                {{#ifDisplay 'SO.DsplAddrCompany'}}
+                    <label>{{pageLabelMap 'Profile_CompanyName'}}
+                        <input class="{{classPrefix}}companyField {{classPrefix}}Field wide" name="{{classPrefix}}Address.companyName" value="{{this.companyName}}" />
+                    </label>
+                    <div class="clear"></div>
+                {{/ifDisplay}}
+                <input type="hidden" class="{{classPrefix}}acctIdField {{classPrefix}}Field" name="{{classPrefix}}Address.partnerId" value="{{this.partnerId}}" />
+                <label class="address1">{{pageLabelMap 'Profile_Address'}}
+                    <input name="{{classPrefix}}Address.address1" class="addresswide {{classPrefix}}Address1 {{classPrefix}}Field" value="{{this.address1}}" maxlength="40" /></label>
+                <label class="address2"><input name="{{classPrefix}}Address.address2" class="addresswide {{classPrefix}}Address2 {{classPrefix}}Field" value="{{this.address2}}" maxlength="40" /></label>
+                <label class="address2"><input name="{{classPrefix}}Address.address3" class="addresswide {{classPrefix}}Address3 {{classPrefix}}Field" value="{{this.address3}}" maxlength="40" /></label>
+
+                <div class="clear"></div>
+                <label>{{pageLabelMap 'CheckOut_Country'}}
+                    {{{selectGeo 'country' this.countryList this.countryCode 'countryListing wide' this.classPrefix}}}
+                </label>
+                <label>{{pageLabelMap 'CheckOut_State'}}
+                    <div class="stateSection"></div>
+                </label>
+                <div class="clear"></div>
+                <label>{{pageLabelMap 'CheckOut_City'}}
+                    <input name="{{classPrefix}}Address.city" class="{{classPrefix}}City {{classPrefix}}Field wide" value="{{this.city}}" />
+                </label>
+                <label>{{pageLabelMap 'CheckOut_PostalCode'}}
+                    <input name="{{classPrefix}}Address.postalCode" class="{{classPrefix}}PostalCode {{classPrefix}}Field wide" value="{{this.postalCode}}" />
+                </label>
+            </fieldset>
+        </form>
+        <div id="modal_{{classPrefix}}" class="modal hide fade in">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h3>{{pageLabelMap 'UserInfo_AddressBookModal'}}</h3>
+            </div>
+            <div class="modal-body">
+                {{#each this.addressList}}
+                    <div class="billing_shipping_info">
+                        <div class="personal_info">
+                            {{> addressDisplay}}
+                        </div>
+                        <div class="select">
+                            <input name="" type="button" value="{{pageLabelMap 'UserInfo_selectAddress'}}" class="large_red_button {{../classPrefix}}Field selectAddress" data-id="{{this.sfid}}"/>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </script>
+     <script>
+      
+        jQuery(function($){
+            CCRZ.uiProperties.UserInfoView.partial.addressEntry='#UserInfo-AddressEdit-Desktop1';
+            CCRZ.uiProperties.UserInfoView.partial.addressSelection='#UserInfo-AddressList-Mobile1';
+            
+            CCRZ.pubSub.on('view:AddressListing:refresh', function(theView) {
+            alert('hi');
+            $("#billingAddressForm :input").prop("readonly", "readonly");
+            });
+
+             });
+        
+    </script>
+
+    
+    </apex:component>

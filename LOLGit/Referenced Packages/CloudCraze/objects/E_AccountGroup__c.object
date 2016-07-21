@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object is used to group multiple accounts together to provide pricing and/or entitlements.  An account group can have 1 or more accounts associated with it.  It also can have 1 or more pricelists (used for pricing and entitlements) associated.  This object then ties the accounts and entitlements/pricing together, ultimately controlling the product list and pricing that a given account can see within CloudCraze.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AccountGroupID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External ID used for mapping the account group to an externally defined entity.</description>
+        <externalId>true</externalId>
+        <label>Account Group ID</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Desc__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Short description of the account group - internal only.</description>
+        <externalId>false</externalId>
+        <label>Desc</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PriceListSelectionMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When the Account Group is associated with multiple price lists that contain a price for the same item this is used to determine which price should be selected.  Sequence order refers to the sequence field on the Account Group-Price List junction object.</description>
+        <externalId>false</externalId>
+        <label>PriceList Selection Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Best Price</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sequence Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ThemeName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When the OOTB cc_hk_DynamicTheme hook is used this is the name of the theme to use for users associated with this Account Group.</description>
+        <externalId>false</externalId>
+        <label>Theme Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Account Group</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Account Group Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CC Account Groups</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>PriceListSelectionMethod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

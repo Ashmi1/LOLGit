@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object used to hold mappings of parent products to child products.  This relationship is used in the case of bundles, kits and aggregated products.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>E_Category__c</referenceTo>
+        <relationshipLabel>Composite Products</relationshipLabel>
+        <relationshipName>Composite_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Component__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The child product that is part of the bundle, kit or aggregated product</description>
+        <externalId>false</externalId>
+        <label>Component</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Composite Products (Component)</relationshipLabel>
+        <relationshipName>Composite_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CompositeProductId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External reference id</description>
+        <externalId>true</externalId>
+        <label>Composite Product Ext Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Composite__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The main product - this would be the bundle, kit or aggregated main product</description>
+        <externalId>false</externalId>
+        <label>Composite</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Composite Products</relationshipLabel>
+        <relationshipName>CompositeProducts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DescriptionRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich text field for the composite description.</description>
+        <externalId>false</externalId>
+        <label>DescriptionRT</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds any informational text describing the composite&apos;s relationship with its parent product.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Holds any informational text describing the composite&apos;s relationship with its parent product.</inlineHelpText>
+        <label>Description</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ExtendedPrice__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Extended Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Optional__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Optional</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Used in the event that a child of an bundle, kit or aggregated product is itself a bundle, kit or aggregated product.</description>
+        <externalId>false</externalId>
+        <label>Parent</label>
+        <referenceTo>E_CompositeProduct__c</referenceTo>
+        <relationshipLabel>Child Composite Products</relationshipLabel>
+        <relationshipName>ChildCompositeProducts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductGroup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Maps this component to a related product grouping.  This is primarily utilized in the case of dynamic kits, where the composite products are grouped together into separate steps or sections.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maps this component to a related product grouping.  This is primarily utilized in the case of dynamic kits, where the composite products are grouped together into separate steps or sections.</inlineHelpText>
+        <label>Product Group</label>
+        <referenceTo>E_RelatedProductGroup__c</referenceTo>
+        <relationshipLabel>CC Composite Products</relationshipLabel>
+        <relationshipName>CC_Composite_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Quantity of the child item included in the kit or bundle.</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <defaultValue>500</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Sequence aggregates should be displayed to the customer</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Composite Product</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Composite__c</columns>
+        <columns>Component__c</columns>
+        <columns>Category__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CP-{00000}</displayFormat>
+        <label>Composite Product Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Composite Products</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Composite__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Component__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Composite__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Component__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Composite__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Component__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

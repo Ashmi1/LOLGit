@@ -1,0 +1,21 @@
+<!--
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2015 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page contentType="text/xml" id="CCSiteIndex" controller="ccrz.cc_ctrl_SiteIndex" readOnly="true">
+
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<apex:repeat var="cat" value="{!cats}" >
+		<sitemap>
+			<loc>{!unsecureURL}{!$Page.ccrz__CCCatSiteMap}?categoryId={!HTMLENCODE(cat.categoryId)} </loc>			
+		</sitemap>
+	</apex:repeat>
+</sitemapindex>
+
+</apex:page>

@@ -1,0 +1,39 @@
+<apex:page id="cc_tmpl_Login" controller="ccrz.cc_ctrl_StorefrontTemplate"
+	docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+
+<apex:composition template="ccrz__cc_tmpl_Storefront">
+
+	<apex:define name="htmlhead">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<apex:insert name="meta" />
+	</apex:define>
+
+	<apex:define name="htmlbody">
+		<div class="container">
+			<apex:insert name="header" />
+			<apex:insert name="splash" />
+			<apex:insert name="breadcrumb" />
+
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="center_column" id="checkoutSection">
+							<apex:insert name="body"/>
+						</div>
+
+					</div>
+				</div>
+				<br/>
+				<!--<div class="row-fluid clear">
+					<div class="span12 footerBrowser">
+						<apex:include pageName="{!storefrontFooter}"/>
+					</div>
+				</div>-->
+			</div>
+
+		</div> <!-- container -->
+		<apex:insert name="htmlbodyX" />
+	</apex:define>
+
+</apex:composition>
+</apex:page>

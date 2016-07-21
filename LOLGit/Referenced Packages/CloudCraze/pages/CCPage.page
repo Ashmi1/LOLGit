@@ -1,0 +1,60 @@
+<apex:page id="CCPage" controller="ccrz.cc_ctrl_Page" docType="html-5.0" sidebar="false" showHeader="false" extensions="ccrz.cc_ctrl_LocaleExtension" standardStylesheets="false" language="{!userLanguageCode}" action="{!execute}">
+
+    <apex:composition template="{!IF(thePageTemplate != null, thePageTemplate, 'cc_tmpl_OneColRD')}">
+
+        <apex:define name="meta">
+            <title><apex:outputText value="{!theTitle}"/></title>
+        </apex:define>
+
+        <apex:define name="body">
+            <apex:include pageName="{!thePageInclude}" />
+        </apex:define> 
+
+        <apex:define name="MiniQuickOrderBox">
+            <div class="quick-order"></div>
+        </apex:define>
+
+        <apex:define name="MiniCartBox">
+            <div class="minicart"></div>
+        </apex:define>
+
+        <apex:define name="FeaturedProducts">
+            <div class="featured-prod"></div>
+        </apex:define>
+
+        <apex:define name="htmlbodyX">
+            <script>
+                var cartDetails = function(cartId) {
+                    document.location = "{!JSENCODE($Page.Cart)}?cartID=" + cartId + "&{!JSENCODE(theController.CSRQueryString)}";
+                }
+                var orderDetails = function(orderId) {
+                    document.location = "{!JSENCODE($Page.OrderView)}?o=" + orderId + "&{!JSENCODE(theController.CSRQueryString)}";
+                }
+                var productList = function(categoryId) {
+                    document.location = "{!JSENCODE($Page.Products)}?viewState=ListView&cartID=" + CCRZ.pagevars.currentCartID + "&categoryId=" + categoryId + "&{!JSENCODE(theController.CSRQueryString)}";
+                }
+                var productDetails = function(productId) {
+                    document.location = "{!JSENCODE($Page.ProductDetails)}?viewState=DetailView&cartID=" + CCRZ.pagevars.currentCartID + "&sku=" + productId + "&{!JSENCODE(theController.CSRQueryString)}";
+                }
+                var homePage = function() {
+                    document.location = "{!$Page.HomePage}?cartID=" + CCRZ.pagevars.currentCartID + "&{!JSENCODE(theController.CSRQueryString)}";
+                }
+            </script>
+
+            <!-- common components -->
+            <c:cc_PageMessagesRD />
+            <c:cc_headerRD ccCtrl="{!theController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+            <c:cc_topMenuRD ccCtrl="{!theController}" rendered="{!widgetConfiguration[LOWER('TM.Enabled')]}" />
+            <c:cc_CategoryTreeRD rendered="{!widgetConfiguration[LOWER('CT.Enabled')]}" />
+            <c:cc_WishlistPicker rendered="{!widgetConfiguration[LOWER('WL.PkrOn')]}" />
+            <c:cc_MiniCartDetailsRD rendered="{!widgetConfiguration[LOWER('MC.Enabled')]}" />
+            <c:cc_MiniQuickOrderRD rendered="{!widgetConfiguration[LOWER('QO.Enabled')]}" />
+            <c:cc_ProductSearchWidgetNavRD ccCtrl="{!theController}" rendered="{!widgetConfiguration[LOWER('SB.Enabled')]}" />
+            <c:cc_productSearchWidget pCcCtrl="{!theController}" rendered="{!IF(OR(widgetConfiguration[LOWER('H.Enabled')] == 'TRUE', widgetConfiguration[LOWER('SB.Enabled')] == 'TRUE'), true, false)}" />
+            <c:cc_SpotlightProductsRD RelatedProducts="false" rendered="{!IF(OR(widgetConfiguration[LOWER('FP.Enabled')] == 'TRUE', widgetConfiguration[LOWER('SL.Enabled')] == 'TRUE'), true, false)}" />
+            <c:cc_promoRD pageLoc="{!thePageKey}" rendered="{!widgetConfiguration[LOWER('PM.Enabled')]}" />
+            <c:cc_TemplateEntryRD rendered="{!widgetConfiguration[LOWER('WL.Enabled')]}" />
+            <c:cc_EffectiveAccountSelector rendered="{!widgetConfiguration[LOWER('EFF.Enabled')]}" />
+        </apex:define>
+    </apex:composition>
+</apex:page>

@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The E_Order__c object contains the header data of placed order.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the Account of the User that this order was placed for.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AdjustmentAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Post order placement adjustment amount that can be used by back-end processing to adjust an order total without adjusting other fields.</description>
+        <externalId>false</externalId>
+        <label>Adjustment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AdjustmentReason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Optional reason text for the Adjustment Amount field.</description>
+        <externalId>false</externalId>
+        <label>Adjustment Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BillTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Contact Address object that contains the bill to address data. This will be a unique copy of the address information captured during checkout.</description>
+        <externalId>false</externalId>
+        <label>Bill To</label>
+        <referenceTo>E_ContactAddr__c</referenceTo>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BuyerCompanyName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BuyerEmail__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email address captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BuyerFirstName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>First name captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BuyerLastName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last name captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BuyerMobilePhone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Mobile Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>BuyerPhone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Phone number captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>CCEmailAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <description>List of whitespace separated email addresses. Should only be used in low volume order implementations. Contains the list of email addresses that the order confirmation was sent to.</description>
+        <externalId>false</externalId>
+        <label>CCEmailAddress</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CCSubscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The subscription this order belongs to</description>
+        <externalId>false</externalId>
+        <label>CCSubscription</label>
+        <referenceTo>E_Subscription__c</referenceTo>
+        <relationshipLabel>CC Orders</relationshipLabel>
+        <relationshipName>CCOrders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the Contact of the User that this order was placed for.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>CC Orders</relationshipLabel>
+        <relationshipName>CC_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContractId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Contract ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrencyISOCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The currency that the order was place in.</description>
+        <externalId>false</externalId>
+        <label>Currency ISO Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveAccountID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds the effective account for this order.  This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own.  The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own.  The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</inlineHelpText>
+        <label>Effective Account ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EncryptedId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Semi-random id used to refer to the order in URLs.</description>
+        <externalId>false</externalId>
+        <label>Encrypted Id</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ExtCarrier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Ext Carrier</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExtShipTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Ext ShipTo</label>
+        <referenceTo>E_ContactAddr__c</referenceTo>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ExtShipTrackNo__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Ext ShipTrack No</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsAnonymous__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>To indicate if this is an anonymous checkout</description>
+        <externalId>false</externalId>
+        <label>Is Anonymous</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Carried over from the cart name that was used to place this order.</description>
+        <externalId>false</externalId>
+        <label>Order Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Note__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Note</description>
+        <externalId>false</externalId>
+        <label>Note</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of the order.</description>
+        <externalId>false</externalId>
+        <label>Order Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External id reference.</description>
+        <externalId>true</externalId>
+        <label>Order Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>OrderName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field to grab the standard name from the Order object.
+This field was created due to a defect in Salesforce returning Name__c instead of Name in email templates.</description>
+        <externalId>false</externalId>
+        <formula>Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Order Name (Duplicated)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Derived from the SFDC Name field as the digit portion of the order Name + 1000000.</description>
+        <externalId>false</externalId>
+        <label>Order Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>OrderStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Displayed order status. Orders initially placed are all in Order Submitted status. All other statuses may be implementation specific.</description>
+        <externalId>false</externalId>
+        <label>Order Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancel Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Return Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Returned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partial Shipped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bill Of Material</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Parent order, which originally submitted the subscription for this order, if applicable</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Parent order, which originally submitted the subscription for this order, if applicable</inlineHelpText>
+        <label>Order</label>
+        <referenceTo>E_Order__c</referenceTo>
+        <relationshipLabel>Children Orders</relationshipLabel>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OriginatedCart__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the CC Cart object used to create this order.</description>
+        <externalId>false</externalId>
+        <label>Originated Cart</label>
+        <referenceTo>E_Cart__c</referenceTo>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PONumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>PO Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PaymentMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The payment method defined in E_PaymentDetail__c.Payment_Method__c.</description>
+        <externalId>false</externalId>
+        <label>PaymentMethod</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequestDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Request date captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ShipAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order shipment charges.</description>
+        <externalId>false</externalId>
+        <label>Ship Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ShipComplete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Ship complete indicator captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Ship Complete</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ShipDiscountAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Post order placement offset that can be used to adjust the shipment amount.</description>
+        <externalId>false</externalId>
+        <label>Ship Discount Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ShipMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Shipment method captured during the checkout process.</description>
+        <externalId>false</externalId>
+        <label>Ship Method</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShipTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Contact Address object that contains the ship to address data. This will be a unique copy of the address information captured during checkout.</description>
+        <externalId>false</externalId>
+        <label>Ship To</label>
+        <referenceTo>E_ContactAddr__c</referenceTo>
+        <relationshipName>E_Orders1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SkipTax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if the tax calculation was skipped during checkout.</description>
+        <externalId>false</externalId>
+        <label>Skip Tax Calculation</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The storefront under which the order was placed.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubtotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of CC Orer Item : Item Total</description>
+        <externalId>false</externalId>
+        <label>Subtotal Amount</label>
+        <summarizedField>E_OrderItem__c.ItemTotal__c</summarizedField>
+        <summaryForeignKey>E_OrderItem__c.Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>TaxAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tax amount captured during order placement.</description>
+        <externalId>false</externalId>
+        <label>Tax Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TaxExemptFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Flag indicating if the order was tax exempt. Copied from the cart during order placement.</description>
+        <externalId>false</externalId>
+        <label>Tax Exempt Flag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TaxSubTotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of CC Orer Item : Item Total</description>
+        <externalId>false</externalId>
+        <label>Tax SubTotal Amount</label>
+        <summarizedField>E_OrderItem__c.ItemTotal__c</summarizedField>
+        <summaryForeignKey>E_OrderItem__c.Order__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>TotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ShipAmount__c + SubtotalAmount__c + TaxAmount__c + AdjustmentAmount__c + ShipDiscountAmount__c + TotalSurcharge__c</description>
+        <externalId>false</externalId>
+        <formula>ShipAmount__c + SubtotalAmount__c + TaxAmount__c +  AdjustmentAmount__c  +  ShipDiscountAmount__c + TotalSurcharge__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalDiscount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total discount as copied from the Cart.</description>
+        <externalId>false</externalId>
+        <label>Total Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalSurcharge__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Surcharge captured during order placement.</description>
+        <externalId>false</externalId>
+        <label>Total Surcharge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the User that this order was placed for.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>E_Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VerifyExemptionFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>VerifyExemptionFlag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>CC Order</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>OWNER.ALIAS</columns>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OrderDate__c</columns>
+        <columns>OrderStatus__c</columns>
+        <columns>SubtotalAmount__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>DefaultStore</fullName>
+        <columns>NAME</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>OrderDate__c</columns>
+        <columns>OrderStatus__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Storefront__c</field>
+            <operation>equals</operation>
+            <value>DefaultStore</value>
+        </filters>
+        <label>DefaultStore</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>O-{0000000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Orders</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OrderStatus__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>OWNER.ALIAS</searchFilterFields>
+        <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
+        <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
+        <searchFilterFields>EncryptedId__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OrderDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>User__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

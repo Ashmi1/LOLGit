@@ -1,0 +1,79 @@
+<messaging:emailTemplate subject="Order Complete" recipientType="Contact" relatedToType="ccrz__E_Order__c">
+<messaging:plainTextEmailBody >
+Congratulations!
+This is the plain text version<br />
+include component here
+</messaging:plainTextEmailBody>
+ 
+<messaging:htmlEmailBody >
+<html>
+<STYLE type="text/css">
+body {
+    background-color:#2F2F2F;
+}
+        
+h {
+    color: #0d6bab;
+    font-family: ProximaNovaBold, Arial, Helvetica, sans-serif;
+}
+          
+h2 {
+    color: #0d6bab;
+    font-family: ProximaNovaBold, Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    color: #0d6bab;
+    font-family: ProximaNovaBold, Arial, Helvetica, sans-serif;
+    float:left;
+    margin:0;
+}
+
+.email-table1{
+    background-color: #FFFFFF;
+    border: 2px solid;
+    border-radius: 10px;
+    webkit-border-radius: 10px;
+    moz-border-radius: 10px;
+}
+
+td { 
+    border-spacing:10px; 
+    cell-padding:10px; 
+    cell-spacing:10px; 
+}
+
+.orderSummaryTable {
+    width:550px;
+}
+
+.orderSummary-TD {
+    width:550px;
+}
+
+.shippedItems-ProductName-TD {
+    width:50%;
+}
+
+.shippedItems-Qty-TD {
+    width:10%;
+}
+
+.shippedItems-ProductSku-TD {
+    width:50%;
+}
+
+.shippedItems-ProductQty-TD {
+	width:10%;
+}
+
+</STYLE>
+<head>
+</head>
+<body>
+<!-- Temporarily commenting out the component include to test QA package install -->
+<!-- <c:cc_OrderShippedSummary porderID="{!relatedTo.ID}" pOrderComplete="true" /> -->
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

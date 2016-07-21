@@ -1,0 +1,24 @@
+<apex:page standardController="ccrz__E_PageLabeli18n__c" extensions="ccrz.cc_ctrl_LocaleExtension" language="{!userLanguageCode}">
+	<apex:form >
+	<apex:pageBlock id="pageLabeli18n" title="Page Label I18N" mode="edit">
+	
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!save}" value="{!$Label.Coupon_Save}"/>
+            <apex:commandButton action="{!Cancel}" value="{!$Label.Coupon_Cancel}"/>             
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection id="pageLabeli18nSection" columns="2">
+            <apex:inputField value="{!ccrz__E_PageLabeli18n__c.ccrz__PageLabel__c}"/>
+            <apex:inputField value="{!ccrz__E_PageLabeli18n__c.ccrz__Value__c}"/>
+            <apex:inputField value="{!ccrz__E_PageLabeli18n__c.ccrz__ValueRT__c}"/>
+            <apex:pageBlockSectionItem >
+            	<apex:outputLabel value="Locale" />
+            	<apex:SelectList value="{!ccrz__E_PageLabeli18n__c.ccrz__Language__c}" size="1">
+            		<apex:selectOptions value="{!LanguageOptionsList}"></apex:selectOptions>
+           	 </apex:SelectList>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+       
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

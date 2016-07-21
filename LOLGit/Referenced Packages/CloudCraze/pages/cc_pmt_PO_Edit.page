@@ -1,0 +1,131 @@
+<apex:page id="cc_pmt_PO_edit" controller="ccrz.cc_ctrl_pmt_PO_Edit" applyHtmlTag="false"
+	docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+
+<script id="MyAccount-MyWalletPO-Desktop" type="text/template">
+	<div class="myWalletPOOuterContainer">
+		<h2 class="title">{{pageLabelMap 'MyWallet_EditPymtMtd'}}</h2>
+		<div class="main_content_large_right_container">
+			
+			<div class="alert alert-error error_messages_section" style="display:none;"></div>
+			
+			<form id="editPOForm" action="" class="editPOForm" forceSSL="true">
+				<fieldset>
+					<legend>{{pageLabelMap 'MyWallet_EditPO'}}</legend>
+					<div class="my_account_information">
+						<div class="row displayName">
+							<label><span class="poLabel Name fieldLabel">{{pageLabelMap 'MyWallet_NameOpt'}}</span>
+								<input type="text" name="displayName" id="displayName" value="{{this.displayName}}" maxlength="50" />
+							</label>
+						</div>
+						<div class="row accountNumber">
+							<label><span class="poLabel Number fieldLabel">{{pageLabelMap 'MyWallet_PONum'}}</span>
+								<input type="text" name="accountNumber" id="accountNumber" value="{{this.accountNumber}}" maxlength="50" />
+							</label>
+						</div>
+						<div class="row actionButtons">
+							<label><span class="poLabel SavePayment fieldLabel">{{pageLabelMap 'MyWallet_Enabled'}}</span>
+								<input type="checkbox" name="isEnabled" id="isEnabled" {{#if this.isEnabled}}checked{{/if}} />
+							</label>
+						</div>
+					</div>
+				</fieldset>
+				<br/>
+				<p class="two_buttons">
+					<div class="right">
+						<input type="button" class='button cancelPO' id='cancelPO' value="{{pageLabelMap 'MyWallet_Cancel'}}" />
+						<input type="button" class='button savePO' id="savePO" value="{{pageLabelMap 'MyWallet_SaveToWall'}}" />
+					</div>
+				</p>
+				<br/>
+			</form>
+		</div>
+	</div>
+</script>
+
+<script>
+	var storedPaymentId = "{!JSENCODE(storedPaymentId)}";
+	var displayName = "{!JSENCODE(displayName)}";
+	var accountNumber = "{!JSENCODE(accountNumber)}";
+	var isEnabled = {!isEnabled};
+
+	jQuery(function($) {
+		CCRZ.models.StoredPaymentsPOModel = CCRZ.CloudCrazeModel.extend({
+			className : "cc_ctrl_pmt_PO_Edit",
+			updatePONumber: function(poData, callback) {
+				var v = this;
+				this.invokeCtx("updatePONumber", JSON.stringify(poData),
+					function(response){
+						if(response && response.success ) {
+							console.log(response.data);
+							callback();
+						}
+					}
+				);
+			},
+		});
+
+		CCRZ.views.StoredPaymentsPOView = CCRZ.CloudCrazeView.extend({
+			viewName : "StoredPaymentsPOView",
+			templateDesktop : CCRZ.util.template(CCRZ.uiProperties.StoredPaymentsPOView.desktop.tmpl),
+			templatePhone : CCRZ.util.template(CCRZ.uiProperties.StoredPaymentsPOView.phone.tmpl),
+			init : function(){
+				this.render();
+			},
+			events: {
+				"click #savePO" : "updatePONumber",
+				"click #cancelPO" : "cancelNewPONumber"
+			},
+			initValidation : function() {
+				$('#editPOForm').validate({
+					invalidHandler : function(event, validator) {
+						CCRZ.handleValidationErrors(event, validator, 'error_messages_section', false);
+					},
+					rules : {
+						accountNumber : { required : CCRZ.getPageConfig('Pmt_PO.ReqNum', true) }
+					},
+					messages : {
+						accountNumber : { required : CCRZ.pagevars.pageLabels['PMTPO_POReq']}
+					},
+					errorPlacement : function(error, element) { }
+				});
+			},
+			preRender : function() {
+				this.data={
+					'storedPaymentId' : storedPaymentId,
+					'displayName' : displayName,
+					'accountNumber' : accountNumber,
+					'isEnabled' : isEnabled
+				};
+			},
+			renderDesktop : function(){				 
+				this.setElement($(CCRZ.uiProperties.StoredPaymentsPOView.desktop.selector));
+				this.$el.html(this.templateDesktop(this.data));
+			},
+			renderPhone : function(){
+				this.setElement($(CCRZ.uiProperties.StoredPaymentsPOView.phone.selector));
+				this.$el.html(this.templatePhone(this.data));
+			},
+			postRender : function() {
+				this.initValidation();
+			},
+			cancelNewPONumber : function(){
+				myWallet();
+			},
+			updatePONumber : function(event) {
+				if ($('#editPOForm').valid()) {
+					var formData = form2js("editPOForm", '.', false, function(node) {}, false);
+					formData.storedPaymentId = this.data.storedPaymentId;
+					formData.isEnabled = formData.isEnabled != null ? true : false;
+					this.model.updatePONumber(formData, function() {
+						myWallet();
+					});
+				}
+			}
+		});
+
+		CCRZ.poView = new CCRZ.views.StoredPaymentsPOView({
+			model : new CCRZ.models.StoredPaymentsPOModel
+		});
+	});
+</script>	
+</apex:page>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The ccrz__E_OrderShipment__c object contains basic shipment details for an order.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BillOfLading__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NOT CURRENTLY USED.</description>
+        <externalId>false</externalId>
+        <label>Bill of lading</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Should be defined specific to the implementation. Contains list of keys to the supported carriers.</description>
+        <externalId>false</externalId>
+        <label>Carrier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Fedex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DHL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DeliveryDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expected date of delivery.</description>
+        <externalId>false</externalId>
+        <label>Delivery Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderShipmentId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Id for external use.</description>
+        <externalId>true</externalId>
+        <label>Order Shipment Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The order that this is a shipment for.</description>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <referenceTo>E_Order__c</referenceTo>
+        <relationshipLabel>Order Shipments</relationshipLabel>
+        <relationshipName>E_OrderShipments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ShipmentDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the shipment was shipped.</description>
+        <externalId>false</externalId>
+        <label>Shipment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ShippingMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Shipping method used.</description>
+        <externalId>false</externalId>
+        <label>Shipping Method</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TrackingNo__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tracking number for the shipment. This will be passed to the carriers site as the tracking number.</description>
+        <externalId>false</externalId>
+        <label>Tracking Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Order Shipment</label>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Order Shipment Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Order Shipments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

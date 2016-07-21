@@ -1,0 +1,15 @@
+<apex:page id="cc_tmpl_OneColRD" controller="ccrz.cc_ctrl_StorefrontTemplate" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+	<apex:composition template="ccrz__cc_tmpl_Storefront">
+		<apex:define name="htmlbody">
+				<div class="row-fluid">
+					<div class="content_container">
+						<div class="span12">
+							<div class="main_content_single_column_container">
+								<apex:insert name="body"/>
+							</div>
+						</div>
+					</div>
+				</div>
+		</apex:define>
+	</apex:composition>
+</apex:page>

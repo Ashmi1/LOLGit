@@ -1,0 +1,329 @@
+<apex:component controller="cc_lol_ctrl_ProductListInclude">
+  <script id="LOL-productListBrowser" type="text/template">
+        <h2 class="title">{{pageLabelMap 'ProductsInc_ProductList'}}</h2>
+        <div class="products_1_row_medium">
+            {{#each this}}
+                <div class="products_1_row_medium_item {{this.prodBean.id}}">
+                    <div class="alert alert-error messagingSection-{{this.prodBean.id}}-Error" style="display: none"></div>
+                    <div class="alert alert-info messagingSection-{{this.prodBean.id}}-Info" style="display: none"></div>
+                    <div class="product_listing_viewport">
+                        <a href="javascript:void(0);" class="productName" data-sku="{{this.prodBean.sku}}">
+                            {{displayImage this.mediaWrapper 'prodList' alt=this.prodBean.name}}
+                        </a>
+                        {{#ifStoreSetting 'DevMode__c'}}
+                            <!-- // display search ranking number in results list -->
+                            <div class="rankDisplayWrapper"><span class="rankDisplay">Rank: {{searchRanking}}{{sequence}}</span></div>
+                        {{/ifStoreSetting}}
+                    </div>
+                    <p><a href="javascript:void(0);" class="productName" data-sku="{{this.prodBean.sku}}">{{this.prodBean.name}}</a></p>
+                    <div>
+                        <p class="description">
+                            {{#ifDisplay 'PL.DsplShortDesc'}}
+                                {{unescape this.prodBean.shortDesc}}
+                            {{/ifDisplay}}
+                            <br/>
+                            {{#ifDisplay 'PL.DsplAddtInfo'}}
+                                <a class="included_items" href="#additional_info{{this.prodBean.sku}}" id="additionalInfoLink" data-toggle="modal">{{pageLabelMap 'ProductsInc_AdditionalInfo'}}</a>
+                                <div id="additional_info{{this.prodBean.sku}}" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                        <h3 id="myModalLabel">{{this.prodBean.name}} {{pageLabelMap 'ProductsInc_MiscDetails'}}</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{#if this.miscDetails}}
+                                            {{this.miscDetails}}<br/><br/>
+                                        {{/if}}
+                                        {{#ifDisplay 'PL.DsplAddtlSku'}}
+                                            <strong>{{pageLabelMap 'SKU'}}:</strong>&nbsp;{{this.prodBean.sku}}<br/><br/>
+                                        {{/ifDisplay}}
+                                        {{#ifDisplay 'PL.DsplAddtlShortDesc'}}
+                                            {{unescape this.prodBean.shortDesc}}<br/><br/>
+                                        {{/ifDisplay}}
+                                    </div>
+                                </div>
+                            {{/ifDisplay}}
+                        </p>
+                    </div>
+                    {{#ifDisplay 'PL.DsplSku'}}
+                        <p class="skuDisp"><strong>{{pageLabelMap 'SKU'}}</strong>&nbsp;{{this.prodBean.sku}}</p>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PL.DsplUOM'}}
+                        <p class="uomDisp"><strong>{{pageLabelMap 'ProductDetails_UnitOfMeasure'}}</strong>&nbsp;{{pageLabelPrefixMap 'UOM_' this.prodBean.UnitOfMeasure}}</p>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PL.DsplSpec'}}
+                        {{#each this.ccproduct.productSpecList}}
+                            <span><p class="specDisp"><strong>{{this.specName}}</strong>&nbsp;{{this.specValue}}</p></span>
+                        {{/each}}
+                    {{/ifDisplay}}
+                        {{#ifDisplay 'PL.DsplListPrc'}}
+                            {{#if this.showPricing}}
+                                 {{#if this.basePrice}}
+                                 <!----- Commented For LOL ----->
+                                 <!--  <p class="listpDisp"><span><strong>{{pageLabelMap 'ProductsInc_ListPrice'}}</strong><del>{{price this.basePrice}}</del></span></p> -->
+                                 <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                                 {{/if}}
+                            {{/if}}
+                        {{/ifDisplay}}
+                        {{#ifDisplay 'PL.DsplPrc'}}
+                            {{#if this.showNewSubscriptionSelection}}
+                            <!----- Commented For LOL ----->
+                            <!-- <p><span><strong class="price priceSubscription">{{pageLabelMap 'Prod_SubsListPrice' (price this.price) (price this.minSubPrice) (price this.maxSubPrice)}}</strong></span></p> -->
+                            <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                            {{else}}
+                                <!-- // check if it is a range price for aggregated product -->
+                                {{#if this.maxPrice}}
+                                <!----- Commented For LOL ----->
+                                <!-- <p><span><strong class="price">{{displayRangePrice 'ProductDetails_PriceRangeFormat' this.minPrice this.maxPrice}}</strong></span></p> -->
+                                <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                                {{else}}
+                                    {{#if this.displayPrice}}
+                                    <!----- Commented For LOL ----->
+                                <!-- <p class="price displayPrice">
+                                            {{pageLabelPrefixMap 'DisplayPrice_' this.displayPrice}}
+                                        </p> -->
+                                        <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                                    {{else}}
+                                        {{#if this.showPricing}}
+                                            {{#if this.price}}
+                                            <!----- Commented For LOL ----->
+                                            <!-- <p><span><strong class="price">{{price this.price}}</strong></span></p> -->
+                                            <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                                            {{/if}}
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{/ifDisplay}}
+                        {{#ifDisplay 'PL.DsplSvPrc'}}
+                            {{#if this.showPricing}}
+                                {{#if this.savings}}
+                                    <p class="saveDisp"><span><strong>{{pageLabelMap 'ProductsInc_YouSave'}}</strong>{{price this.savings}}</span><p>
+                                {{/if}}
+                            {{/if}}
+                        {{/ifDisplay}}
+                    {{#ifDisplay 'PL.DsplAvlb' }}
+                        {{#ifEquals this.inventory '0'}}
+                            <p class="availDisp">{{pageLabelMap 'ProductDetail_NotAvailable1'}} {{pageLabelMap 'ProductDetail_NotAvailable2'}}</p>
+                        {{/ifEquals}}
+                    {{/ifDisplay}}
+                    <input type="hidden" value="{{this.inventory}}" id="qtyAvail_{{this.prodBean.id}}" name="qtyAvail_{{this.prodBean.id}}" />
+                    <p class="included_items"></p>
+                    {{#unless this.showNewSubscriptionSelection}}
+                    {{#if this.canAddtoCart}}
+                        {{#ifDisplay 'PL.DsplAddCart' }}
+                                <p class="plus_minus">
+                                    {{#if this.qtySkipIncrement}}
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}" class="plus_minus minusFF">
+                                    {{/if}}
+                                    {{#ifEquals this.qtySingleIncrement 1}}
+                                    <input type="text" name="qty" value="1" class="input-text entry plus_minus" maxlength="7" />
+                                    {{else}}
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}" class="  plus_minus minus">
+                                    <input type="text" readonly="true" name="qty" value="0" class="entry plus_minus" maxlength="7" />
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}" class="plus_minus plus">
+                                    {{/ifEquals}}
+                                    {{#if this.qtySkipIncrement}}
+                                        <input type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}" class="plus_minus plusFF">
+                                    {{/if}}
+                                    <input type="hidden" name="qtyIncrement" value="{{this.qtySingleIncrement}}" class="item_qtyIncrement" />
+                                    <input type="hidden" name="qtySkipIncrement" value="{{this.qtySkipIncrement}}" class="item_qtySkipIncrement" />
+                                </p>
+                                {{#if this.prodBean.showSubscriptionSelection}}
+                                    <p class="subscription_selection">{{pageLabelMap 'Subscribe_And_Save_Label'}}
+                                        <select class="subscriptionFrequencySelection" data-subscription="{{this.prodBean.sku}}">
+                                            {{#each this.prodBean.subscriptionFrequencies}}
+                                            <option value="{{safeQuote this}}">{{pageLabelMapMultiString 'Subscribe_And_Save_' this}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </p>
+                                {{/if}}
+                                {{#each this.prodBean.compositeSubscriptions}}
+                                    <p class="subscription_selection">{{pageLabelMap 'Subscribe_And_Save_Label_Composite' this.name this.sku}}
+                                        <select class="subscriptionFrequencySelection" data-subscription="{{this.sku}}">
+                                            {{#each this.subscriptionFrequencies}}
+                                            <option value="{{safeQuote this}}">{{pageLabelMapMultiString 'Subscribe_And_Save_' this}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </p>
+                                {{/each}}
+                                <p class="wishFinder" data-sku="{{this.prodBean.sku}}">
+                                    <span><button type="button" class="btn btn-primary slim add_to_cart_desktop_button" data-id="{{this.prodBean.id}}" data-inventory="{{this.productInventory}}">{{pageLabelMap 'Component_MiniwishList_AddToCart'}}</button></span>
+                                    {{#ifNotEquals this.prodBean.ProductType 'Aggregated'}}<span class="wishButtons"></span>{{/ifNotEquals}}
+                                </p>
+                        {{/ifDisplay}}
+                    {{else}}
+                        <p class="wishFinder" data-sku="{{this.prodBean.sku}}">
+                        {{#listFind this.prodBean.ProductType 'Aggregated|Dynamic Kit' false }}
+                            <span class="wishButtons"></span>
+                        {{/listFind}}
+                        </p>
+                    {{/if}}
+                    {{/unless}}
+                </div>
+            {{/each}}
+        </div>
+    </script>
+    
+     <script id="LOL-productListPhone" type="text/template">
+        <h2 class="title">{{pageLabelMap 'ProductsInc_ProductList'}}</h2>
+        <div class="products_1_row_medium">
+            {{#each this}}
+                <div class="products_1_row_medium_item {{this.prodBean.id}}">
+                    <div class="alert alert-error messagingSection-{{this.prodBean.id}}-Error" style="display: none"></div>
+                    <div class="alert alert-info messagingSection-{{this.prodBean.id}}-Info" style="display: none"></div>
+                    <div class="product_listing_viewport">
+                        <a href="javascript:void(0);" class="productName" data-sku="{{this.prodBean.sku}}">
+                            {{displayImage this.mediaWrapper 'prodList' alt=this.prodBean.name}}
+                        </a>
+                    </div>
+                    <p>
+                        <a href="javascript:void(0);" class="productName" data-sku="{{this.prodBean.sku}}">{{this.prodBean.name}}</a>
+                    </p>
+                    {{#ifDisplay 'PL.DsplAddtInfo'}}
+                        <p>
+                            <a class="included_items" href="#additional_info{{this.prodBean.sku}}" id="additionalInfoLink" data-toggle="modal">{{pageLabelMap 'ProductsInc_AdditionalInfo'}}</a>
+                            <div id="additional_info{{this.prodBean.sku}}" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                    <h3 id="myModalLabel">{{this.prodBean.name}} {{pageLabelMap 'ProductsInc_MiscDetails'}}</h3>
+                                </div>
+                                <div class="modal-body">
+                                    {{#if this.miscDetails}}
+                                        {{this.miscDetails}}<br/><br/>
+                                    {{/if}}
+                                    {{#ifDisplay 'PL.DsplAddtlSku'}}
+                                        <strong>{{pageLabelMap 'SKU'}}</strong>&nbsp;{{this.prodBean.sku}}<br/><br/>
+                                    {{/ifDisplay}}
+                                    {{#ifDisplay 'PL.DsplAddtlShortDesc'}}
+                                        {{unescape this.prodBean.shortDesc}}<br/><br/>
+                                    {{/ifDisplay}}
+                                </div>
+                            </div>
+                        </p>
+                    {{/ifDisplay}}
+                    {{#ifDisplay 'PL.DsplUOM'}}
+                        <p><strong>{{pageLabelMap 'ProductDetails_UnitOfMeasure'}}</strong>&nbsp;{{pageLabelPrefixMap 'UOM_' this.prodBean.UnitOfMeasure}}</p>
+                    {{/ifDisplay}}
+                        {{#ifDisplay 'PL.DsplListPrc'}}
+                            {{#if this.showPricing}}
+                                {{#if this.basePrice}}
+                                <!----- Commented For LOL ----->
+                                <!-- <p><span><del>{{price this.basePrice}}</del></span></p> -->
+                                <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                                {{/if}}
+                            {{/if}}
+                        {{/ifDisplay}}
+                        {{#ifDisplay 'PL.DsplPrc'}}
+                            {{#if this.showNewSubscriptionSelection}}
+                            <!----- Commented For LOL ----->
+                            <!-- <p><span><strong class="price priceSubscription">{{pageLabelMap 'Prod_SubsListPrice' (price this.price) (price this.minSubPrice) (price this.maxSubPrice)}}</strong></span></p> -->
+                            <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                            {{else}}
+                                <!-- // check if it is a range price for aggregated product -->
+                                {{#if this.maxPrice}}
+                                <!----- Commented For LOL ----->
+                                <!-- <p><span><strong class="price">{{displayRangePrice 'ProductDetails_PriceRangeFormat' this.minPrice this.maxPrice}}</strong></span></p> -->
+                                <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                                {{else}}
+                                    {{#if this.displayPrice}}
+                                    <!----- Commented For LOL ----->
+                                    <!-- <p class="price displayPrice">
+                                            {{pageLabelPrefixMap 'DisplayPrice_' this.displayPrice}}
+                                        </p> -->
+                                        <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                                    {{else}}
+                                        {{#if this.showPricing}}
+                                            {{#if this.price}}
+                                            <!----- Commented For LOL ----->
+                                            <!-- <p><span><strong class="price">{{price this.price}}</strong></span></p> -->
+                                            <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                                            {{/if}}
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{/ifDisplay}}
+                        {{#ifDisplay 'PL.DsplSvPrc'}}
+                            {{#if this.showPricing}}
+                                {{#if this.savings}}
+                                    <p><span><strong>{{pageLabelMap 'YouSave'}}</strong>{{price this.savings}}</span><p>
+                                {{/if}}
+                            {{/if}}
+                        {{/ifDisplay}}
+                    {{#unless this.showNewSubscriptionSelection}}
+                    {{#if this.canAddtoCart}}
+                        {{#ifDisplay 'PL.DsplAddCart' }}
+                            <p class="plus_minus">
+                                {{#if this.qtySkipIncrement}}
+                                    <input type="button" value="{{pageLabelMap 'Prod_QtyDecrFF'}}" class="plus_minus minusFF">
+                                {{/if}}
+                                <input type="button" value="{{pageLabelMap 'Prod_QtyDecrSingle'}}" class="plus_minus minus">
+                                {{#ifNotEquals this.qtySingleIncrement 1}}
+                                    <input type="text" readonly="true" name="qty" value="0" class="plus_minus entry" maxlength="7" />
+                                {{else}}
+                                    <input type="text" name="qty" value="1" class="input-text plus_minus entry" maxlength="7" />
+                                {{/ifNotEquals}}
+                                <input type="button" value="{{pageLabelMap 'Prod_QtyIncrSingle'}}" class="plus_minus plus">
+                                {{#if this.qtySkipIncrement}}
+                                    <input type="button" value="{{pageLabelMap 'Prod_QtyIncrFF'}}" class="plus_minus plusFF">
+                                {{/if}}
+                                <input type="hidden" name="qtyIncrement" value="{{this.qtySingleIncrement}}" class="item_qtyIncrement" />
+                                <input type="hidden" name="qtySkipIncrement" value="{{this.qtySkipIncrement}}" class="item_qtySkipIncrement" />
+                                {{#if this.prodBean.showSubscriptionSelection}}
+                                    <p class="subscription_selection">{{pageLabelMap 'Subscribe_And_Save_Label'}}
+                                        <select class="subscriptionFrequencySelection" data-subscription="{{this.prodBean.sku}}">
+                                            {{#each this.prodBean.subscriptionFrequencies}}
+                                            <option value="{{safeQuote this}}">{{pageLabelMapMultiString 'Subscribe_And_Save_' this}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </p>
+                                {{/if}}
+                                {{#each this.prodBean.compositeSubscriptions}}
+                                    <p class="subscription_selection">{{pageLabelMap 'Subscribe_And_Save_Label_Composite' this.name this.sku}}
+                                        <select class="subscriptionFrequencySelection" data-subscription="{{this.prodBean.sku}}">
+                                            {{#each this.subscriptionFrequencies}}
+                                            <option value="{{safeQuote this}}">{{pageLabelMapMultiString 'Subscribe_And_Save_' this}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </p>
+                                {{/each}}
+                            </p>
+                            <p>
+                                <button type="button" class="btn btn-primary addItem" data-id="{{this.prodBean.id}}" data-inventory="{{this.productInventory}}">{{pageLabelMap 'ProductsInc_AddToCart'}}</button>
+                            </p>
+                        {{/ifDisplay}}
+                    {{/if}}
+                    {{/unless}}
+                    <div class="wishFinder" data-sku="{{this.prodBean.sku}}">
+                        {{#listFind this.prodBean.ProductType 'Aggregated|Dynamic Kit' false }}
+                            <p class="wishButtons"></p>
+                        {{/listFind}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </script>
+    
+    <script>
+      
+        jQuery(function($){
+            CCRZ.uiProperties.productListView.desktop.tmpl = 'LOL-productListBrowser';
+            CCRZ.uiProperties.productListView.phone.tmpl = 'LOL-productListPhone';
+            
+            CCRZ.pubSub.on('view:productListView:refresh', function(theView) {
+                var remoteCall = _.extend(CCRZ.RemoteInvocation,{className:'cc_lol_ctrl_ProductListInclude'});
+                remoteCall.invokeCtx('getProductPrice',  
+                function(resp){
+                    if(resp && resp.success){
+                        var respData = resp.data;
+                        $('.lolCustomPrice').html(respData);
+                    }
+                },  {buffer:false,escape:false,nmsp:false} );   
+           })
+        });
+        
+    </script>
+    
+    
+
+</apex:component>

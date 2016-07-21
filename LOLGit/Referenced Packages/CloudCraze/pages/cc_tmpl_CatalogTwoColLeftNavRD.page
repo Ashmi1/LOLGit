@@ -1,0 +1,36 @@
+<apex:page id="cc_tmpl_CatalogTwoColLeftNavRD" controller="ccrz.cc_ctrl_StorefrontTemplate" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+
+	<apex:composition template="ccrz__cc_tmpl_Storefront">
+		<apex:define name="htmlbody">
+			<div class="row-fluid">
+				<div class="span3 hidden-tablet">
+					<div class="left_column">
+						<apex:insert name="WidgetBoxL" />
+						<apex:insert name="ProductSearch" />
+						<apex:insert name="PhoneSplash"/>
+						<div id="categories-left-nav"></div> <!-- placeholder for category tree in left nav -->
+						<apex:insert name="ContactUs" />
+						<div class="promotion-box-LeftNav"></div>
+						<apex:insert name="LeftNavX" />
+					</div>
+				</div>
+
+				<div class="span9">
+					<div class="center_column">
+						<apex:insert name="WidgetBoxC" />
+						<apex:insert name="Banner" />
+						<apex:insert name="ProductSpotlight" />
+						<apex:insert name="body" />
+						<apex:insert name="PromosCenter" />
+						<apex:insert name="FeaturedProducts" />
+						<apex:insert name="GuideProducts" />
+						<apex:insert name="UpsellProducts" />
+						<apex:insert name="ProductReviews" />
+						<apex:insert name="CenterX" />
+					</div>
+				</div>
+			</div>
+		</apex:define>
+	</apex:composition>
+
+</apex:page>

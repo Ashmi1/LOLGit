@@ -1,0 +1,76 @@
+<messaging:emailTemplate subject="Order Confirmation" recipientType="Contact" relatedToType="ccrz__E_Order__c">
+<messaging:plainTextEmailBody >
+Congratulations!
+This is the plain text version<br />
+include component here
+</messaging:plainTextEmailBody>
+<messaging:htmlEmailBody >
+<html>
+<style type="text/css">
+body {
+    background-color:#2F2F2F;
+}
+
+table {
+    background-color: #FFFFFF;
+    border: 2px solid;
+    border-radius: 10px;
+    webkit-border-radius: 10px;
+    moz-border-radius: 10px;
+}
+        
+h {
+    color: #0d6bab;
+    font-family: ProximaNovaBold, Arial, Helvetica, sans-serif;
+}
+          
+h2 {
+    color: #0d6bab;
+    font-family: ProximaNovaBold, Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    color: #0d6bab;
+    font-family: ProximaNovaBold, Arial, Helvetica, sans-serif;
+}
+
+.emailFooter-Div{
+    color: #0d6bab;
+    font-family: ProximaNovaBold, Arial, Helvetica, sans-serif;
+}
+
+.orderItemsProductNameHeading-TD .orderItemsProductName-TD {
+    width:50%;
+}
+
+.orderItemsProductPriceHeading-TD .orderItemsProductPricing-TD {
+    width:110px;
+}
+
+.orderItemsProductQty-TD .orderItemsProductQtyHeading-TD {
+    width:10%;
+}
+
+.totalsSbtAmt-TD {
+    text-align:right;
+    width:20%;
+}
+
+.orderItemsProductTotalHeading-TD .orderItemsProductSubAmt-TD .totalsSbtLbl-TD .totalsShipLbl-TD .totalsShipAmt-TD .totalsTaxLbl-TD .totalsTaxAmt-TD .totalsGTotalLbl-TD .totalsGTotalAmt-TD{
+    width:20%;
+}
+
+.spacerTD {
+	width:60%;
+}
+</style>
+
+<head>
+</head>
+<body>
+
+<c:cc_OrderSummaryNew porderID="{!relatedTo.ID}" pOrderComplete="true" />
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

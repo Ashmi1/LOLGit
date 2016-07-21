@@ -1,0 +1,22 @@
+<apex:page id="cc_tmpl_StorefrontPDF" controller="ccrz.cc_ctrl_StorefrontTemplate" docType="html-5.0"
+	sidebar="false" showHeader="false" standardStylesheets="false">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+
+	<head>
+		<apex:insert name="htmlhead" />
+		<apex:repeat value="{!pageStyles}" var="styleUrl">
+			<apex:outputPanel rendered="{!not(contains(styleUrl,'fonts'))}" layout="none">
+				<link rel="stylesheet"  type="text/css" href="{!styleUrl}" />
+			</apex:outputPanel>
+		</apex:repeat>
+	</head>
+
+	<body>
+		<apex:insert name="htmlbody" />
+		<apex:insert name="htmlbodyX" />
+	</body>
+
+</html>
+</apex:page>

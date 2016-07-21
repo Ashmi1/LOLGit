@@ -1,0 +1,44 @@
+<apex:page id="PriceListItemTiers" standardController="ccrz__E_PriceListItem__c" extensions="ccrz.cc_ctrl_PriceListItemTiers">
+<apex:form id="TieredPricingForm">
+<apex:outputPanel id="TieredPricingPanel">
+    <apex:pageBlock id="TieredPricingBlock">
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!saveTiers}" value="Save Pricing Tiers" rendered="{!showSaveButton}" rerender="TieredPricingPanel"/>
+            <apex:commandButton action="{!removeTiers}" value="Remove Tiered Pricing" rendered="{!showRemoveButton}" rerender="TieredPricingPanel" />
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection columns="1">
+            <apex:messages />
+
+            <apex:pageBlockSectionItem >
+                <apex:selectRadio id="tierType" value="{!tierType}">
+                    <apex:selectOption itemValue="Tiered" itemLabel="Tiered Pricing" title="Tiered price applies to all of the same item in the cart" />
+                    <apex:selectOption itemValue="Stepped" itemLabel="Stepped Pricing" title="Stepped prices apply separately to each tier" />
+                </apex:selectRadio>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem >
+                <apex:dataTable value="{!tierValues}" var="item" id="tierData" styleClass="tableClass">
+                    <apex:column >
+                        <apex:facet name="header">Lower Bound</apex:facet>
+                        <apex:inputText size="10" value="{!item.low}" onkeypress="return numbersonly(event)"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Value Type</apex:facet>
+                        <apex:selectList value="{!item.valueType}" multiselect="false" size="1">    
+                            <apex:selectOption itemValue="Percentage" itemLabel="Percentage Discount"/>
+                            <apex:selectOption itemValue="Absolute" itemLabel="Absolute Discount"/>
+                            <apex:selectOption itemValue="Price" itemLabel="Absolute Price"/>
+                        </apex:selectList>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Amount</apex:facet>
+                        <apex:inputText size="10" value="{!item.amount}" />
+                    </apex:column>
+                </apex:dataTable>
+            </apex:pageBlockSectionItem>
+
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:outputPanel>
+</apex:form>
+</apex:page>

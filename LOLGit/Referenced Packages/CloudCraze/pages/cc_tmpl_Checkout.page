@@ -1,0 +1,67 @@
+<apex:page id="cc_tmpl_Checkout" docType="html-5.0" sidebar="false" showHeader="false" controller="ccrz.cc_ctrl_StorefrontTemplate" standardStylesheets="false">
+
+<apex:composition template="ccrz__cc_tmpl_Storefront">
+
+	<apex:define name="htmlhead">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<apex:insert name="meta" />
+	</apex:define>
+
+	<apex:define name="htmlbody">
+		<div class="container hidden-phone">
+			<div class="row-fluid">
+				<div class="span12 header">
+		    <apex:insert name="header" />
+				</div>
+			</div>
+
+			<div class="navbar main_navigation_container">
+				<div class="navbar-inner">
+					<div class="container">
+						<apex:insert name="menu" />
+					</div>
+				</div>
+			</div>
+
+			<div class="home_slider">
+		    <apex:insert name="splash" />
+			</div>
+
+		    
+			<!--<div class="content_container">
+				<div class="single_column_layout">
+					<div class="main_content_single_column_container">
+		            	<apex:insert name="body"/>
+		            </div>
+		        </div>
+		    </div>
+		 
+			<div class="row-fluid clear">
+				<div class="span12">
+					<apex:include pageName="{!storefrontFooter}"/>
+				</div>
+			</div>-->
+
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="center_column single_column_layout" id="checkoutSection">
+							<apex:insert name="body"/>
+						</div>
+					</div>
+				</div>
+				<br/>
+				<div class="row-fluid clear">
+					<div class="span12 footerBrowser">
+                <apex:include pageName="{!storefrontFooter}"/>
+		    </div>
+				</div>
+			</div>
+		
+		</div> <!-- container -->
+		
+	</apex:define>
+
+</apex:composition>
+
+</apex:page>

@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Transaction payments represent payments made to the system.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AccountNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Account number of the payment.  For credit cards, etc. this is the last 4. For things like PO this would be the entire PO number.</description>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccountType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The account type of the payment, e.g. PO, Credit Card, etc.</description>
+        <externalId>false</externalId>
+        <label>Account Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Account of the user that created this transaction payment.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>CC Transaction Payments</relationshipLabel>
+        <relationshipName>TransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Actual transaction amount.  Could be different than the requested amount.</description>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BillTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Account against which this transaction payment applies, e.g. the Bill To of the invoice.</description>
+        <externalId>false</externalId>
+        <label>Bill To</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Bill To Transaction Payments</relationshipLabel>
+        <relationshipName>BillToTransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CCOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>References the order this payment was applied to (optional).</description>
+        <externalId>false</externalId>
+        <label>CC Order</label>
+        <referenceTo>E_Order__c</referenceTo>
+        <relationshipLabel>CC Transaction Payments</relationshipLabel>
+        <relationshipName>TransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CCSubscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The cc subscription that this transaction applies to</description>
+        <externalId>false</externalId>
+        <label>CC Subscription</label>
+        <referenceTo>E_Subscription__c</referenceTo>
+        <relationshipLabel>CC Transaction Payments</relationshipLabel>
+        <relationshipName>TransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Comments associated with the transaction.  These should normally be written when the transaction is created and then never touched.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Contact of the user that created this transaction payment.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>CC Transaction Payments</relationshipLabel>
+        <relationshipName>TransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyISOCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The CloudCraze current for this transaction.</description>
+        <externalId>false</externalId>
+        <label>CurrencyISOCode</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpirationMonth__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expiration month of the payment type, e.g. the Credit Card expiration month.</description>
+        <externalId>false</externalId>
+        <label>Expiration Month</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpirationYear__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expiration year of the payment type, e.g. for Credit Card this would be the expiration year.</description>
+        <externalId>false</externalId>
+        <label>Expiration Year</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InvoiceAppliedFor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Invoice this payment was made for (optional).  In a summary invoice case this is the summary invoice.  For non-summary invoices this will be the same as the InvoiceAppliedTo field.</description>
+        <externalId>false</externalId>
+        <label>Invoice Applied For</label>
+        <referenceTo>E_Invoice__c</referenceTo>
+        <relationshipLabel>CC Transaction Payments For</relationshipLabel>
+        <relationshipName>TransactionPaymentsFor</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>InvoiceAppliedTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Invoice this payment was applied to (optional).  This is the invoice that the payment was applied to.  In a summary invoice case this will be the child invoice the sub-payment was applied to.  For a non-summary case this will be the same as the applied for field.</description>
+        <externalId>false</externalId>
+        <label>Invoice Applied To</label>
+        <referenceTo>E_Invoice__c</referenceTo>
+        <relationshipLabel>CC Transaction Payments To</relationshipLabel>
+        <relationshipName>TransactionPaymentsTo</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentTransactionPayment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>If a transaction payment is made against multiple items, e.g. multiple-invoices, a parent transaction payment may be used to store the core payment data but have child payments that then are used to track individual payment amounts against each individual item.</description>
+        <externalId>false</externalId>
+        <label>Parent Transaction Payment</label>
+        <referenceTo>E_TransactionPayment__c</referenceTo>
+        <relationshipLabel>CC Transaction Payments</relationshipLabel>
+        <relationshipName>ChildTransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PaymentType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Account specific sub-type of the account type, e.g. for Credit Card this would be the card type.</description>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequestAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Requested amount of the transaction.</description>
+        <externalId>false</externalId>
+        <label>Request Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SoldTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Account to which the original invoice or order was applied, e.g. the Sold To of the invoice or the Ship To of the order.</description>
+        <externalId>false</externalId>
+        <label>Sold To</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sold To Transaction Payments (Sold To)</relationshipLabel>
+        <relationshipName>SoldToTransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SourceTransactionPayment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to another transaction payment that was used as the source for this transaction.  E.g. in a AUTH, later CAPTURE scenario the AUTH would be the source transaction payment for the CAPTURE.  This allows the chaining of transactional data.</description>
+        <externalId>false</externalId>
+        <label>Source Transaction Payment</label>
+        <referenceTo>E_TransactionPayment__c</referenceTo>
+        <relationshipLabel>Sourced Transaction Payments</relationshipLabel>
+        <relationshipName>SourcedTransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>StoredPayment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>References the original stored payment, if there is one</description>
+        <externalId>false</externalId>
+        <label>Stored Payment</label>
+        <referenceTo>E_StoredPayment__c</referenceTo>
+        <relationshipLabel>CC Transaction Payments</relationshipLabel>
+        <relationshipName>CC_Transaction_Payments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The storefront associated with this payment.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubAccountNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sub-account number to be used in addition to the account number.</description>
+        <externalId>false</externalId>
+        <label>Sub Account Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Token__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tokenized form of the payment</description>
+        <externalId>false</externalId>
+        <label>Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TransactionCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Code associated with the transaction.  For example, for a credit card this would be the specific transaction returned from a payment.</description>
+        <externalId>false</externalId>
+        <label>Transaction Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TransactionPaymentId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External id used for data loading or other access</description>
+        <externalId>true</externalId>
+        <label>Transaction Payment Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>TransactionSubcode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used when a secondary code is required for the transaction.  For example, if the transaction failed this might contain the error code.</description>
+        <externalId>false</externalId>
+        <label>Transaction Subcode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TransactionTS__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The date/time when the transaction occurred.</description>
+        <externalId>false</externalId>
+        <label>Transaction Timestamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>TransactionType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of the transaction, e.g. for a credit card this might be AUTH, CAPTURE, or AUTH+CAPTURE.  This is provider specific.</description>
+        <externalId>false</externalId>
+        <label>Transaction Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>User that created this transaction payment.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TransactionPayments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VerificationCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Secondary transaction code.</description>
+        <externalId>false</externalId>
+        <label>Verification Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Transaction Payment</label>
+    <nameField>
+        <displayFormat>TP-{0000000000}</displayFormat>
+        <label>CC Transaction Payment Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Transaction Payments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

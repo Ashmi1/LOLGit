@@ -1,0 +1,80 @@
+<apex:page id="CheckOutNew" controller="ccrz.cc_ctrl_CheckoutRD" extensions="ccrz.cc_ctrl_LocaleExtension" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" language="{!userLanguageCode}" cache="false">
+
+    <apex:composition template="{!IF(pageTemplate != null, pageTemplate, 'cc_tmpl_OneColRD')}">
+    	<apex:define name="meta">
+    	    <title><apex:outputText value="{!PageTitle}" /></title>
+            <meta name="description" content="{!HTMLENCODE(metaDescription)}" />
+            <meta name="keywords" content="{!HTMLENCODE(metaKeywords)}" />
+    	</apex:define>
+
+        <apex:define name="body">
+	       <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIB.Enabled')]}" >
+		   		<apex:include pageName="{!widgetConfiguration[LOWER('BIB.PIName')]}" />
+		   </apex:outputPanel>
+
+           <div class="checkoutContent"/>
+
+	       <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIE.Enabled')]}" >
+		   		<apex:include pageName="{!widgetConfiguration[LOWER('BIE.PIName')]}" />
+		   </apex:outputPanel>
+        </apex:define>
+
+        <apex:define name="htmlbodyX">
+            <script>
+                CCRZ.remoteAction.COfetchCart = '{!$RemoteAction.cc_ctrl_CheckoutRD.fetchCart}';
+                CCRZ.remoteAction.COsave = '{!$RemoteAction.cc_ctrl_CheckoutRD.save}';
+                CCRZ.remoteAction.COrefreshPricing = '{!$RemoteAction.cc_ctrl_CheckoutRD.refreshPricing}';
+                CCRZ.remoteAction.COfetchPaymentSettings = '{!$RemoteAction.cc_ctrl_CheckoutRD.fetchPaymentSettings}';
+                CCRZ.remoteAction.COplaceOrder = '{!$RemoteAction.cc_ctrl_CheckoutRD.placeOrder}';
+                CCRZ.remoteAction.COfetchShippingMethods = '{!$RemoteAction.cc_ctrl_CheckoutRD.fetchShippingMethods}';
+                CCRZ.remoteAction.COfetchAvailableDeliveryDates = '{!$RemoteAction.cc_ctrl_CheckoutRD.fetchAvailableDeliveryDates}';
+                CCRZ.remoteAction.COfetchTax = '{!$RemoteAction.cc_ctrl_CheckoutRD.fetchTax}';
+                CCRZ.remoteAction.COfetchAddressBooks = '{!$RemoteAction.cc_ctrl_CheckoutRD.fetchAddressBooks}';
+
+                CCRZ.remoting.remoteBind('cc_ctrl_CheckoutRD',[
+                    {m:'fetchCart',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.fetchCart}'},
+                    {m:'save',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.save}'},
+                    {m:'fetchPaymentSettings',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.fetchPaymentSettings}'},
+                    {m:'placeOrder',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.placeOrder}'},
+                    {m:'fetchCart',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.fetchCart}'},
+                    {m:'fetchShippingMethods',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.fetchShippingMethods}'},
+                    {m:'fetchAvailableDeliveryDates',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.fetchAvailableDeliveryDates}'},
+                    {m:'fetchTax',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.fetchTax}'},
+                    {m:'fetchAddressBooks',r:'{!$RemoteAction.cc_ctrl_CheckoutRD.fetchAddressBooks}'}
+                ]);
+
+            </script>
+            <script>
+                var orderDetails = function(orderId) {
+                    document.location = "{!JSENCODE($Page.OrderConfirmation)}?o=" + orderId + getCSRQueryString();
+                }
+                var productDetails = function(productId) {
+                    document.location = "{!$Page.ProductDetails}?viewState=DetailView&cartID=" + CCRZ.pagevars.currentCartID + "&sku=" + productId+"&{!JSENCODE(CheckOutController.CSRQueryString)}";
+                }
+                var homePage = function() {
+                    document.location = "{!$Page.HomePage}?cartID=" + CCRZ.pagevars.currentCartID + "&{!JSENCODE(CheckOutController.CSRQueryString)}";
+                }
+                var cartDetails = function() {
+                    document.location = "{!$Page.Cart}?cartID=" + CCRZ.pagevars.currentCartID + "&{!JSENCODE(CheckOutController.CSRQueryString)}";
+                }
+            </script>
+
+            <!-- common components -->
+            <c:cc_PageMessagesRD />
+            <c:cc_headerRD ccCtrl="{!CheckOutController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+            <c:cc_topMenuRD ccCtrl="{!CheckOutController}" rendered="{!widgetConfiguration[LOWER('TM.Enabled')]}" />
+            <c:cc_productSearchWidget pCcCtrl="{!CheckOutController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+            <c:cc_MiniCartDetailsRD rendered="{!widgetConfiguration[LOWER('MC.Enabled')]}" />
+            <c:cc_EffectiveAccountSelector rendered="{!widgetConfiguration[LOWER('EFF.Enabled')]}" readOnly="true" />
+
+            <!-- page-specific components -->
+            <c:cc_CommonTemplates />
+            <c:cc_CheckoutUserInfoRD co="{!CheckOutController}" />
+            <c:cc_CheckoutShippingRD co="{!CheckOutController}" />
+            <c:cc_CheckoutReviewRD co="{!CheckOutController}" />
+            <c:cc_CheckoutPaymentNewRD co="{!CheckOutController}" rendered="{!widgetConfiguration[LOWER('CO.NewOrder')] == 'TRUE'}" /> 
+            <c:cc_CheckoutPaymentRD co="{!CheckOutController}" rendered="{!widgetConfiguration[LOWER('CO.NewOrder')] == 'FALSE'}" />
+            <c:cc_CheckoutRD co="{!CheckOutController}" />
+        </apex:define>
+    </apex:composition>
+</apex:page>

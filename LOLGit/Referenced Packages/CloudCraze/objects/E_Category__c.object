@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Product Category detail record</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CategoryID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External Id used for mapping the category to an externally defined entity</description>
+        <externalId>true</externalId>
+        <label>Category ID</label>
+        <length>128</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ChildCategoryCount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Formula - set to the number of child categories within this category</description>
+        <externalId>false</externalId>
+        <label>Child Category Count</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <defaultValue>DATEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The end date for which this category is active. After this date the category will no longer be displayed.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LongDescRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Long description as a rich text field</description>
+        <externalId>false</externalId>
+        <label>LongDescRT</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LongDesc__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Long description of the category, usually containing more formatted marketing content.</description>
+        <externalId>false</externalId>
+        <label>Long Desc</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ParentCategory__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Used when building a category hierarchy. Contains a reference to this same object, pointing to the parent of this entry</description>
+        <externalId>false</externalId>
+        <label>Parent Category</label>
+        <referenceTo>E_Category__c</referenceTo>
+        <relationshipLabel>E_Categories</relationshipLabel>
+        <relationshipName>Categories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Formula - set to the number of products within the category</description>
+        <externalId>false</externalId>
+        <label>Product Count</label>
+        <summaryForeignKey>E_ProductCategory__c.Category__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <defaultValue>500</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used for ordering categories within a parent category</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShortDescRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Short category description as a rich text field.</description>
+        <externalId>false</externalId>
+        <label>ShortDescRT</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ShortDesc__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Short description of the category</description>
+        <externalId>false</externalId>
+        <label>Short Desc</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The start date for which this category is active. This is the first date the category will be displayed.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>CC Category</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>CategoryID__c</columns>
+        <columns>NAME</columns>
+        <columns>ParentCategory__c</columns>
+        <columns>ProductCount__c</columns>
+        <columns>Sequence__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Category Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CC Categories</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>ParentCategory__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ProductCount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Sequence__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ParentCategory__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ProductCount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Sequence__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>ParentCategory__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ProductCount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Sequence__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

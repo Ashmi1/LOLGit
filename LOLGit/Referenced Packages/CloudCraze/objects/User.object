@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CC_CurrencyCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze: Customized Currency field for Orgs which don&apos;t have  Multi-currency feautre.</description>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CompanyType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze: Company Type</description>
+        <externalId>false</externalId>
+        <label>CompanyType</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ISP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Data Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ContactTypeRole__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze: contact type role</description>
+        <externalId>false</externalId>
+        <label>Contact Type Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Researcher/Post Doc</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purchasing Agent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lab Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department Chair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Principal Investigator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tax_Exempt__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze: Determines whether the current user gets qualified for the tax-exempt</description>
+        <externalId>false</externalId>
+        <label>Tax Exempt</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>User_Industry__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze: user industry</description>
+        <externalId>false</externalId>
+        <label>User Industry</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Academic research</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>commercial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM-Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>User_Salutation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze: user salutation</description>
+        <externalId>false</externalId>
+        <label>User Salutation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mr</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mrs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ms</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

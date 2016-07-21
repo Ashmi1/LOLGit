@@ -1,0 +1,25 @@
+<apex:page standardController="Contact" extensions="ccrz.cc_ctrl_CSRFlow">
+
+<apex:form id="storeForm">
+	<apex:pageMessages />
+
+	<apex:pageBlock title="Order on Behalf Options" rendered="{!IF(IsActiveUser, true, false)}"  >
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!forward}" value="Continue" />
+        </apex:pageBlockButtons>
+		<apex:pageBlockSection title="Storefront Info" columns="1">
+			
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel for="storeSelect" value="Select Storefront" />
+				<apex:selectList id="storeSelect" value="{!currentStorefront}" size="1">
+					<apex:selectOptions value="{!storefrontOptionList}" />
+				</apex:selectList>
+			</apex:pageBlockSectionItem>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	<apex:pageBlock title="Order on Behalf Options" rendered="{!IF(IsActiveUser, false, true)}">
+		The contact&nbsp;<apex:outputField value="{!Contact.Name}" />&nbsp;is not a valid portal user. Please select another contact.
+	</apex:pageBlock>
+</apex:form>
+
+</apex:page>

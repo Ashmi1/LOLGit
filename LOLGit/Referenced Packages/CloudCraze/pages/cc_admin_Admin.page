@@ -1,0 +1,484 @@
+<!--
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page controller="ccrz.cc_ctrl_Admin" id="admin-page" extensions="ccrz.cc_ctrl_LocaleExtension" language="{!userLanguageCode}" sidebar="false" action="{!initDownload}" docType="html-5.0" standardStylesheets="false" tabStyle="CloudCraze_Administration__tab">
+
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<head>
+			<link rel="stylesheet" href="{!URLFOR($Resource.CC_Admin_Static, 'css/admin.css')}"/>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+			<style>
+				.slds-tree__item a span{
+					float: left;
+				}
+			</style>
+		</head>
+		<body>
+			<script src="{!URLFOR($Resource.CC_Admin_Static, 'js/admin.js')}"></script>
+
+			<div class="admin">
+
+				<div class="slds-m-around--large slds-grid slds-wrap">
+					<!--
+						Header
+					-->
+
+						<nav class="slds-page-header slds-col slds-size--1-of-1 slds-m-bottom--medium" role="banner">
+							<apex:form id="admin-form">
+								<apex:actionFunction name="globalSettings" action="{!globalSettings}" rerender="sidebar, adminBody"></apex:actionFunction>
+								<apex:actionFunction name="rerenderHeader" rerender="storefront-dropdown"></apex:actionFunction>
+								<apex:outputPanel styleClass="slds-grid" layout="block" id="storefront-dropdown">
+									<div class="slds-col slds-has-flexi-truncate">
+										<div class="slds-media">
+											<div class="slds-media__figure">
+												<div class="logo logo-small"></div>
+											</div>
+											<div class="slds-media__body">
+											 	<p class="slds-text-heading--label">CloudCraze Software LLC</p>
+											 	<div class="slds-grid">
+											 		<div class="solds-col slds-has-flexi-truncate">
+											 			<h1 class="slds-text-heading--medium slds-m-right--small slds-truncate slds-align-middle" title="Administration">Administration</h1>
+											 		</div>
+											 		<div class="slds-col slds-no-flex slds-align-bottom">
+
+											 			<!-- Single button -->
+											 			<div class="slds-button-group btn-group" role="group">
+											 				<button type="button" class="slds-button slds-button--neutral" onclick="globalSettings();">
+											 					<i class="fa fa-cog slds-m-right--x-small"></i>
+											 					Global Settings
+											 				</button>
+											 				<div class="slds-button--last">
+		            											<button class="slds-button slds-button--icon-border-filled dropdown-toggle btn" data-toggle="dropdown" aria-haspopup="true">
+		            												<i class="fa fa-caret-down fa-lg"></i>
+		            											</button>
+		            											<ul class="dropdown-menu">
+												 					<apex:repeat value="{!storefrontOptionList}" var="s">
+												 						<li>
+												 							<apex:commandLink action="{!changeStorefront}" rerender="sidebar, adminBody">
+												 								<apex:param name="currentStorefront" value="{!s.value}" assignTo="{!currentStorefront}" />
+												 								{!s.label}
+												 							</apex:commandLink>
+												 						</li>
+												 					</apex:repeat>
+												 				</ul>
+		            										</div>
+											 			</div>
+												    </div>
+											 	</div>
+											 </div>
+										</div>
+									</div>
+								</apex:outputPanel>
+							</apex:form>
+						</nav>
+						<aside class="slds-col slds-size--1-of-2 slds-medium-size--1-of-6 slds-large-size--3-of-12 slds-card slds-p-around--small">
+							<apex:form >
+								<apex:outputPanel layout="block" id="sidebar">
+									<apex:outputPanel layout="block" styleClass="slds-tree-container" html-role="application" rendered="{!ISNULL(currentStorefront)}">
+										<h4 class="slds-text-heading--label" id="treeheading">Global Settings</h4>
+										<ul class="slds-tree slds-m-top--medium" role="tree" aria-labelledby="Global Settings">
+											<li class="slds-tree__item {!IF(currentTab == 'Welcome', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar" immediate="true">
+													<apex:param name="firstParam" value="Welcome" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-home"></i>
+														Welcome
+													</span>
+												</apex:commandLink>
+											</li>
+											<li class="slds-tree__item {!IF(currentTab == 'DataLoader', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar" immediate="true">
+													<apex:param name="firstParam" value="DataLoader" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-upload"></i>
+														Data Loader
+													</span>
+												</apex:commandLink>
+											</li>
+											<li class="slds-tree__item {!IF(currentTab == 'Application', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar" immediate="true">
+													<apex:param name="firstParam" value="Application" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-cog"></i>
+														Settings
+													</span>
+												</apex:commandLink>
+											</li>
+											<li class="slds-tree__item {!IF(currentTab == 'Indexing', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar" immediate="true">
+													<apex:param name="firstParam" value="Indexing" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-database"></i>
+														Indexing
+													</span>
+												</apex:commandLink>
+											</li>
+											<li class="slds-tree__item {!IF(currentTab == 'ConfigManage', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar" immediate="true">
+													<apex:param name="firstParam" value="ConfigManage" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-wrench"></i>
+														Config Cache Management
+													</span>
+												</apex:commandLink>
+											</li>
+											<li class="slds-tree__item {!IF(currentTab == 'PageKeys', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar" immediate="true">
+													<apex:param name="firstParam" value="PageKeys" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-file-text"></i>
+														Page Keys
+													</span>
+												</apex:commandLink>
+											</li>
+											<li class="slds-tree__item {!IF(currentTab == 'Storefronts', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar" immediate="true">
+													<apex:param name="firstParam" value="Storefronts" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-columns"></i>
+														Storefronts
+													</span>
+												</apex:commandLink>
+											</li>
+											<li class="slds-tree__item {!IF(currentTab == 'Pages', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+													<apex:param name="firstParam" value="Pages" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-file-text"></i>
+														Page Settings
+													</span>
+												</apex:commandLink>
+											</li>
+											<li class="slds-tree__item {!IF(currentTab == 'SettingLoader', 'slds-theme--inverse', '')}" role="treeitem">
+												<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar" immediate="true">
+													<apex:param name="firstParam" value="SettingLoader" assignTo="{!currentTab}" />
+													<span>
+														<i class="fa fa-cogs"></i>
+														Settings Loader
+													</span>
+												</apex:commandLink>
+											</li>
+										</ul>
+									</apex:outputPanel>
+
+									<apex:outputPanel layout="block" styleClass="slds-tree-container" html-role="application" rendered="{!NOT(ISNULL(currentStorefront))}">
+										<h4 class="slds-text-heading--label" id="treeheading">{!currentStorefront} Settings</h4>
+										<ul class="slds-tree" role="tree" aria-labelledby="Storefront Settings">
+											<li class="slds-tree__branch slds-is-open" role="treeitem">
+												<div class="slds-tree__item no-hover">
+													<strong>Settings</strong>
+												</div>
+												<ul class="slds-tree__group slds-nested is-expanded" role="group">
+													<li class="slds-tree__item {!IF(currentTab == 'General', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="General" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-bars"></i>
+																General
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'Localization', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Localization" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-globe"></i>
+																Localization
+															</span>
+														</apex:commandLink>
+													</li>
+												</ul>
+											</li>
+											<li class="slds-tree__branch" role="treeitem">
+												<div class="slds-tree__item slds-m-top--medium no-hover">
+													<strong>Integrations</strong>
+												</div>
+												<ul class="slds-tree__group slds-nested is-expanded" role="group">
+													<li class="slds-tree__item {!IF(currentTab == 'Shipping', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Shipping" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-truck"></i>
+																Shipping
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'Payments', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Payments" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-credit-card"></i>
+																Payments
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'Products', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Products" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-th-large"></i>
+																Products
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'Pricing', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Pricing" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-tag"></i>
+																Pricing
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'InventoryIntegration', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="InventoryIntegration" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-list"></i>
+																Inventory
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'OrdersIntegration', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="OrdersIntegration" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-pie-chart"></i>
+																Orders
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'CartExtension', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="CartExtension" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-shopping-cart"></i>
+																Carts
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'TaxCalculation', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="TaxCalculation" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-money"></i>
+																Tax
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'SSO', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="SSO" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-user"></i>
+																SSO
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'Promotions', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Promotions" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-bullhorn"></i>
+																Promotions
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'ServiceManagement', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="ServiceManagement" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-exchange"></i>
+																Service Management
+															</span>
+														</apex:commandLink>
+													</li>
+												</ul>
+											</li>
+											<li class="slds-tree__branch" role="treeitem">
+												<div class="slds-tree__item slds-m-top--medium no-hover">
+													<strong>Appearance</strong>
+												</div>
+												<ul class="slds-tree__group slds-nested is-expanded" role="group">
+													<li class="slds-tree__item {!IF(currentTab == 'Themes', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Themes" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-paint-brush"></i>
+																Themes
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'Pages', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Pages" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-file-text"></i>
+																Page Settings
+															</span>
+														</apex:commandLink>
+													</li>
+													<li class="slds-tree__item {!IF(currentTab == 'Layouts', 'slds-theme--inverse', '')}" role="treeitem">
+														<apex:commandLink action="{!gotoTab}" html-role="presentation" styleClass="slds-truncate" rerender="adminBody, sidebar">
+															<apex:param name="firstParam" value="Layouts" assignTo="{!currentTab}" />
+															<span>
+																<i class="fa fa-columns"></i>
+																Layouts
+															</span>
+														</apex:commandLink>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</apex:outputPanel>
+									<script>
+										$(".slds-tree__item a").on("click", function(){
+											$(".slds-tree__item a").off("click");
+											$(this).append('<i class="fa fa-spinner fa-pulse fa-lg slds-float--right slds-m-top--small"></i>')
+										});
+									</script>
+								</apex:outputPanel>
+							</apex:form>
+						</aside>
+					<div class="slds-col slds-size--1-of-2 slds-medium-size--5-of-6 slds-large-size--9-of-12 slds-col--padded admin">
+						<apex:outputPanel id="adminBody" styleClass="admin-container animated fadeInRight" layout="block">
+							<!-- CloudCraze Settings -->
+							<apex:form >
+								<c:cc_admin_Welcome store="{!currentStorefront}" rendered="{!IF(currentTab == 'Welcome',true,false)}" />
+								<c:cc_admin_DataLoader rendered="{!IF(currentTab == 'DataLoader',true,false)}" />
+								<c:cc_admin_Application rendered="{!IF(currentTab == 'Application',true,false)}" />
+								<c:cc_admin_Indexing rendered="{!IF(currentTab == 'Indexing',true,false)}" />
+								<c:cc_admin_PageKeys rendered="{!IF(currentTab == 'PageKeys',true,false)}" />
+								<c:cc_admin_ConfigManage rendered="{!IF(currentTab == 'ConfigManage',true,false)}" />
+
+								<c:cc_admin_Storefronts rendered="{!IF(currentTab == 'Storefronts',true,false)}" id="storefronts-component"/>
+
+								<c:cc_admin_General store="{!currentStorefront}" rendered="{!IF(currentTab == 'General',true,false)}" />
+								<c:cc_admin_Localization store="{!currentStorefront}" rendered="{!currentTab == 'Localization'}"/>
+								<c:cc_admin_Shipping store="{!currentStorefront}" rendered="{!IF(currentTab == 'Shipping',true,false)}" />
+								<c:cc_admin_Products store="{!currentStorefront}" rendered="{!IF(currentTab == 'Products',true,false)}" />
+								<c:cc_admin_Pricing store="{!currentStorefront}" rendered="{!IF(currentTab == 'Pricing',true,false)}" />
+								<c:cc_admin_Inventory store="{!currentStorefront}" rendered="{!IF(currentTab == 'InventoryIntegration',true,false)}" />
+								<c:cc_admin_OrderIntegration store="{!currentStorefront}" rendered="{!IF(currentTab == 'OrdersIntegration',true,false)}"/>
+								<c:cc_admin_CartExtension store="{!currentStorefront}" rendered="{!IF(currentTab == 'CartExtension',true,false)}" />
+								<c:cc_admin_tax store="{!currentStorefront}" rendered="{!IF(currentTab == 'TaxCalculation',true,false)}" />
+								<c:cc_admin_SSO store="{!currentStorefront}" rendered="{!IF(currentTab == 'SSO',true,false)}" />
+	        			<c:cc_admin_Promotions store="{!currentStorefront}" rendered="{!IF(currentTab == 'Promotions',true,false)}" />
+	        			<c:cc_admin_ServiceManagement store="{!currentStorefront}" rendered="{!IF(currentTab == 'ServiceManagement',true,false)}" />
+	        			<c:cc_admin_Payments store="{!currentStorefront}" rendered="{!IF(currentTab == 'Payments',true,false)}" />
+
+	        			<c:cc_admin_Themes store="{!currentStorefront}" rendered="{!IF(currentTab == 'Themes',true,false)}" />
+	        			<c:cc_admin_Pages store="{!currentStorefront}" rendered="{!IF(currentTab == 'Pages',true,false)}" />
+	        			<c:cc_admin_Layout store="{!currentStorefront}" rendered="{!IF(currentTab == 'Layouts',true,false)}" />
+							</apex:form>
+							<c:cc_admin_SettingsLoader settingLoaderCtrl="{!settingLoader}" rendered="{!IF(currentTab == 'SettingLoader',true,false)}" />
+						</apex:outputPanel>
+					</div>
+					<!--
+						Modals have to go here
+					-->
+					<c:cc_admin_Modals id="modals"/>
+				</div>
+			<script>
+			jQuery(function($) {
+                'use strict';
+                    $(document).ready(function(){
+
+                    	$.fn.multiselect = function(){
+                    		return this.each(function(){
+			                	var that = $(this)
+	                			var fromList = that.find(".fromList");
+			                	var toList = that.find(".toList");
+
+	                			if(!that.data("multi-select")){
+	                				that.find(".slds-picklist--multi").on("drop", function(evt){
+			                			var target = $(evt.target).hasClass("slds-picklist--multi") ? $(evt.target) : $(evt.target).closest(".slds-picklist--multi");
+			                        	target.children(".slds-picklist__options").append(document.getElementById(evt.originalEvent.dataTransfer.getData("text")));
+			                        	evt.preventDefault();
+			                		});
+			                		that.find(".slds-picklist__options--multi").on("dragover", function(evt){
+			                			if(that.has($(evt.currentTarget)).length > 0 && that.sourceElement.is($(evt.currentTarget)) == false && $(evt.currentTarget).hasClass("slds-picklist__options--multi"))
+			                				evt.preventDefault();
+
+			                		});
+			                		that.find(".slds-picklist__item").on("dragstart", function(evt){
+			                			evt.originalEvent.dataTransfer.setData("text", evt.target.id);
+			                			var container = $(this).parent("ul");
+			                			that.sourceElement = container;
+			                		});
+			                		that.find(".slds-picklist__item").on("click", function(evt){
+			                			var toggleValue = $(this).attr("aria-selected") === 'true';
+
+			                			if(!evt.ctrlKey && !evt.shiftKey){
+			                				that.find(".slds-picklist__item").attr("aria-selected", false);
+			                			}
+			                			$(this).attr("aria-selected", !toggleValue);
+			                		});
+			                		that.find(".select-remove").on("click", function(evt){
+			                			toList.find("li[aria-selected='true']").appendTo(fromList);
+			                		});
+			                		that.find(".select-add").on("click", function(evt){
+			                			fromList.find("li[aria-selected='true']").appendTo(toList);
+			                		})
+
+			                		that.data("multi-select", true);
+
+	                			}
+			                });
+                    	}
+                    	$.fn.getMultiselectValues = function(){
+                    		var vals = new Array();
+            				$.each($(this).find(".toList li span>span"), function(index, obj){
+            					vals.push($(obj).text());
+            				});
+            				return vals;
+                    	}
+
+						document.validate = {
+							isValid : function(element){
+								var valid = true;
+								if(element.val().trim().length == 0){
+									this.flagElement(element);
+									valid = false;
+								}
+								if(!valid){
+									setTimeout(function(){
+										Ladda.stopAll();
+									}, 100)
+
+								}
+
+								return valid;
+							},
+							flagElement : function(element){
+								var container = element.parents(".slds-form-element");
+								container.addClass("slds-has-error slds-is-required");
+								container.find(".slds-form-element__help").show();
+								container.find(".slds-input-has-icon").addClass("slds-input-has-icon--left");
+								container.find(".slds-input-has-icon i").show();
+							}
+						}
+                    });
+
+
+            	});
+
+			</script>
+
+		</div>
+		</body>
+	</html>
+
+
+
+
+
+
+</apex:page>

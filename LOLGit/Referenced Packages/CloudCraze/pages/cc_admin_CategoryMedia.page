@@ -1,0 +1,26 @@
+<apex:page standardController="ccrz__E_CategoryMedia__c" extensions="ccrz.cc_ctrl_LocaleExtension" language="{!userLanguageCode}">
+	<apex:form >
+	<apex:pageBlock id="CategoryMedia" title="Category Media" mode="edit">
+	
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!save}" value="{!$Label.Coupon_Save}"/>
+            <apex:commandButton action="{!Cancel}" value="{!$Label.Coupon_Cancel}"/>             
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection id="CategoryMediaSection" columns="2" title="Category Media">
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.Name}" style="width:90%" />
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.ccrz__Category__c}"/>
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.ccrz__MediaType__c}" style="width:90%" />
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.ccrz__ProductMediaSource__c}" style="width:90%" />
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.ccrz__StaticResourceName__c}" style="width:90%" />
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.ccrz__URI__c}" style="width:90%" />
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.ccrz__FilePath__c}" style="width:90%" />
+        	<apex:SelectList value="{!ccrz__E_CategoryMedia__c.ccrz__Locale__c}" size="1">
+                <apex:selectOptions value="{!LanguageOptionsList}"></apex:selectOptions>
+            </apex:SelectList>
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.ccrz__AltMessage__c}" style="width:90%" />
+        	<apex:inputField value="{!ccrz__E_CategoryMedia__c.ccrz__Sequence__c}" style="width:90%" />
+        </apex:pageBlockSection>
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,346 @@
+<apex:page id="cc_tmpl_Storefront" controller="ccrz.cc_ctrl_StorefrontTemplate" applyHtmlTag="false"
+	docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+
+	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+		<head>
+			<apex:outputPanel layout="none" rendered="{!forceHTTPS}">
+			<script>
+			if (window.location.protocol != "https:"){window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);}        
+			</script>
+			</apex:outputPanel>
+            <apex:include id="hib" pageName="{!headerBeginPage}" rendered="{!useHeaderBegin}" />
+			<script type="text/javascript">
+				var CCRZ = CCRZ || {};
+				CCRZ.devMode = CCRZ.devMode||{!storefront.DevMode__c};
+				CCRZ.logOn = {!logOn};
+			</script>
+
+<!-- START REPLACE -->
+			<c:HeadIncludes />
+<!-- CCRZ-2158
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+			<c:cc_jQueryInclude rendered="{!useIncludes}" />
+
+			<apex:repeat value="{!pageStyles}" var="styleUrl">
+				<link rel="stylesheet"  type="text/css" href="{!styleUrl}" />
+			</apex:repeat>
+			<script type="text/javascript" src="{!URLFOR($Resource.CC_Javascript_Framework, 'js/libs/respond.src.js')}"></script>
+			<apex:repeat value="{!pageJs}" var="jsUrl">
+				<script type="text/javascript"  src="{!jsUrl}"></script>
+			</apex:repeat>
+			<script type="text/javascript" src="{!URLFOR($Resource.CC_Javascript_Framework, 'js/uiproperties.js')}"></script>
+			<script type="text/javascript"  src="{!themeResourcePath}/js/uiproperties.js"></script>
+-->			
+<!-- END REPLACE -->
+
+
+			<c:cc_PageLabelsInclude />
+
+			<apex:insert name="meta" />
+            <apex:include id="hie" pageName="{!headerEndPage}" rendered="{!useHeaderEnd}" />
+		</head>
+
+		<body>
+            <apex:include pageName="{!htmlBodyBeginPage}" rendered="{!useHTMLBodyBegin}" />
+			<!-- Required RD variables -->
+			<script>
+				var hasCookieId = false;
+				//CC event aggregator to channel events from multiple objects into a single object to
+				//simplify registration for clients.
+				CCRZ.pubSub = _.extend({}, Backbone.Events);
+				CCRZ.pagevars.storefrontName = "{!JSENCODE(store)}";
+				CCRZ.pagevars.themeBaseURL = "{!themeResourcePath}/";
+
+				CCRZ.pagevars.isGuest = {!ISPICKVAL($User.UserType, 'Guest')};
+				//CCRZ.pagevars.pageLabels = {!PageLabelMapRD};
+				CCRZ.pagevars.pageConfig = _.extend({!PageConfigMapRD},{
+					get: function(srchVar){
+						return (this[(srchVar||'').toLowerCase()]||'');
+					},
+					isTrue: function(srchVar){
+						var val = this.get(srchVar);
+						return (true===val)||('true'===val.toLowerCase());
+					}
+				});
+				//CCRZ-2214
+				CCRZ.pagevars.queryParams = function(){
+				    var r = {};
+					if(location.search){
+					    var s = location.search.slice(1).split('&');
+					    var i;
+					    for(i=0;i<s.length;i++){
+					    	var p = s[i].split('=');
+					    	var n = p[0];
+					    	var v = decodeURIComponent(p[1] || '');
+					    	if(r[n]){
+					    		if(_.isArray(r[n])){
+					    			r[n].push(v);
+					    		}else{
+					    			r[n] = [r[n],v];
+					    		}
+					    	}else{
+					    		r[n] = v;
+					    	}
+					    }
+					}
+					return r;
+				}();
+				
+				CCRZ.reloadCurrentPage = function() {
+					
+					var shortURL = window.location.href
+					var reloadLocation = shortURL;
+					//check for an existing cart id in the url (also make sure to resolve ID vs Id by forcing to match)
+					var checkCartId = shortURL.replace('cartID=','cartId=').split('cartId=');
+
+					//used to parse the parameters after the cartId
+					var paramCartId = null;
+					var paramEnd = null
+					
+					//check if we have any existing cartID
+					if(checkCartId.length > 1){
+						//we have an existing cart ID, check if its blank
+						var paramsString = checkCartId[1];
+						//ensure that our url ends with an & to make future parsing easier
+						if(!paramsString.endsWith('&')){
+							paramsString = paramsString + '&';
+						}
+						
+						//break up the url on the first parameter from cart id
+						paramCartId = paramsString.substr(0,paramsString.indexOf('&'));
+						paramEnd = paramsString.substr(paramsString.indexOf('&')+1);
+						//check if there are any params after the cart Id
+						if(!paramEnd){
+							reloadLocation = checkCartId[0] + "cartId="+ CCRZ.pagevars.currentCartID + '&reloaded=true';
+						}else{
+							//if there are, then append them afterwards
+							reloadLocation = checkCartId[0] + "cartId="+ CCRZ.pagevars.currentCartID + '&reloaded=true&' + paramEnd;
+						}
+
+					}else{
+						//no previous existing cartID param, so add it
+						
+						//make sure the url properly inserts a ? if one is missing..
+						if(shortURL.indexOf('?') >= 0){
+							reloadLocation = shortURL+"&cartId=" + CCRZ.pagevars.currentCartID+"&reloaded=true";
+						}else{
+							reloadLocation = shortURL+"?cartId=" + CCRZ.pagevars.currentCartID+"&reloaded=true";
+						}
+					}
+
+					CCRZ.console.log('reload url is: '+reloadLocation);
+					document.location = reloadLocation;
+				};
+				
+				CCRZ.pagevars.currentCartID = '{!currentCartID}';
+				//first check if the page var is enabled)
+				if(CCRZ.pagevars.queryParams.reloaded){
+					//check if we have a blank current cart (if we do it means that either a bad cart id 
+					//came from cookie or url, and doesnt have a valid cart (not in correct status, invalid number, no number))
+					if(!CCRZ.pagevars.currentCartID){
+						//if this is the case, then we need to remove the url param, as well as delete the original cookie
+						//delete the cookie by setting value null and date to past
+						CCRZ.setCookieWithPath('apex__currCartId', null, -1, "/{!$Site.CurrentSiteUrl}");
+
+						
+					}
+				}else{
+					//this wasnt reloaded, so try to load the page again if it meets the criteria
+					if(CCRZ.pagevars.pageConfig.isTrue('C.pgRdCke') && CCRZ.pagevars.isGuest){
+						if(!CCRZ.pagevars.currentCartID){
+							//read the cookie if it exists
+							var cookieId = CCRZ.getCookie('apex__currCartId');
+							if(cookieId){
+								CCRZ.console.log('reloading page with cart id from cookie');
+								CCRZ.pagevars.currentCartID = cookieId;
+								//set the url param, and then reload page
+								CCRZ.reloadCurrentPage();
+							}else{
+								CCRZ.console.log('did not find a cart id cookie');
+							}
+						
+						}else{
+							CCRZ.console.log('currentCartID was not null: ' + CCRZ.pagevars.currentCartID);
+						}
+					}else{
+						CCRZ.console.log('not a guest or read cookie disabled');
+					}
+				}	
+				CCRZ.userIsoCode = "{!currencyIsoCode}";
+
+				CCRZ.pagevars.storeSettings = {!storefrontSettingRD};
+				CCRZ.pagevars.staticResourceMap = {!StaticResourceMapRD};
+				CCRZ.pagevars.namespace = "{!namespace}";
+				CCRZ.pagevars.storeName = "{!JSENCODE($CurrentPage.parameters.store)}";
+				CCRZ.pagevars.portalUserId = "{!JSENCODE($CurrentPage.parameters.portalUser)}";
+				CCRZ.pagevars.effAccountId = '{!JSENCODE(effectiveAccountId)}';
+				CCRZ.pagevars.priceGroupId = '{!JSENCODE(priceGroupId)}';
+				CCRZ.pagevars.currSiteURL = "{!$Site.CurrentSiteUrl}";
+				var getCSRQueryString = function() {
+					var csrQueryString = '';
+					if(CCRZ.pagevars.portalUserId != null) {
+						csrQueryString = '&isCSRFlow=true&portalUser=' + CCRZ.pagevars.portalUserId;
+					}
+					if(CCRZ.pagevars.storeName != null) {
+						csrQueryString += '&store=' + CCRZ.pagevars.storeName;
+					}
+					if(CCRZ.pagevars.effAccountId) {
+						csrQueryString += '&effectiveAccount=' + CCRZ.pagevars.effAccountId;
+					}
+					if(CCRZ.pagevars.priceGroupId) {
+						csrQueryString += '&grid=' + CCRZ.pagevars.priceGroupId;
+					}
+					return csrQueryString;
+				}
+
+				CCRZ.pagevars.currencyData = _.extend({!UserCurrencyCodeJSON}, {
+					symbol: {comma:',', dot:'.', ws:' ', sq:"'"},
+					initialize : function(){
+						this.charDecimalPoint = this.symbol[this.charDecimalPoint];
+						this.charThousandsPoint = this.symbol[this.charThousandsPoint];
+						var idx1 = this.displayFormat.indexOf('{0}');
+						var idx2 = this.displayFormat.indexOf('{1}');
+						this.prefix = true;
+						if(idx1 != -1 && idx2 != -1 && idx2 < idx1) {
+							this.prefix = false;
+						}
+						return this;
+					}
+				}).initialize();
+
+				CCRZ.pagevars.userLocale = "{!userLocale}";
+				CCRZ.pagevars.currentPageName = "{!$CurrentPage.Name}";
+				CCRZ.pagevars.currentPageURL = "{!$CurrentPage.URL}";
+
+
+
+				CCRZ.pagevars.linkOverrideMap = {!linkOverrideMap};
+				
+
+				CCRZ.pagevars.remoteContext = {
+					storefront:          CCRZ.pagevars.storefrontName,
+					portalUserId:        CCRZ.pagevars.portalUserId,
+					effAccountId:        CCRZ.pagevars.effAccountId,
+					priceGroupId:        CCRZ.pagevars.priceGroupId,
+					currentCartId:       CCRZ.pagevars.currentCartID,
+					userIsoCode:         CCRZ.userIsoCode ,
+					userLocale:          CCRZ.pagevars.userLocale,
+					currentPageName:     CCRZ.pagevars.currentPageName,
+					currentPageURL:      CCRZ.pagevars.currentPageURL,
+					queryParams:         CCRZ.pagevars.queryParams
+				};
+
+				CCRZ.homePage = function() {
+                    document.location = "{!JSENCODE($Page.HomePage)}?cartID=" + CCRZ.pagevars.currentCartID + getCSRQueryString();
+                };
+
+
+				CCRZ.pubSub.on('cartChange', function(cartId) {
+						CCRZ.console.log('got cart change!');
+						CCRZ.pagevars.currentCartID = cartId;
+						//if the option to set cookies is enabled, then set the cookie
+						if(CCRZ.pagevars.pageConfig.isTrue('C.crtCke') && CCRZ.pagevars.isGuest){
+							CCRZ.console.log('setting session cookie');
+							CCRZ.setCookieWithPath('apex__currCartId', cartId, null, "{!$Site.CurrentSiteUrl}");
+						}else{
+							CCRZ.console.log('set cart cookie disabled');
+						}
+						CCRZ.console.log('done with cart change');
+				}, this);	
+			</script>
+
+			<apex:form id="phoneLoginForm" styleClass="phoneLoginForm" forceSSL="true">
+				<apex:actionFunction name="login" action="{!login}"/>
+
+				<apex:inputHidden id="hdnUsername" value="{!username}" />
+				<apex:inputHidden id="hdnPassword" value="{!password}" />
+
+			</apex:form>
+			<!-- Phone Layout -->
+			<!-- <c:temp_cartjs /> -->
+<!-- CCRZ-2158
+			<c:cc_PhoneLayout />
+-->			
+			<apex:outputPanel layout="none" rendered="{!if(pagePhoneTemplate == 'cc_EmptyPage', false, true)}">
+                <apex:include pageName="{!pagePhoneTemplate}" rendered="{!if(pagePhoneTemplate == 'cc_EmptyPage', false, true)}"/>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!if(pagePhoneTemplate == 'cc_EmptyPage', true, false)}">
+				<div class="container visible-phone phoneLayout">
+
+					<div class="loadingContainer ">
+						<div class="loadingOverlay overlay"></div>
+						<div class="circleContainer overlay">
+							<div class="circle"></div>
+							<div class="circle1"></div>
+						</div>
+					</div>
+
+					<div class="header_menu" id="menuHeader"></div>
+					<div class="phone_header" id="accountHeader"></div>
+					<div class="container-fluid">
+						<div class="row-fluid">
+							<div class="span3">
+								<div class="left_column" id="productSearch"></div>
+								<div id="breadcrumb"></div>
+							</div>
+						</div>
+					</div>
+					<div class="span6">
+						<div class="center_column phone_center_column">
+							<div class="phone_center_top"></div>
+							<apex:insert name="phonetop" />
+							<div class="phone_center_mid"></div>
+							<div class="phone_center_bot"></div>
+						</div>
+					</div>
+					<div class="row-fluid clear">
+						<div class="span12">
+							<div class="footer footerPhone"></div>
+						</div>
+					</div>
+				</div>
+			</apex:outputPanel>
+
+			<!-- Desktop Layout -->
+			<apex:outputPanel layout="none" rendered="{!if(pageDesktopTemplate == 'cc_EmptyPage', false, true)}">
+				<apex:include pageName="{!pageDesktopTemplate}" rendered="{!if(pageDesktopTemplate == 'cc_EmptyPage', false, true)}"/>
+			</apex:outputPanel>
+			<apex:outputPanel layout="none" rendered="{!if(pageDesktopTemplate == 'cc_EmptyPage', true, false)}">
+				<div class="container hidden-phone deskLayout">
+					<header>
+						<div class="row-fluid headerRow">
+							<div class="span12 header">
+								<apex:insert name="header" />
+							</div>
+						</div>
+						<div class="menu_container">
+							<apex:insert name="menu" />
+						</div>
+					</header>
+					<div class="home_slider">
+						<apex:insert name="splash" />
+						<div id="breadcrumb_desktop_container">
+							<apex:insert name="breadcrumb" />
+						</div>
+					</div>
+					<div class="container-fluid contentBody">
+						<apex:insert name="htmlbody" />
+					</div>
+					<footer>
+						<div class="row-fluid clear footerRow">
+							<div class="span12 footerBrowser">
+								<apex:include pageName="{!storefrontFooter}"/>
+							</div>
+						</div>
+					</footer>
+				</div>
+			</apex:outputPanel>
+
+			<!-- Use to include RD components -->
+			<apex:insert name="htmlbodyX" />
+            <apex:include pageName="{!htmlBodyEndPage}" rendered="{!useHTMLBodyEnd}" />
+            <c:ccLog />
+		</body>
+	</html>
+</apex:page>

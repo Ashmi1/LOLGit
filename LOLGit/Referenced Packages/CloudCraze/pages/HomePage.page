@@ -1,0 +1,114 @@
+<!--
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page id="HomePage" controller="ccrz.cc_ctrl_HomePage" extensions="ccrz.cc_ctrl_LocaleExtension" applyHtmlTag="false"
+    docType="html-5.0" sidebar="false" showHeader="false" cache="{!widgetConfiguration[LOWER('HP.cache')]}" standardStylesheets="false" language="{!userLanguageCode}" >
+
+    <apex:composition template="{!IF(pageTemplate != null, pageTemplate, 'cc_tmpl_ThreeColRD')}">
+        <apex:define name="meta">
+            <title><apex:outputText value="{!PageTitle}" /></title>
+            <meta name="description" content="{!HTMLENCODE(metaDescription)}" />
+            <meta name="keywords" content="{!HTMLENCODE(metaKeywords)}" />
+        </apex:define>
+
+        <apex:define name="splash">
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('SPL.Enabled')]}">
+                <apex:outputPanel layout="none" rendered="{!IF(OR(pageTemplate == null, pageTemplate == 'cc_tmpl_ThreeColRD', widgetConfiguration[LOWER('SPL.hptop')] == 'TRUE'), true, false)}" >
+                    <apex:outputPanel layout="none" rendered="{!IF(widgetConfiguration[LOWER('SPL.UsePI')] == 'TRUE', TRUE, FALSE)}" >
+    		            <apex:include pageName="{!widgetConfiguration[LOWER('SPL.PIName')]}" />
+    		        </apex:outputPanel>
+    		        <apex:outputPanel layout="none" rendered="{!IF(widgetConfiguration[LOWER('SPL.UsePI')] == 'FALSE', TRUE, FALSE)}" >
+    	                <c:cc_Splash divId="myCarousel"/>
+    	            </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:outputPanel>            
+        </apex:define>
+
+        <apex:define name="WidgetBoxL">
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('CWL.Enabled')]}" >
+                <apex:include pageName="{!widgetConfiguration[LOWER('CWL.PIName')]}" />
+            </apex:outputPanel>
+        </apex:define>
+
+        <apex:define name="SocialFacebookBox">
+            <c:cc_SocialFacebookLikeBox ccCtrl="{!HomePageController}" />
+        </apex:define>
+
+        <apex:define name="MiniQuickOrderBox">
+            <div class="quick-order"></div>
+        </apex:define>
+
+        <apex:define name="body">
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('SPL.Enabled')]}">
+                <apex:outputPanel layout="none" rendered="{!IF(OR(pageTemplate == null, pageTemplate == 'cc_tmpl_ThreeColRD', widgetConfiguration[LOWER('SPL.hptop')] == 'TRUE'), false, true)}" >
+    		    	<apex:outputPanel layout="none" rendered="{!IF(widgetConfiguration[LOWER('SPL.UsePI')] == 'TRUE', TRUE, FALSE)}" >
+    		            <apex:include pageName="{!widgetConfiguration[LOWER('SPL.PIName')]}" />
+    		        </apex:outputPanel>
+    		        <apex:outputPanel layout="none" rendered="{!IF(widgetConfiguration[LOWER('SPL.UsePI')] == 'FALSE', TRUE, FALSE)}" >
+    	                <c:cc_Splash divId="myCarousel"/>
+    	            </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIB.Enabled')]}" >
+                <apex:include pageName="{!widgetConfiguration[LOWER('BIB.PIName')]}" />
+            </apex:outputPanel>
+            <div class="cart-template"></div>
+            <div class="featured-prod"></div>
+
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIE.Enabled')]}" >
+                <apex:include pageName="{!widgetConfiguration[LOWER('BIE.PIName')]}" />
+            </apex:outputPanel>
+        </apex:define>
+
+        <apex:define name="phonetop">
+            <div class="phone-eff"></div>
+            <div class="home-template"></div>
+        </apex:define>
+
+        <apex:define name="MiniCartBox">
+            <div class="minicart"></div>
+        </apex:define>
+
+        <apex:define name="htmlbodyX">
+            <script>
+                var showCategories = true;
+                var productList = function(categoryId) {
+                    document.location = "{!$Page.Products}?viewState=ListView&cartID=" + CCRZ.pagevars.currentCartID + "&categoryId=" + categoryId+"&{!JSENCODE(HomepageController.CSRQueryString)}";
+                }
+                var productDetails = function(productId) {
+                    document.location = "{!$Page.ProductDetails}?viewState=DetailView&cartID=" + CCRZ.pagevars.currentCartID + "&sku=" + productId+"&{!JSENCODE(HomepageController.CSRQueryString)}";
+                }
+                var cartDetails = function() {
+                    document.location = "{!$Page.Cart}?cartID=" + CCRZ.pagevars.currentCartID + "&{!JSENCODE(HomepageController.CSRQueryString)}";
+                }
+                jQuery(document).ready(function() {
+                    jQuery('.carousel-inner .item:first-child').addClass('active');
+                    jQuery('.carousel').carousel();
+                });
+            </script>
+
+            <!-- common components -->
+            <c:cc_PageMessagesRD />
+            <c:cc_headerRD ccCtrl="{!HomePageController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+            <c:cc_topMenuRD ccCtrl="{!HomePageController}" rendered="{!widgetConfiguration[LOWER('TM.Enabled')]}" />
+            <c:cc_CategoryTreeRD rendered="{!widgetConfiguration[LOWER('CT.Enabled')]}" />
+            <c:cc_WishlistPicker rendered="{!widgetConfiguration[LOWER('WL.PkrOn')]}" />
+            <c:cc_MiniCartDetailsRD rendered="{!widgetConfiguration[LOWER('MC.Enabled')]}" /> 
+            <c:cc_MiniQuickOrderRD rendered="{!widgetConfiguration[LOWER('QO.Enabled')]}" />
+            <c:cc_ProductSearchWidgetNavRD ccCtrl="{!HomePageController}" rendered="{!widgetConfiguration[LOWER('SB.Enabled')]}" />
+            <c:cc_productSearchWidget pCcCtrl="{!HomePageController}" rendered="{!IF(OR(widgetConfiguration[LOWER('H.Enabled')] == 'TRUE', widgetConfiguration[LOWER('SB.Enabled')] == 'TRUE'), true, false)}" />
+            <c:cc_SpotlightProductsRD RelatedProducts="false" rendered="{!IF(OR(widgetConfiguration[LOWER('FP.Enabled')] == 'TRUE', widgetConfiguration[LOWER('SL.Enabled')] == 'TRUE'), true, false)}" />
+            <c:cc_promoRD pageLoc="Landing Page" rendered="{!widgetConfiguration[LOWER('PM.Enabled')]}" />
+            <c:cc_TemplateEntryRD rendered="{!widgetConfiguration[LOWER('WL.Enabled')]}" />
+            <c:cc_EffectiveAccountSelector rendered="{!widgetConfiguration[LOWER('EFF.Enabled')]}" readOnly="false" />
+        </apex:define>
+    </apex:composition>
+
+</apex:page>

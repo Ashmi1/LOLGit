@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object used to hold product relationships.  These relationships tie various products together, used for cross-selling or up-selling.  Also used to associated similar products, accessories for a product, and other types of custom defined relationships between varying products within the application.  This typically are displayed on the product detail and shopping cart pages.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whether or not this relationship is active</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <defaultValue>DATEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The last date that this relationship will be available/active</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Primary product</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Related Products (ProductID)</relationshipLabel>
+        <relationshipName>E_RelatedProducts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>RelatedProductGroup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Grouping/categorization of the relationship</description>
+        <externalId>false</externalId>
+        <label>Related Product Group</label>
+        <referenceTo>E_RelatedProductGroup__c</referenceTo>
+        <relationshipLabel>CC Related Products</relationshipLabel>
+        <relationshipName>E_RelatedProducts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RelatedProductId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External reference Id</description>
+        <externalId>true</externalId>
+        <label>Related Product Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>RelatedProductType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates how the related product ties to the primary product. Includes: Competitive, Related, CrossSell, UpSell, Complementary, Accessories, but can contain custom values.</description>
+        <externalId>false</externalId>
+        <label>Related Product Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Competitive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Related</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RequiredItem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CrossSell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UpSell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complementary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RelatedProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The related product</description>
+        <externalId>false</externalId>
+        <label>Related Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Related To (RelatedProductID)</relationshipLabel>
+        <relationshipName>E_RelatedProducts1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RelationshipDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Describes the relationship and any additional contextual information that might be relevant.</description>
+        <externalId>false</externalId>
+        <label>Relationship Description</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <defaultValue>500</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Ordering of the related products when displayed as a list.</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShortDesc__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The short description of this relationship.</description>
+        <externalId>false</externalId>
+        <label>ShortDesc</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The first date that this relationship will be available/active</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>CC Related Product</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>RelatedProductType__c</columns>
+        <columns>Product__c</columns>
+        <columns>RelatedProduct__c</columns>
+        <columns>Sequence__c</columns>
+        <columns>Enabled__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>RelatedAutoNumber</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Related Products</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>RelatedProductType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RelatedProduct__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Sequence__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Enabled__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>RelatedProduct__c</searchFilterFields>
+        <searchFilterFields>Product__c</searchFilterFields>
+        <searchFilterFields>Sequence__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

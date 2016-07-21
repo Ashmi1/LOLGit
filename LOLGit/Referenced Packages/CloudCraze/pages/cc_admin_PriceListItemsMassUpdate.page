@@ -1,0 +1,37 @@
+<apex:page standardController="ccrz__E_PriceList__c"
+	extensions="ccrz.cc_ctrl_PriceList">
+
+	<apex:form rendered="{!canEditPriceListItems}">
+		<apex:PageBlock title="Edits" mode="edit">
+		<apex:pageMessages ></apex:pageMessages>
+			<apex:pageblocksection >
+				<apex:pageblocksectionitem >
+					<apex:outputLabel value="Amount" for="amount">
+					</apex:outputLabel>
+					<apex:inputText id="amount" value="{!amount}"></apex:inputText>
+				</apex:pageblocksectionitem>
+
+				<apex:pageblocksectionitem >
+					<apex:outputLabel value="Change Code" for="code"> </apex:outputLabel>
+						<apex:selectList id="code" value="{!percentAbsolute}" size="1">
+							<apex:selectOptions value="{!percentAbsoluteOptions}" />
+						</apex:selectList>
+				</apex:pageblocksectionitem>
+
+				<apex:pageblocksectionitem >
+					<apex:outputLabel value="Change Type" for="type"> </apex:outputLabel>
+						<apex:selectList id="type" value="{!addSubtract}" size="1">
+							<apex:selectOptions value="{!addSubOptions}" />
+						</apex:selectList>
+				</apex:pageblocksectionitem>
+			</apex:pageblocksection>
+			
+				<apex:pageBlockButtons >
+		            <apex:commandButton action="{!applyChanges}" value="Save Changes"/>
+		            <apex:commandButton action="{!cancelChanges}" value="Cancel Changes"/>             
+		        </apex:pageBlockButtons>
+		        
+		</apex:PageBlock>
+	</apex:form>
+
+</apex:page>

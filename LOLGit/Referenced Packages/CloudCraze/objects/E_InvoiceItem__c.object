@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Represents invoice detail and reference to other objects.  The invoice item should be a running record of the invoice.  The initial set of data will be the initial detail of the invoice.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CCOrderItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Specific order item to which this invoice applies (optional)</description>
+        <externalId>false</externalId>
+        <label>CC Order Item</label>
+        <referenceTo>E_OrderItem__c</referenceTo>
+        <relationshipLabel>CC Invoice Items</relationshipLabel>
+        <relationshipName>CCInvoiceItems</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CCOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Order to which this invoice item applies (optional)</description>
+        <externalId>false</externalId>
+        <label>CC Order</label>
+        <referenceTo>E_Order__c</referenceTo>
+        <relationshipLabel>CC Invoice Items</relationshipLabel>
+        <relationshipName>CCInvoiceItems</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Comments about this line item.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>InvoiceItemId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External identifier.</description>
+        <externalId>true</externalId>
+        <label>Invoice Item Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The invoice this item is a child of</description>
+        <externalId>false</externalId>
+        <label>Invoice</label>
+        <referenceTo>E_Invoice__c</referenceTo>
+        <relationshipLabel>CC Invoice Items</relationshipLabel>
+        <relationshipName>InvoiceItems</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>OriginalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The original amount of the invoice item. Once set this should not be changed. Could be negative or positive.</description>
+        <externalId>false</externalId>
+        <label>Original Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Display order sequence for the item.</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>E.g. Open, Closed.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>E.g. Detail, Comment, Payment.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Invoice Item</label>
+    <nameField>
+        <displayFormat>II-{0000000000}</displayFormat>
+        <label>CC Invoice Item Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Invoice Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

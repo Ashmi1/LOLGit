@@ -1,0 +1,49 @@
+<apex:page id="cc_tmpl_Catalog_2col" docType="html-5.0" sidebar="false" showHeader="false" controller="ccrz.cc_ctrl_StorefrontTemplate" standardStylesheets="false">
+<apex:composition template="ccrz__cc_tmpl_Storefront">
+
+    <apex:define name="htmlhead">
+        <apex:insert name="meta" />
+    </apex:define>
+
+    <apex:define name="htmlbody">
+        <div id="container">
+            <apex:insert name="header" />
+            <apex:insert name="splash" />
+            <apex:insert name="breadcrumb" />
+
+            <div class="content_container">
+                <div class="left_column">
+                    <apex:insert name="MiniCartBox" />
+                    <apex:insert name="CategoryTreeBox" />
+                    <apex:insert name="SocialShareBox" />
+                    <apex:insert name="MiniQuickOrderBox" />
+                    <apex:insert name="MiniWishListBox" />
+                    <apex:insert name="SocialFacebookBox" />
+                    <apex:insert name="PromotionsBox" />
+                    <apex:insert name="AdBox" />
+                    <apex:insert name="AdBox2" />
+                    <apex:insert name="RightNavX" />
+                    <apex:insert name="ContactUs" />
+                </div>
+
+                <div class="right_column_large">
+                    <div class="main_content_large_right_container">
+	                    <apex:insert name="Banner" />
+	                    <apex:insert name="body" />
+	                    <apex:insert name="UpsellProducts" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <!-- <c:cc_SiteFooter /> -->
+                <apex:include pageName="{!storefrontFooter}"/>
+            </div>
+
+            <div class="clear"></div>
+        </div> <!-- container -->
+        <apex:insert name="htmlbodyX" />
+    </apex:define>
+
+</apex:composition>
+</apex:page>

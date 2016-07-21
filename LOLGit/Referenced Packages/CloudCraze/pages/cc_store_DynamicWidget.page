@@ -1,0 +1,17 @@
+<apex:page id="cc_store_DynamicWidget" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+	<style>
+		.dbs_body {
+			padding: 10px;
+			margin-bottom: 10px;
+			background: #fff;
+			font-size: 12px;
+			color: #525252;
+		}
+	</style>
+	<div class="dbs_container">
+		<h2 class="title">Dynamic Widget</h2>
+		<div class="dbs_body">
+			<p/>Dynamic Widget Place Holder<p/>
+		</div>
+	</div>
+</apex:page>

@@ -1,0 +1,105 @@
+<apex:component controller="CartPageController_Piyali">
+ <script id="CartDetail-ActionTotals-View-Piyali" type="text/template">
+        <ul class="shopping_cart">
+                       <li><button class="btn slim" name="" type="button" onclick="onClickOfCaseBtn();">Request Credit</button></li>
+             
+        
+
+
+            <li><button class="btn slim continueShoppingButton" name="" type="button" >{{pageLabelMap 'CartInc_ContinueShopping'}}</button></li>
+            {{#if {!ISPICKVAL($User.UserType, 'Guest')} }}
+            {{ else }}
+                {{#ifStoreSetting 'AutoCalcPriceAdjust__c'}}
+                {{else}}
+                    <li><button class="btn slim getExtPricingButton" type="button" >{{pageLabelMap 'CartInc_ApplyDiscounts'}}</button></li>
+                {{/ifStoreSetting}}
+                <li><button class="btn slim" data-toggle="modal" data-target="#wishMod" name="" type="button" >{{pageLabelMap 'Create_Cart_Wishlist'}}</button></li>
+            {{/if}}
+            
+                                    
+
+
+            <li><button class="btn slim updateCartButton" name="" type="button" >{{pageLabelMap 'CartInc_Update'}}</button></li>
+            {{#if {!ISPICKVAL($User.UserType, 'Guest')} }}
+                {{#ifDisplay 'C.EmailAnon'}}
+                    <li><a href="#emailModal" id="emailCartLink" data-toggle="modal"><button class="btn slim remove" type="button" >{{pageLabelMap 'CartOrderEmailer_Header'}}</button></a></li>
+                {{/ifDisplay}}
+            {{else}}
+                {{#ifDisplay 'C.EnableEmailCart'}}
+                    <li><a href="#emailModal" id="emailCartLink" data-toggle="modal"><button class="btn slim remove" type="button" >{{pageLabelMap 'CartOrderEmailer_Header'}}</button></a></li>
+                {{/ifDisplay}}
+            {{/if}}
+            <!-- rfq button -->
+            {{#if {!ISPICKVAL($User.UserType, 'Guest')} }}
+                {{#ifDisplay 'rfq.GuestUser'}}
+                    <li><a href="#rfqModal" id="rfqLink" data-toggle="modal"><button class="btn slim remove" type="button" >{{pageLabelMap 'CartRFQForm_Header'}}</button></a></li>
+                {{/ifDisplay}}
+            {{else}}
+                {{#ifDisplay 'rfq.LoggedIn'}}
+                    <li><a href="#rfqModal" id="rfqLink" data-toggle="modal"><button class="btn slim remove" type="button" >{{pageLabelMap 'CartRFQForm_Header'}}</button></a></li>
+                {{/ifDisplay}}
+            {{/if}}
+
+            <!-- rfq button -->
+        </ul>
+        <ul class="checkout clear_right">
+            {{#if subTotal}}
+                <li class="grand_total">{{pageLabelMap 'CartInc_Subtotal'}}: {{{price subTotal}}}</li>
+            {{/if}}
+            {{#if this.totalInfo}}
+                <li class="cart_total_amount">{{this.totalInfo}}</li>
+            {{/if}}
+            <li class="totalsmessagingSection"></li>
+            {{#if this.cartItems}}
+                {{#ifNotEquals this.cartItems.length 0}}
+                    {{#if this.allowCheckout}}
+                        {{#ifEquals this.preventCheckout false}}
+                            <li>
+                                <button type="button" class="btn btn-primary wide checkOutBtn">{{pageLabelMap 'CartInc_Checkout'}}</button>
+                            </li>
+                        {{/ifEquals}}
+                    {{/if}}
+                {{/ifNotEquals}}
+            {{/if}}
+        </ul>
+        
+        {{#ifStoreSetting 'Display_Cart_Coupon__c'}}
+            <div class="discount_code_container">
+            {{#if this.hasCoupon}}
+                <form id="couponClearForm">
+                <h2 class="title">{{pageLabelMap 'CartInc_discountCodes'}}</h2>
+                <div class="discount_code">
+                        <p>{{pageLabelMap 'CartInc_AppliedCoupon'}} {{this.couponName}}</p>
+                        <p><button id="clearCouponBtn" type="button">{{pageLabelMap 'CartInc_ClearCoupon'}}</button></p>
+                    </div>
+                </form>
+            {{else}}
+                <form id="couponAddForm">
+                    <h2 class="title">{{pageLabelMap 'CartInc_discountCodes'}}</h2>
+                    <div class="discount_code">
+                        <p id="couponAddError"></p>
+                    <p>{{pageLabelMap 'CartInc_EntercouponCode'}}</p>
+                        <p><input type="text" id="addCouponId" name="couponId" /></p>
+                        <div class="couponMessagingSection-Error"></div>
+                        <p><button id="addCouponBtn" type="button">{{pageLabelMap 'CartInc_ApplyCoupon'}}</button></p>
+                </div>
+                </form>
+            {{/if}}
+            </div>
+        {{/ifStoreSetting}}
+    </script>
+    <script>
+    CCRZ.uiProperties.CartDetailView.partials.actionsTotals='#CartDetail-ActionTotals-View-Piyali';
+    </script>
+    
+    <script>
+    function onClickOfCaseBtn(){
+            var remoteCall = _.extend(CCRZ.RemoteInvocation,{className:'CartPageController_Piyali'}); 
+            remoteCall.invokeCtx('createCreditCase',  CCRZ.pagevars.currentCartID,  
+            function(resp){  
+                alert('Hello Piyali');
+                },  {buffer:false,escape:false,nmsp:false} );
+
+        }    
+   </script>
+</apex:component>

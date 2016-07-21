@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This is a subscription, the record of purchased subscription</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Account associated with this subscription.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>CC Subscriptions</relationshipLabel>
+        <relationshipName>CCSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AutoRenew__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whether or not this subscription automatically renews</description>
+        <externalId>false</externalId>
+        <label>Auto Renew</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CCOrderItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to original order item used to create this subscription.</description>
+        <externalId>false</externalId>
+        <label>CC Order Item</label>
+        <referenceTo>E_OrderItem__c</referenceTo>
+        <relationshipLabel>CC Subscriptions</relationshipLabel>
+        <relationshipName>CCSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CCOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to original order used to create this subscription.</description>
+        <externalId>false</externalId>
+        <label>CC Order</label>
+        <referenceTo>E_Order__c</referenceTo>
+        <relationshipLabel>CC Subscriptions</relationshipLabel>
+        <relationshipName>CCSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Any comments to note about this subscription</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CurrencyISOCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The CloudCraze currency for this transaction.</description>
+        <externalId>false</externalId>
+        <label>Currency ISO Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveAccountID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds the effective account for this Subscription. This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own. The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own. The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</inlineHelpText>
+        <label>Effective Account ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IgnoreInstallmentFrequencyFields__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Copied on creation from original ccrz__E_ProdSubTerm__c object.</description>
+        <externalId>false</externalId>
+        <label>Ignore Installment Frequency Fields</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InstallmentAddress__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Contact Address object that contains the billing address data. This will be a unique copy of the address information captured when the subscription is checked out.</description>
+        <externalId>false</externalId>
+        <label>Installment Address</label>
+        <referenceTo>E_ContactAddr__c</referenceTo>
+        <relationshipLabel>CC Subscriptions (Installment Address)</relationshipLabel>
+        <relationshipName>CCInstallmentSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>InstallmentCountRemaining__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of installments left in this subscription.  0 indicates no more installments left.  Null indicates this is not an installment based subscription.</description>
+        <externalId>false</externalId>
+        <label>Installment Count Remaining</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InstallmentLastDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last date that payment will be billed for this subscription</description>
+        <externalId>false</externalId>
+        <label>Installment Last Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>InstallmentNextDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the next time payment will be processed for this subscription</description>
+        <externalId>false</externalId>
+        <label>Installment Next Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>InstallmentStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Not currently used</description>
+        <externalId>false</externalId>
+        <label>Installment Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LastRecurringFailure__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates a message why the last recurring process for this subscription failed.</description>
+        <externalId>false</externalId>
+        <label>Last Recurring Failure</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OrderAddress__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Contact Address object that contains subscription shipping address data. This will be a unique copy of the address information captured during checkout.</description>
+        <externalId>false</externalId>
+        <label>Order Address</label>
+        <referenceTo>E_ContactAddr__c</referenceTo>
+        <relationshipLabel>CC Subscriptions (Order Address)</relationshipLabel>
+        <relationshipName>CCOrderSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderCountRemaining__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of orders left in this subscription.  0 indicates no more orders left.  Null indicates this is not an order based subscription.</description>
+        <externalId>false</externalId>
+        <label>Order Count Remaining</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderLastDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of the last order for this subscription</description>
+        <externalId>false</externalId>
+        <label>Order Last Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>OrderNextDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of the next order for this subscription</description>
+        <externalId>false</externalId>
+        <label>Order Next Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>OrderStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Not currently used</description>
+        <externalId>false</externalId>
+        <label>Order Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentSubscription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>If this subscription has a parent subscription, this will point to it</description>
+        <externalId>false</externalId>
+        <label>Parent Subscription</label>
+        <referenceTo>E_Subscription__c</referenceTo>
+        <relationshipLabel>CC Subscriptions</relationshipLabel>
+        <relationshipName>CCSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of items shipped for this subscriptions</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecurringPriceSubAmt__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sub total for the recurring price.  This will be the amount used for installments.</description>
+        <externalId>false</externalId>
+        <label>Recurring Price Sub Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RecurringPrice__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Individual unit price for the installment.</description>
+        <externalId>false</externalId>
+        <label>Recurring Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SPTInstallmentCount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Copied on creation from original ccrz__E_ProdSubTerm__c object.</description>
+        <externalId>false</externalId>
+        <label>SPT Installment Count</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SPTInstallmentFrequencyUOM__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Copied on creation from original ccrz__E_ProdSubTerm__c object.</description>
+        <externalId>false</externalId>
+        <label>SPT Installment Frequency UOM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SPTInstallmentFrequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Copied on creation from original ccrz__E_ProdSubTerm__c object.</description>
+        <externalId>false</externalId>
+        <label>SPT Installment Frequency</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SPTOrderCount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Copied on creation from original ccrz__E_ProdSubTerm__c object.</description>
+        <externalId>false</externalId>
+        <label>SPT Order Count</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SPTOrderFrequencyUOM__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Copied on creation from original ccrz__E_ProdSubTerm__c object.</description>
+        <externalId>false</externalId>
+        <label>SPT Order Frequency UOM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SPTOrderFrequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Copied on creation from original ccrz__E_ProdSubTerm__c object.</description>
+        <externalId>false</externalId>
+        <label>SPT Order Frequency</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SPT__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The sub prod term this subscription was ordered from</description>
+        <externalId>false</externalId>
+        <label>SPT</label>
+        <referenceTo>E_SubProdTerm__c</referenceTo>
+        <relationshipLabel>CC Subscriptions</relationshipLabel>
+        <relationshipName>CCSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used for modifiers to determine order in which they are processed.</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StoredPayment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The stored payment method for this subscription.</description>
+        <externalId>false</externalId>
+        <label>Stored Payment</label>
+        <referenceTo>E_StoredPayment__c</referenceTo>
+        <relationshipLabel>CC Subscriptions</relationshipLabel>
+        <relationshipName>CCSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The storefront to which this subscription belongs.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubscriptionId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>The external id of the subscription.  Not functionally used by CloudCraze but may be used when creating objects within CloudCraze.</description>
+        <externalId>true</externalId>
+        <label>Subscription Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SubscriptionProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The product that this subscription is for.  When recurring orders are used this is the product that will be ordered.</description>
+        <externalId>false</externalId>
+        <label>Subscription Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>CC Subscriptions</relationshipLabel>
+        <relationshipName>CCSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SubscriptionStartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The start date of the subscription</description>
+        <externalId>false</externalId>
+        <label>Subscription Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SubscriptionStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the subscription</description>
+        <externalId>false</externalId>
+        <label>Subscription Status</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>User associated with the subscription</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CCSubscriptions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>CC Subscription</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SB-{0000000000}</displayFormat>
+        <label>CC Subscription Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Subscriptions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

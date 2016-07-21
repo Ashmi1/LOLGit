@@ -1,0 +1,5 @@
+<apex:page id="cc_tmpl_SubscriberTemplate" controller="ccrz.cc_ctrl_StorefrontTemplate" applyHtmlTag="false" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+<apex:composition template="ccrz__cc_tmpl_Storefront">
+    <apex:define name="htmlbody"><apex:include pageName="{!subscriberTemplateDef}"/></apex:define>
+</apex:composition>
+</apex:page>

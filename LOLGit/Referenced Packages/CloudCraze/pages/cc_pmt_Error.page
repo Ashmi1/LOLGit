@@ -1,0 +1,43 @@
+<apex:page applyHtmlTag="false" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false">
+<script id="PaymentError-Both" type="text/template">
+<div class="paymentOuterContainer">
+
+<div class="main_content_large_right_container">
+	<div class="paymentPage error">{{pageLabelMap 'PMTERR_InvalidPage'}}</div>
+</div>
+</div>
+</script>
+<script>
+        jQuery(function($) {
+            CCRZ.models.PaymentPageErrorModel = CCRZ.CloudCrazeModel.extend();
+            CCRZ.views.PaymentPageErrorView = CCRZ.CloudCrazeView.extend({
+                viewName : "PaymentPageErrorView",
+                managedSubView : true,
+                templateDesktop : CCRZ.util.template(CCRZ.uiProperties.PaymentPageErrorView.desktop.tmpl),
+                templatePhone : CCRZ.util.template(CCRZ.uiProperties.PaymentPageErrorView.phone.tmpl),
+                init : function(options){
+                    this.selector = options.selector;
+                    this.render();
+                    CCRZ.pubSub.trigger('action:paymentViewInit',this);
+                },
+                renderDesktop : function(){
+                    this.setElement(this.selector);
+                    this.data={};
+                    this.$el.html(this.templateDesktop(this.data));
+                },
+                renderPhone : function(){
+                    this.setElement(this.selector);
+                    this.data={};
+                    this.$el.html(this.templatePhone(this.data));
+                }
+            });
+            CCRZ.pubSub.trigger('action:paymentViewReady','err',function(options){
+                CCRZ.payment = CCRZ.payment||{views:{}};
+                CCRZ.payment.views.err = new CCRZ.views.PaymentPageErrorView({
+                    model : new CCRZ.models.PaymentPageErrorModel(),
+                    selector : options.selector
+                });
+            });
+        });
+    </script>
+</apex:page>

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Cart Items</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AbsoluteDiscount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The absolute discount for this item in the cart</description>
+        <externalId>false</externalId>
+        <label>Absolute Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AdjustmentAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional Adjustment from the CSR</description>
+        <externalId>false</externalId>
+        <label>Adjustment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AvailabilityMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Availability Message</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CartItemId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Cart Item Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Cart__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Cart Id</description>
+        <externalId>false</externalId>
+        <label>Cart</label>
+        <referenceTo>E_Cart__c</referenceTo>
+        <relationshipLabel>Cart Items</relationshipLabel>
+        <relationshipName>E_CartItems</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>CategoryID</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>E_Category__c</referenceTo>
+        <relationshipLabel>Cart Items</relationshipLabel>
+        <relationshipName>E_CartItems</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Coupon__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Coupon ID</description>
+        <externalId>false</externalId>
+        <label>Coupon</label>
+        <referenceTo>E_Coupon__c</referenceTo>
+        <relationshipLabel>Cart Items</relationshipLabel>
+        <relationshipName>E_CartItem2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DisplayProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Product used to display the name in the cart and link to product detail page</description>
+        <externalId>false</externalId>
+        <label>Display Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>CC Cart Items (Display Product)</relationshipLabel>
+        <relationshipName>CC_Cart_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Is_Subscription_Selected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>True if a subscription was selected via the UI, or if the associated product is only a subscription.  False otherwise.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>True if a subscription was selected via the UI, or if the associated product is only a subscription.  False otherwise.</inlineHelpText>
+        <label>Is Subscription Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ItemLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Alternate label to use when displaying the item in the cart.</description>
+        <externalId>false</externalId>
+        <label>Item Label</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ItemStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Item Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Available</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invalid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ItemTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>AdjustmentAmount__c  +  SubAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OriginalQuantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The purpose of this field is to store the appropriate quantity of line items that have  products in the  form of parent and child like bundles kits and dynamic kits</description>
+        <externalId>false</externalId>
+        <label>Original Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentCartItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Cart Item</label>
+        <referenceTo>E_CartItem__c</referenceTo>
+        <relationshipLabel>Cart Items</relationshipLabel>
+        <relationshipName>Cart_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Parent Product Id</description>
+        <externalId>false</externalId>
+        <label>Parent Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Cart Items (ParentProductID)</relationshipLabel>
+        <relationshipName>E_CartItems</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PercentDiscount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The percentage discount for this item in the cart</description>
+        <externalId>false</externalId>
+        <label>Percent Discount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Price</description>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProductType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ProductType same as CartItemType</description>
+        <externalId>false</externalId>
+        <label>ProductType</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Product ID</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Cart Items (ProductID)</relationshipLabel>
+        <relationshipName>E_CartItem2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Quantity</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecurringPriceSubAmt__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sub total for the recurring price</description>
+        <externalId>false</externalId>
+        <label>Recurring Price Sub Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RecurringPrice__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The recurring price portion of a subscription</description>
+        <externalId>false</externalId>
+        <label>Recurring Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RequestDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Request Date</description>
+        <externalId>false</externalId>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>StoreID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Store ID</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sub Amount</description>
+        <externalId>false</externalId>
+        <label>Sub Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SubProdTerm__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SubProdTerm</label>
+        <referenceTo>E_SubProdTerm__c</referenceTo>
+        <relationshipLabel>CC Cart Items</relationshipLabel>
+        <relationshipName>CC_Cart_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subscription_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Duration of the subscription in months.  If this is field is blank, then this cart item is not a subscribed item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Duration of the subscription in months.  If this is field is blank, then this cart item is not a subscribed item.</inlineHelpText>
+        <label>Subscription Duration (In Months)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_Frequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The frequency of this subscription in days.  If not selected via the UI, then this value defaults to the Product&apos;s subscription frequency.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The frequency of this subscription in days.  If not selected via the UI, then this value defaults to the Product&apos;s subscription frequency.</inlineHelpText>
+        <label>Subscription Frequency</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UnitOfMeasure__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Unit Of Measure</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cartItemType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>cart item type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Major</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coupon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>CC Cart Item</label>
+    <nameField>
+        <displayFormat>{00000000}</displayFormat>
+        <label>CartItemAutoNumber</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Cart Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

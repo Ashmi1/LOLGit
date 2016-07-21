@@ -1,0 +1,51 @@
+<apex:page id="cc_LOL_ThreeColLayout" applyHtmlTag="false" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+            <div class="row-fluid">
+                <div class="span3 hidden-tablet">
+                    <div class="left_column">
+                        <div class="search-box-LeftNav" />
+                        <apex:insert name="WidgetBoxL" />
+                        <apex:insert name="ProductSearch" />
+                        <apex:insert name="PhoneSplash"/>
+                        <div id="categories-left-nav"></div> <!-- placeholder for category tree in left nav -->
+                        <div class="filterContainer"></div>
+                        <apex:insert name="ContactUs" />
+                        <div class="promotion-box-LeftNav"></div>
+                        <apex:insert name="LeftNavX" />
+                    </div>
+                </div>
+
+                <div class="span6">
+                    <div class="center_column desktop_center_column">
+                        <apex:insert name="WidgetBoxC" />
+                        <apex:insert name="Banner" />
+                        <div class="promotion-box-Banner"></div>
+                        <apex:insert name="ProductSpotlight" />
+                        <apex:insert name="body" />
+                        <apex:insert name="PromosCenter" />
+                        <apex:insert name="FeaturedProducts" />
+                        <apex:insert name="GuideProducts" />
+                        <apex:insert name="UpsellProducts" />
+                        <apex:insert name="ProductReviews" />
+                        <apex:insert name="CenterX" />
+                    </div>
+                </div>
+
+                <div class="span3">
+                    <div class="right_column">
+                        <div class="effright"></div>
+                        <div class="search-box-RightNav" />
+                        <div id="MyAccount_navSection"></div> <!-- placeholder for MyAccount Nav in right nav -->
+                        <apex:insert name="WidgetBoxR" />
+                        <apex:insert name="MiniCartBox" />
+                        <div id="categories-right-nav"></div> <!-- placeholder for category tree in right nav -->
+                        <div class="widgetSection"></div>
+                        <apex:insert name="SocialShareBox" />
+                        <apex:insert name="MiniQuickOrderBox" />
+                        <apex:insert name="MiniWishListBox" />
+                        <apex:insert name="SocialFacebookBox" />
+                        <div class="promotion-box-RightNav"></div>
+                        <apex:insert name="RightNavX" />
+                    </div>
+                </div>
+            </div>
+</apex:page>

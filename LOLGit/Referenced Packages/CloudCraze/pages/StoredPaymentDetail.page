@@ -1,0 +1,61 @@
+<apex:page id="MyPaymentDetail" controller="ccrz.cc_ctrl_MyPaymentDetailRD" extensions="ccrz.cc_ctrl_LocaleExtension" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" language="{!userLanguageCode}" cache="false">
+    
+  <apex:composition template="{!IF(pageTemplate != null, pageTemplate, 'cc_tmpl_OneColRD')}">
+        <apex:define name="meta">
+            <title><apex:outputText value="{!PageTitle}" /></title>
+            <meta name="description" content="{!HTMLENCODE(metaDescription)}" />
+            <meta name="keywords" content="{!HTMLENCODE(metaKeywords)}" />
+        </apex:define>
+
+        <apex:define name="body">
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIB.Enabled')]}" >
+                <apex:include pageName="{!widgetConfiguration[LOWER('BIB.PIName')]}" />
+            </apex:outputPanel>
+
+            <div class="paymentContainer"></div>
+			<apex:include pageName="{!includePageName}" />
+
+            <apex:outputPanel layout="none" rendered="{!widgetConfiguration[LOWER('BIE.Enabled')]}" >
+	            <apex:include pageName="{!widgetConfiguration[LOWER('BIE.PIName')]}" />
+            </apex:outputPanel>
+        </apex:define> 
+
+        <apex:define name="htmlbodyX">
+            <script>
+                var myInvoices = function() {
+                    document.location = "{!JSENCODE($Page.MyAccount)}?viewState=myInvoices&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+                var invoiceDetail = function(invoiceId) {
+                    document.location = "{!$Page.InvoiceDetail}?i=" + invoiceId + "&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+                var paymentDetail = function(paymentId) {
+                    document.location = "{!$Page.PaymentDetail}?pd=" + paymentId + "&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+                var orderDetails = function(orderId) {
+                    document.location = "{!$Page.OrderView}?o=" + orderId + "&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+                var myWallet = function() {
+                    document.location = "{!JSENCODE($Page.MyAccount)}?viewState=myWallet&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+                var myAccount = function() {
+                    document.location = "{!JSENCODE($Page.MyAccount)}?viewState=myInvoices&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+                var homePage = function() {
+                    document.location = "{!$Page.HomePage}&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+                var productList = function(categoryId) {
+                    document.location = "{!JSENCODE($Page.Products)}?viewState=ListView&&categoryId="+categoryId+"&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+                var productDetails = function(productId) {
+                    document.location = "{!JSENCODE($Page.ProductDetails)}?viewState=DetailView&sku="+productId+"&cartID="+CCRZ.pagevars.currentCartID+getCSRQueryString();
+                }
+            </script>
+            <c:cc_headerRD ccCtrl="{!cloudCrazeController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}" />
+            <c:cc_topMenuRD ccCtrl="{!cloudCrazeController}" rendered="{!widgetConfiguration[LOWER('TM.Enabled')]}" />
+            <c:cc_productSearchWidget pCcCtrl="{!cloudCrazeController}" rendered="{!widgetConfiguration[LOWER('H.Enabled')]}"/>
+            <c:cc_CommonTemplates />
+            <c:cc_PageMessagesRD />
+        </apex:define>
+    </apex:composition>
+
+</apex:page>

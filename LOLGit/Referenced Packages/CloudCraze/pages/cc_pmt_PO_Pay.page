@@ -1,0 +1,112 @@
+<apex:page applyHtmlTag="false" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" cache="false">
+
+<script id="PaymentPO-Both" type="text/template">
+	<div class="poPaymentOuterContainer">
+		<div class="main_content_large_right_container">
+			<div class="alert alert-error poPayment-messagingSection-Error" style="display: none"></div>
+			<form id="newWalletForm" action="" class="newPOForm" forceSSL="true">
+			<fieldset>
+				<legend>{{pageLabelMap 'PMTPO_NewPO'}}</legend>
+				<div class="payment_po_instructions">{{pageLabelMap 'PMTPO_Instr'}}</div>
+				<div class="payment_po_information">
+					<div class="row accountNumber">
+						<label><span class="poLabel Number fieldLabel">{{pageLabelMap 'PMTPO_PONum'}}</span>
+							<input type="text" name="accountNumber" id="accountNumber" maxlength="50" />
+						</label>
+					</div>
+					{{#if {!NOT(ISPICKVAL($User.UserType, 'Guest'))} }}
+					{{#ifDisplay 'WLT.Enabled'}}
+						<div class="row actionButtons">
+							<label><span class="poLabel SavePayment fieldLabel">{{pageLabelMap 'MyWallet_SavePayment'}}</span>
+								<input type="checkbox" name="saveAsStoredPayment" id="saveAsStoredPayment" value="true" />
+							</label>
+						</div>
+						<div class="row displayName">
+							<label><span class="poLabel Name fieldLabel">{{pageLabelMap 'MyWallet_NameOpt'}}</span>
+								<input type="text" name="displayName" id="displayName" maxlength="50" />
+							</label>
+						</div>
+					{{/ifDisplay}}
+					{{/if}}
+				</div>
+			</fieldset>
+			<br/>
+			<p class="two_buttons">
+				<div class="right">
+					<input type="button" class="button makePOPayment" id="save" data-id="newWalletForm" value="{{pageLabelMap 'Payment_MakePayment'}}" />
+				</div>
+			</p>
+			<br/>
+			</form>
+		</div>
+	</div>
+</script>
+
+<script>
+	jQuery(function($) {
+		CCRZ.models.PaymentsPOModel = CCRZ.CloudCrazeModel.extend();
+		CCRZ.views.PaymentsPOView = CCRZ.CloudCrazeView.extend({
+			viewName : "PaymentsPOView",
+			managedSubView : true,
+			templateDesktop : CCRZ.util.template(CCRZ.uiProperties.PaymentsPOView.desktop.tmpl),
+			templatePhone : CCRZ.util.template(CCRZ.uiProperties.PaymentsPOView.phone.tmpl),
+			init : function(options){
+				this.selector = options.selector;
+				this.render();
+				CCRZ.pubSub.trigger('action:paymentViewInit',this);
+			},
+			events: {
+				"click .makePOPayment" : "makePOPayment"
+			},
+			validateInfo: function(formName, fieldData) {
+				$("#"+formName).validate({
+					invalidHandler: function(event, validator) {
+						CCRZ.handleValidationErrors(event, validator, 'poPayment-messagingSection-Error', false);
+					},
+					rules: {
+						accountNumber : { required : CCRZ.getPageConfig('Pmt_PO.ReqNum', true) }
+					},
+					messages: {
+						accountNumber : { required : CCRZ.pagevars.pageLabels['PMTPO_POReq']}
+					},
+					errorPlacement: function(error, element) {
+					}
+				});
+				return $("#"+formName).valid();
+			},
+			
+			parentPreRender : function(){
+				//Look for the instantiated iframe
+				//Detach it from the DOM
+				//Re-render the view but don't create the iframe
+				//Re-attach the iframe as appropriate in the rendered view
+			},
+			renderDesktop : function(){
+				this.setElement(this.selector);
+				this.data={};
+				this.$el.html(this.templateDesktop(this.data));
+			},
+			renderPhone : function(){
+				this.setElement(this.selector);
+				this.data={};
+				this.$el.html(this.templatePhone(this.data));
+			},
+			makePOPayment : function(event){
+				var formName = $(event.target).data("id"); //'myWallet';
+				var formData = form2js(formName, '.', false, function(node) {}, false);
+				if (this.validateInfo(formName, formData)) {
+					formData.accountType = 'po';
+					CCRZ.pubSub.trigger('action:processPayment', formData);
+				}
+			}
+		});
+		CCRZ.pubSub.trigger('action:paymentViewReady','po',function(options){
+			CCRZ.payment = CCRZ.payment||{views:{}};
+			CCRZ.payment.views.po = new CCRZ.views.PaymentsPOView({
+				model : new CCRZ.models.PaymentsPOModel(),
+				selector : options.selector
+			});
+		});
+	});
+</script>
+</apex:page>

@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The E_OrderItem__c object contains the line level detail of placed orders.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AbsoluteDiscount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When a coupon has been applied to the order this field contains the discount amount applied with that coupon. This field is for reference only and is not used in calculations.</description>
+        <externalId>false</externalId>
+        <label>Absolute Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AdjustmentAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Pricing adjustment amount applied to this line. This field is normally set when the pricing extension adjusts individual line amounts.</description>
+        <externalId>false</externalId>
+        <label>Adjustment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AvailabilityMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Availability message as carried through from the product at the time the item was placed in the cart.</description>
+        <externalId>false</externalId>
+        <label>Availability Message</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>If a product was placed into a cart in the context of viewing a category this contains the reference to that category.</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>E_Category__c</referenceTo>
+        <relationshipLabel>Order Items</relationshipLabel>
+        <relationshipName>E_OrderItems</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Cart line comments as applied to this item.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Coupon__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>When a coupon has been applied to the order this field contains a reference to that coupon.</description>
+        <externalId>false</externalId>
+        <label>Coupon</label>
+        <referenceTo>E_Coupon__c</referenceTo>
+        <relationshipLabel>Order Items</relationshipLabel>
+        <relationshipName>E_OrderItems</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DisplayProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>When this line refers to a product that is part of an aggregate product this field contains a reference to the parent aggregate product.</description>
+        <externalId>false</externalId>
+        <label>Display Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>CC Order Items (Display Product)</relationshipLabel>
+        <relationshipName>CC_Order_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Is_Subscription__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>True or false value indicating whether or not this order item is a subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>True or false value indicating whether or not this order item is a subscription.</inlineHelpText>
+        <label>Is Subscription</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ItemLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated</description>
+        <externalId>false</externalId>
+        <label>Item Label</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ItemStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reserved for future use.</description>
+        <externalId>false</externalId>
+        <label>Item Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Available</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ItemTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>AdjustmentAmount__c + SubAmount__c</description>
+        <externalId>false</externalId>
+        <formula>AdjustmentAmount__c  +  SubAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Item Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Next_Subscription_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines when the next order is placed for this Order Item, if this order item is in fact, a subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines when the next order is placed for this Order Item, if this order item is in fact, a subscription.</inlineHelpText>
+        <label>Next Subscription Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OrderItemId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reference id for external systems.</description>
+        <externalId>true</externalId>
+        <label>Order Item Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderItemStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status field at the line level. The initial value is always Order Submitted. Other values are non-functional and can be used by external systems for post-order placement status tracking.</description>
+        <externalId>false</externalId>
+        <label>Order Item Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Order Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancel Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Return Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Returned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partial Shipped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OrderLineType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Either Major or Minor. Minor if this line item is part of a kit or bundle, otherwise Major.</description>
+        <externalId>false</externalId>
+        <label>Order Line Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Major</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The order that this order line is a part of.</description>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <referenceTo>E_Order__c</referenceTo>
+        <relationshipLabel>Order Items</relationshipLabel>
+        <relationshipName>E_OrderItems</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>OriginalQuantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The purpose of this field is to store the appropriate quantity of line items that have products in the form of parent and child like bundles kits and dynamic kits</description>
+        <externalId>false</externalId>
+        <label>Original Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentOrderItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>When this line item is part of a kit or bundle then this refers to the order line of that kit or bundle.</description>
+        <externalId>false</externalId>
+        <label>Parent Order Item</label>
+        <referenceTo>E_OrderItem__c</referenceTo>
+        <relationshipLabel>Order Items</relationshipLabel>
+        <relationshipName>Order_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>When this line item is part of a kit or bundle then this refers to the product that is the kit or bundle.</description>
+        <externalId>false</externalId>
+        <label>Parent Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Order Items (ParentProductID)</relationshipLabel>
+        <relationshipName>E_OrderItems1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PercentDiscount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>When a coupon has been applied this will be the percent discount that was used to calculate the item subtotal.</description>
+        <externalId>false</externalId>
+        <label>Percent Discount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The price of the product at the time the item was ordered.</description>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProductType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Copied product type from the Product this line refers to, e.g. Product.</description>
+        <externalId>false</externalId>
+        <label>ProductType</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Product__r.Name</description>
+        <externalId>false</externalId>
+        <formula>Product__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the product for this line.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Order Items (ProductID)</relationshipLabel>
+        <relationshipName>E_OrderItems</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of items ordered for this line.</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecurringPriceSubAmt__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sub total for the recurring price</description>
+        <externalId>false</externalId>
+        <label>Recurring Price Sub Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RecurringPrice__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The recurring price portion of a subscription</description>
+        <externalId>false</externalId>
+        <label>Recurring Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RequestDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The request date for this line item. This will be the same value as at the order header.</description>
+        <externalId>false</externalId>
+        <label>Request Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>StoreId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The storefront name for this line. This will be the same value as at the order header.</description>
+        <externalId>false</externalId>
+        <label>Store Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The sub-total amount for the order. This will be calculated as price * quantity - coupon adjustments during order placement.</description>
+        <externalId>false</externalId>
+        <label>Sub Amount</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SubProdTerm__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Specific SubProdTerm associated with this order item.</description>
+        <externalId>false</externalId>
+        <label>CC SubProdTerm</label>
+        <referenceTo>E_SubProdTerm__c</referenceTo>
+        <relationshipLabel>CC Order Items</relationshipLabel>
+        <relationshipName>CC_Order_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SubscriptionId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Subscription Id</description>
+        <externalId>false</externalId>
+        <formula>IF( Is_Subscription__c , &quot;S-&quot;&amp; Name , &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SubscriptionId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_Auto_Renewal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines if a subscription is renewed when the subscription end date is reached.  This field is carried over from the Is_Subscription_Auto_Renewal field on the Product when the original order is placed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines if a subscription is renewed when the subscription end date is reached.  This field is carried over from the Is_Subscription_Auto_Renewal field on the Product when the original order is placed.</inlineHelpText>
+        <label>Subscription Auto Renewal</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Subscription_Duration__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The length in months that this subscription lasts.  Only applicable for Order Items that are subscriptions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The length in months that this subscription lasts.  Only applicable for Order Items that are subscriptions.</inlineHelpText>
+        <label>Subscription Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines when the subscription ends.  Depending on the subscriber, this field is calculated from based on date the order is placed and the subscription duration.  Additionally, if this date is met, and Subscription Auto Renewal is set to true, then the end date is extended.  If the date is met, and Subscription Auto Renewal is set to false, then the subscription status is updated and the subscription is expired.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines when the subscription ends, or if the this subscription is set to auto renew, then the subscription end date is extended.</inlineHelpText>
+        <label>Subscription End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Subscription_Frequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines how often a new order is placed, in months, if this Order Item is a subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines how often a new order is placed, in months, if this Order Item is a subscription.</inlineHelpText>
+        <label>Subscription Frequency</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date this subscription started.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date this subscription started.</inlineHelpText>
+        <label>Subscription Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Subscription_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the subscription, if this order item is a subscription.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The status of the subscription, if this order item is a subscription.</inlineHelpText>
+        <label>Subscription Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lapsed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reordered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UnitOfMeasure__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unit of measure copied from the product.</description>
+        <externalId>false</externalId>
+        <label>Unit Of Measure</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Order Item</label>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>OrderItemAutoNumber</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Order Items</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Quantity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Price__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Quantity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>SubAmount__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

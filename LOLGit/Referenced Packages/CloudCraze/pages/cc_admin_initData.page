@@ -1,0 +1,91 @@
+<!--  
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without 
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page controller="ccrz.cc_ctrl_InitData">
+<link rel="stylesheet"  type="text/css" href="{!URLFOR($Resource.CC_Bootstrap, 'css/bootstrap.css')}" />
+<link rel="stylesheet"  type="text/css" href="{!URLFOR($Resource.CC_Bootstrap, 'css/ccbootstrap-overrides.css')}" />
+<script type="text/javascript" src="{!URLFOR($Resource.CC_Bootstrap, 'js/jquery-1.8.1.min.js')}"></script>
+<script type="text/javascript" src="{!URLFOR($Resource.CC_Bootstrap, 'js/bootstrap.min.js')}"></script>
+<body>
+ <apex:form >
+        <apex:sectionHeader title="CloudCraze® Administration"></apex:sectionHeader>
+        <apex:pageBlock mode="edit" title="CloudCraze® Data Loader">
+	        <apex:pageblockSection title="Custom Settings" columns="1" id="buttons1">
+	        	<apex:outputText value="Enter the static resource containing the custom setting data (use CC_CustomSettings for default):"  />
+	        	<apex:pageBlockSectionItem >
+			        <apex:inputText value="{!loadSettingsResName}" />
+		        <apex:commandButton value="Load Custom Settings" action="{!loadCustomSettings}" status="status1" /> 
+				</apex:pageBlockSectionItem>
+		       <apex:actionStatus startText=" (loading...)" id="status1"/>
+			</apex:pageblockSection>
+			<apex:pageblockSection title="Load Individual Custom Settings" columns="1" >
+		        <apex:pageBlockSectionItem >
+		        	<apex:outputText value="Enter the static resource containing the custom setting data (use CC_CustomSettings for default):"  />
+		        	<apex:inputText value="{!staticResName}" />
+		        </apex:pageBlockSectionItem>
+		       	<apex:pageBlockSectionItem >
+		        	<apex:selectList value="{!selectedIndivSetting}" size="1">
+						<apex:selectOption itemValue="Storefront" itemLabel="Storefronts"/>
+						<apex:selectOption itemValue="Country" itemLabel="Countries"/>
+						<apex:selectOption itemValue="Currency" itemLabel="Currencies"/>
+						<apex:selectOption itemValue="Factory" itemLabel="Factories"/>
+						<apex:selectOption itemValue="Language" itemLabel="Languages"/>
+		        		<apex:selectOption itemValue="PageConfigurations" itemLabel="Page Configurations"/>
+						<apex:selectOption itemValue="PageSectionKey" itemLabel="Page Section Keys"/>
+						<apex:selectOption itemValue="Payment" itemLabel="Payments"/>
+						<apex:selectOption itemValue="StateCodes" itemLabel="States"/>
+		        		<apex:selectOption itemValue="ShipmentCarriers" itemLabel="Shipment Carriers"/>
+		        	</apex:selectList>
+		        	<apex:commandButton value="Re-load Individual Custom Settings" action="{!loadIndivCustomSettings}" status="status6" /> 
+		        </apex:pageBlockSectionItem>
+		        <apex:actionStatus startText=" (loading...)" id="status6"/>
+	        </apex:pageblockSection>
+	        <apex:pageblockSection title="Account/Pricelist" columns="1" id="buttons2" >
+	        	<apex:commandButton value="Remove Data" action="{!resetAccountPriceList}" status="status2"/> 
+	        	<apex:actionStatus startText=" (loading...)" id="status2"/>
+	        </apex:pageblockSection>
+	        <apex:pageblockSection title="Account/Pricelist" columns="1" id="buttons3">
+	        	<apex:commandButton value="Load data set" action="{!loadInitialDataSet}" status="status3"/> 
+	        	<apex:actionStatus startText=" (loading...)" id="status3"/>
+	        </apex:pageblockSection>
+	        
+	        <apex:pageblockSection title="CloudCraze Data" columns="1" id="buttons4">
+	        	
+	        	<apex:commandButton value="Remove OOTB Data" action="{!removeCloudCrazeData}" status="status4" /> 
+	        	<apex:actionStatus startText=" (loading...)" id="status4"/>
+	        </apex:pageblockSection>
+	        <a href="#deleteModalDataset" role="button" styleclass="form-button2" data-toggle="modal">Delete</a>
+	        	<div id="deleteModalDataset" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">Delete Data Set </h3>
+						</div>
+						<div class="modal-body">
+							<apex:outputText value="Are you sure?"/>
+							<br /><br />
+							<apex:outputLabel value="Will delete all CloudCraze data."/>
+						</div>
+						<div class="modal-footer">
+							<button data-dismiss="modal" aria-hidden="true">Cancel</button>
+							<button data-dismiss="modal" aria-hidden="true" onclick="">Delete</button>
+						</div>
+				</div>
+	        <apex:pageblockSection title="CloudCraze Data" columns="1" id="buttons5">
+	        	<apex:outputText value="Enter the static resource containing the custom data (use CC_Data2 for default):"  />
+	        	<apex:pageBlockSectionItem >
+		        	<apex:inputText value="{!loadDataResName}" />
+	        	<apex:commandButton value="Load data set" action="{!loadCloudCrazeData}" status="status5" /> 
+	        	</apex:pageBlockSectionItem>
+	        	<apex:actionStatus startText=" (loading...)" id="status5"/>
+	        </apex:pageblockSection>
+        </apex:pageBlock>
+ </apex:form>
+ </body>
+</apex:page>

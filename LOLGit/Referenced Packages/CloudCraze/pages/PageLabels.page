@@ -1,0 +1,1 @@
+<apex:page readOnly="true" contentType="application/javascript" sidebar="false" showHeader="false" standardStylesheets="false" applyHtmlTag="false" controller="ccrz.cc_ctrl_PageLabels">var CCRZ=CCRZ||{};CCRZ.pagevars=CCRZ.pagevars||{};CCRZ.pagevars.pageLabels={!pageLabels}</apex:page>

@@ -1,0 +1,71 @@
+<apex:page id="cc_admin_downloadCustomSettings" controller="ccrz.cc_ctrl_admin_downloadCustomSettings" action="{!initDownload}">
+	<apex:sectionHeader title="CloudCraze® Custom Settings Loader"></apex:sectionHeader>
+		<apex:pageBlock title="Custom Settings Downloader" >
+        	<apex:pageBlockSection columns="1">
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!storefrontDownloadId}">Download Storefront</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!pageConfigDownloadId}">Download Page Configuration</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!factoryDownloadId}">Download Factory</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!reflectionDownloadId}">Download Reflection</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!applicationDownloadId}">Download Application Settings</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!basePriceDownloadId}">Download Base Price</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!paymentAttributeDownloadId}">Download Payment Attributes</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!paymentSettingDownloadId}">Download Payment Settings</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!serviceMapDownloadId}">Download Service Map</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!shipmentCarrierDownloadId}">Download Shipment Carriers</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!pageSectionDownloadId}">Download Page Sections</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	             <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!pageUIDownloadId}">Download Page UI Keys</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!currencyDownloadId}">Download Currency Code</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+	            <apex:pageBlockSectionItem >
+	            	<apex:outputLink value="/servlet/servlet.FileDownload?file={!localeMapDownloadId}">Download Locale Map</apex:outputLink>
+	            </apex:pageBlockSectionItem>
+        	</apex:pageBlockSection>
+	</apex:pageBlock>
+	<apex:form > 
+		<apex:pageBlock title="Custom Settings Uploader" >
+	        <apex:pageBlockSection columns="1">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Please select a custom setting..." />
+				    <apex:SelectList value="{!selCustomSettingName}" styleClass="SelcustomSettings" size="1">
+				      <apex:selectOptions value="{!CustomSettingsNames}"></apex:selectOptions>
+				    </apex:SelectList>
+			    </apex:pageBlockSectionItem>
+			    <apex:pageBlockSectionItem >
+				    <apex:outputLabel value="Please select a csv file..." />
+				    <apex:inputFile value="{!content}" filename="{!nameFile}" /> 
+			    </apex:pageBlockSectionItem>
+			    <apex:pageBlockSectionItem >
+			    	<apex:outputLabel value="" />
+					<apex:commandButton action="{!ReadFile}" value="Upload File" id="theButton" style="width:70px;"/>
+				</apex:pageBlockSectionItem>
+				
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

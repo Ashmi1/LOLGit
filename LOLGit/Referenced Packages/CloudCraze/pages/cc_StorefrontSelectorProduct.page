@@ -1,0 +1,13 @@
+<!--
+//
+//  Created by CloudCraze, LLC.
+//  Copyright 2010 CloudCraze, LLC. All rights reserved.
+//
+//  Redistribution and use in source or binary forms, with or without
+//  modification is PROHIBITED.
+//
+//
+-->
+<apex:page showHeader="true" sidebar="true" standardController="ccrz__E_Product__c" extensions="ccrz.cc_ctrl_StorefrontSelector">
+	<c:cc_StorefrontSelector obj="{!ccrz__E_Product__c}" ctrl="{!extnController}"/>
+</apex:page>

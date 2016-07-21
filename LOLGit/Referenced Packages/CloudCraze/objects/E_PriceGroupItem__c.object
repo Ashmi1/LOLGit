@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Holds the items making up a price grouping.  These indicate the items that are part of the grouping, as well as a ny other controlling attributes, such as quantity range or control.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>EffectiveEnd__c</fullName>
+        <defaultValue>DATETIMEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Date and Time at which this entry is expires</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and Time at which this entry is expires</inlineHelpText>
+        <label>Effective End</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveStart__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Date and Time at which this entry is takes effect</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and Time at which this entry is takes effect</inlineHelpText>
+        <label>Effective Start</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines if the entry is available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines if the entry is available.</inlineHelpText>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PriceGroupItemID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External ID field</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External ID field</inlineHelpText>
+        <label>Price Group Item ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PriceGroup__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CC Price Group</label>
+        <referenceTo>E_PriceGroup__c</referenceTo>
+        <relationshipLabel>CC Price Group Items</relationshipLabel>
+        <relationshipName>PriceGroupItems</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Product represented by this item.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product represented by this item.</inlineHelpText>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>CC Price Group Items</relationshipLabel>
+        <relationshipName>PriceGroupItems</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Quantity for this item.  This can represent a max value supported by this item, or a minimum value supported depending on the corresponding implementation.</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>CC Price Group Item</label>
+    <nameField>
+        <displayFormat>PGI-{0000000000}</displayFormat>
+        <label>CC Price Group Item Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Price Group Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

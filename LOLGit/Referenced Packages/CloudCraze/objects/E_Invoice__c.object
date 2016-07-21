@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Invoice main object.  The invoice represents object against which payments may be made.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BillAddress__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Billing address for the invoice.</description>
+        <externalId>false</externalId>
+        <label>Bill Address</label>
+        <referenceTo>E_ContactAddr__c</referenceTo>
+        <relationshipLabel>CC Billing Invoices</relationshipLabel>
+        <relationshipName>CCBillingInvoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BillTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Account used for billing. Typically will be the same as Sold To Account.</description>
+        <externalId>false</externalId>
+        <label>Bill To</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>CC Billing Invoices</relationshipLabel>
+        <relationshipName>CCBillingInvoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CCOrder__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Order to which this invoice applies (optional).</description>
+        <externalId>false</externalId>
+        <label>CC Order</label>
+        <referenceTo>E_Order__c</referenceTo>
+        <relationshipLabel>CC Invoices</relationshipLabel>
+        <relationshipName>CCInvoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice comments. Typically set at create time.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>CC Invoices</relationshipLabel>
+        <relationshipName>CCInvoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze currency code.</description>
+        <externalId>false</externalId>
+        <label>Currency Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DateDue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the invoice is due.</description>
+        <externalId>false</externalId>
+        <label>Date Due</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DateIssued__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the invoice was issued.</description>
+        <externalId>false</externalId>
+        <label>Date Issued</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>InvoiceId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Unique external identifier.</description>
+        <externalId>true</externalId>
+        <label>Invoice Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>OriginalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The original amount of the invoice. Once set this should not be changed. Could be negative or positive.</description>
+        <externalId>false</externalId>
+        <label>Original Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PaidAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>OriginalAmount__c - RemainingAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Paid Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ParentInvoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to summary parent invoice.</description>
+        <externalId>false</externalId>
+        <label>Parent Invoice</label>
+        <referenceTo>E_Invoice__c</referenceTo>
+        <relationshipLabel>Child Invoices</relationshipLabel>
+        <relationshipName>ChildInvoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RemainingAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The remaining amount of the invoice. As payments are applied this number will typically reduce (or increase for credits as they are applied to the customer account).</description>
+        <externalId>false</externalId>
+        <label>Remaining Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SoldAddress__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Sold To address for the invoice.</description>
+        <externalId>false</externalId>
+        <label>Sold Address</label>
+        <referenceTo>E_ContactAddr__c</referenceTo>
+        <relationshipLabel>CC Sold Invoices</relationshipLabel>
+        <relationshipName>CCSoldInvoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SoldTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Sold To Account to which this invoice applies.</description>
+        <externalId>false</externalId>
+        <label>Sold To</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>CC Invoices</relationshipLabel>
+        <relationshipName>CCInvoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The current implementation defined status of the invoice. E.g. Open, Closed.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The storefront associated with this invoice.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Terms__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The payment terms of the invoice, e.g. Net 15.</description>
+        <externalId>false</externalId>
+        <label>Terms</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>E.g. Credit Note, Debit Note, etc.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>User reference</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CCInvoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>CC Invoice</label>
+    <nameField>
+        <displayFormat>I-{0000000000}</displayFormat>
+        <label>CC Invoice Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Invoices</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

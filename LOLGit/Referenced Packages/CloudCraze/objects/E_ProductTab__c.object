@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object used to created additional pieces of formatted content.  This content would be displayed within tabs/sections of the product detail page.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ContentRT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rich text field version of the Content field.</description>
+        <externalId>false</externalId>
+        <label>ContentRT</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Content__c</fullName>
+        <deprecated>false</deprecated>
+        <description>HTML formatted content</description>
+        <externalId>false</externalId>
+        <label>Content</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Whether or not the content is available to be displayed</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <defaultValue>DATEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The last date that this content will be available for display</description>
+        <externalId>false</externalId>
+        <label>EndDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Locale__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Language for the content. For multiple languages, multiple entries will be needed within this object</description>
+        <externalId>false</externalId>
+        <label>Locale</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductTabId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>External reference Id</description>
+        <displayFormat>{00000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>ProductTab Id</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reference to the product associated with this content</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>Product Tabs</relationshipLabel>
+        <relationshipName>E_ProductTabs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <defaultValue>500</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines the order the tabs appear in the ProductDetails page</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The first date that this content will be available for display</description>
+        <externalId>false</externalId>
+        <label>StartDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tab__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tab Name used to uniquely identify and name the content</description>
+        <externalId>false</externalId>
+        <label>Tab</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Product Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specifications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Items Included</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipping Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Why Buy this Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Additional Information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ItemsIncluded</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resources and Additional Information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ShippingInfo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Why Buy This</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>CC Product Tab</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Product__c</columns>
+        <columns>Tab__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>TAB-{00000}</displayFormat>
+        <label>Product Tab Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Product Tabs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

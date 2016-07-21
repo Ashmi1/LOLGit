@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CustomField1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:A general purpose custom field.</description>
+        <externalId>false</externalId>
+        <label>Custom Field 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomField2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:A general purpose custom field.</description>
+        <externalId>false</externalId>
+        <label>Custom Field 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>E_AccountGroup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:Reference to E_AccountGroup__c</description>
+        <externalId>false</externalId>
+        <label>Account Group</label>
+        <referenceTo>E_AccountGroup__c</referenceTo>
+        <relationshipLabel>Accounts</relationshipLabel>
+        <relationshipName>Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PreventAddrBookSave__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:If selected, users cannot save new addresses to the address book.</description>
+        <externalId>false</externalId>
+        <label>Prevent Address Book Saves</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PreventNewAddrCheckout__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:If selected, the user should not be able to add new addresses during checkout</description>
+        <externalId>false</externalId>
+        <label>Prevent New Addresses at Checkout</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PreventNewBillAddrCO__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:If selected, the user should not be able to add new billing addresses during checkout</description>
+        <externalId>false</externalId>
+        <label>Prevent New Checkout Billing Address</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystem__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:Deprecated</description>
+        <externalId>false</externalId>
+        <label>Source System</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TaxExemptAccount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:This is the field to indicate whether an account is tax exempt.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the field to indicate whether an account is tax exempt.</inlineHelpText>
+        <label>TaxExemptAccount</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UsedByCloudcraze__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>CloudCraze:Used in account sharing rules to identify portal user accounts</description>
+        <externalId>false</externalId>
+        <label>Used by Cloudcraze Customer Portal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The E_MenuItem__c object contains data pertaining to child menu links. NOTE: Unless Menu Cache is re-generated, any changes made to the data in this object will not reflect on the UI.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Category object, if Link Type is set to Category.</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>E_Category__c</referenceTo>
+        <relationshipLabel>CC Menu Items</relationshipLabel>
+        <relationshipName>CC_Menu_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Display Name of the child menu.</description>
+        <externalId>false</externalId>
+        <label>DisplayName</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Flag determining whether or not this child menu record is active.</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <defaultValue>DATEVALUE(&quot;2099-12-31&quot;)</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The last date that this child menu will be available.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LinkType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of this menu link. Possible values are Category, Product or URL. Option selected for this field, determines which field- Category, Product or URL should be referenced to construct the URL for this child menu link.</description>
+        <externalId>false</externalId>
+        <label>Link Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Category</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>URL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MenuItemId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Child menu external ID field used for data loading.</description>
+        <externalId>true</externalId>
+        <label>Menu Item Id</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Menu__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the CC Menu record. The Referenced CC Menu record will be the parent of this child menu item record.</description>
+        <externalId>false</externalId>
+        <label>Menu</label>
+        <referenceTo>E_Menu__c</referenceTo>
+        <relationshipLabel>CC Menu Items</relationshipLabel>
+        <relationshipName>Menu_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NewWindowProperty__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated. Was used for passing extra parameters to the URL, if Link Type was URL.</description>
+        <externalId>false</externalId>
+        <label>New Window Property</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NewWindow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Flag to determine whether to open this menu item link in a new window or not.</description>
+        <externalId>false</externalId>
+        <label>New Window</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ParentMenuItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to parent menu item record. Through this field, you can build a third level of Menu hierarchy. If this field is set, then the Menu__c field should be blank.</description>
+        <externalId>false</externalId>
+        <label>Parent Menu Item</label>
+        <referenceTo>E_MenuItem__c</referenceTo>
+        <relationshipLabel>Child Menu Items</relationshipLabel>
+        <relationshipName>Child_Menu_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to a CC Product object, if Link Type is set to Product.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>E_Product__c</referenceTo>
+        <relationshipLabel>CC Menu Items</relationshipLabel>
+        <relationshipName>CC_Menu_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sequence in which the menu item links should be displayed. For a given menu record, menu item record with the smallest sequence is displayed first, starting from the left in desktop view, and starting from the top in tablet/mobile view.</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The first date that this menu item will be available.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is referenced to construct the URL of this menu item Link, if Link Type is set to URL. It can be a relative or an absolute URL.</description>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>CC Menu Item</label>
+    <nameField>
+        <displayFormat>{000000000}</displayFormat>
+        <label>CC Menu Item Auto Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CC Menu Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

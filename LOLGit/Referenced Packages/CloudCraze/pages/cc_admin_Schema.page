@@ -1,0 +1,20 @@
+<apex:page id="Schema" controller="ccrz.cc_ctrl_Schema">
+
+    <apex:outputLink id="excel" value="{!$Page.ccrz__cc_admin_Schema2Excel}" style="display: block; float: right; height: 48px; width: 48px; margin: 0 3px 3px 0; background: url({!$Resource.ccrz__CC_Static2}/images/icons/excel-48.png)" title="Download To Excel"></apex:outputLink>
+
+    <apex:repeat value="{!tables}" var="table">
+
+        <apex:pageBlock title="{!table.name}">
+
+            <apex:pageBlockTable value="{!table.fields}" var="field">
+                <apex:column headerValue="Name" value="{!field.name}" />
+                <apex:column headerValue="Label" value="{!field.label}" />
+                <apex:column headerValue="Type" value="{!field.dataType}" />
+                <apex:column headerValue="Default Value" value="{!field.defaultValue}" />
+            </apex:pageBlockTable>
+
+        </apex:pageBlock>
+
+    </apex:repeat>
+
+</apex:page>

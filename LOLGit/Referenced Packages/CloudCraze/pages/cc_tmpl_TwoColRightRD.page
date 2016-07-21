@@ -1,0 +1,33 @@
+<apex:page id="cc_tmpl_TwoColRightRD" controller="ccrz.cc_ctrl_StorefrontTemplate" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false">
+	<apex:composition template="ccrz__cc_tmpl_Storefront">
+		<apex:define name="htmlbody">
+			<div class="row-fluid">
+				<div class="span3 visible-desktop">
+					<div class="left_column">
+						<div class="effleft"></div>
+						<div class="search-box-RightNav" />
+						<div id="MyAccount_navSection"></div> <!-- placeholder for MyAccount Nav in right nav -->
+						<apex:insert name="ContactUs" />
+						<apex:insert name="MiniCartBox" />
+						<apex:insert name="MiniQuickOrderBox" />
+						<div id="categories-right-nav"></div> <!-- placeholder for category tree in right nav -->
+						<div class="widgetSection"></div>
+						<div class="promotion-box-RightNav"></div>
+						<apex:insert name="SideNavigation" />
+						<apex:insert name="SocialFacebookBox" />
+					</div>
+				</div>
+				<div class="span9">
+					<div class="right_column_large">
+						<apex:insert name="Banner" />
+						<div class="effwig"></div>
+						<div class="promotion-box-Banner"></div>
+						<apex:insert name="ProductSearch" />
+						<apex:insert name="body" />
+						<apex:insert name="CrossSell" />
+					</div>
+				</div>
+			</div> <!-- ./row-fluid -->
+		</apex:define>
+	</apex:composition>
+</apex:page>

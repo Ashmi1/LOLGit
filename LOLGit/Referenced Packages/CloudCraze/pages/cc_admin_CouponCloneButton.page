@@ -1,0 +1,9 @@
+<apex:page standardController="ccrz__E_Coupon__c"  extensions="ccrz.cc_ctrl_CouponCloneButton" >
+<apex:form > 
+
+<h3>Clone coupon: <apex:outputText value="{!ccrz__E_Coupon__c.ccrz__CouponName__c}" ></apex:outputText></h3>
+<br/>
+ <apex:commandButton value="Clone" action="{!CloneCoupon}"/>           
+
+</apex:form>
+</apex:page>

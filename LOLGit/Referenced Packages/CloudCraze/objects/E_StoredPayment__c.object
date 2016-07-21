@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The stored payment object is used to store saved or walleted payment information.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AccountAccessible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicator if this payment method is available to all users within an Account.</description>
+        <externalId>false</externalId>
+        <label>Account Accessible</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AccountNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Account Number of the payment method. For credit cards this would be the final 4 digits.</description>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccountType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Account Type of the Stored Payment such as Credit Card, PO Number, etc.  Should match the corresponding account type as setup in page configuration.</description>
+        <externalId>false</externalId>
+        <label>Account Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Account for which the Stored Payment is Available</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>CC Stored Payments</relationshipLabel>
+        <relationshipName>CC_Stored_Payments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Default__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Not Currently Used.</description>
+        <externalId>false</externalId>
+        <label>Default</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DisplayName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The user entered name of the stored payment.</description>
+        <externalId>false</externalId>
+        <label>Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveAccountID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds the effective account for this Stored Payment. This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own. The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be utilized in implementations where a user can order for multiple accounts inclusive or exclusive of their own. The effective account is used to control the entitlements, pricing, integrations etc that drive the site experience.</inlineHelpText>
+        <label>Effective Account ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enabled Flag</description>
+        <externalId>false</externalId>
+        <label>Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>End Date after which a Stored Payment will no longer be available.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ExpMonth__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expiration month of the Stored Payment. Zero Based, e. g. January = 0.</description>
+        <externalId>false</externalId>
+        <label>Exp Month</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpYear__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The expiration year of the Stored Payment.</description>
+        <externalId>false</externalId>
+        <label>Exp Year</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CCSP-{00000000}</description>
+        <displayFormat>CCSP-{00000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>PaymentType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specific sub-type of the Stored Payment, for example, for Credit Cards this would be the card type.</description>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReadOnly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicator if the user can edit/create/delete the Stored Payment.</description>
+        <externalId>false</externalId>
+        <label>Read Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Ordering of the Stored Payments.</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Start Date that a Stored Payment will be Available.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>StoredPaymentId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>External ID For Stored Payments.  Not used by CloudCraze.</description>
+        <externalId>true</externalId>
+        <label>Stored Payment Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Storefront__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Storefront associated with this Stored Payment.</description>
+        <externalId>false</externalId>
+        <label>Storefront</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubaccountNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sub-account number.</description>
+        <externalId>false</externalId>
+        <label>Subaccount Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Token__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tokenized form of the payment method</description>
+        <externalId>false</externalId>
+        <label>Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The User for which the Stored Payment is available.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CC_Stored_Payments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>CC Stored Payment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>CC Stored Payment Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CC Stored Payments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

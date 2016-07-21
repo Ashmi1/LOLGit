@@ -1,0 +1,5 @@
+<apex:page id="cc_Footer" controller="ccrz.cc_ctrl_LocaleExtension"
+    docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" language="{!userLanguageCode}">
+
+	<c:cc_SiteFooterRD />
+</apex:page>

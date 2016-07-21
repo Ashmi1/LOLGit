@@ -1,0 +1,323 @@
+<apex:component controller="cc_lol_ctrl_CartProductListInclude">
+  <script id="LOL-CartItemDetail-View-Desktop" type="text/template">
+        {{#with this.attributes}}
+            {{#ifEquals itemStatus 'Invalid'}}
+                <div class="alert alert-error">
+                    <p class="item_title">
+                        <a href="#" class="prodLink" data-id="{{mockProduct.sku}}">{{displayProductName 'Aggregate_Display' displayProductBean.name mockProduct.name }}</a>
+                    </p>
+                    <p><span><strong>{{pageLabelMap 'SKU'}}:</strong> {{mockProduct.sku}}</span></p>
+                    {{#if showSubProdTerm}}
+                        <p><label class="subscriptionSummary">{{insertTokens cartDisplayName displayName (price price) (price SubAmount) (price recurringPrice) (price recurringPriceSubAmount) (pageLabelPrefixMap 'Subscriptions_Frequency_' orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' installmentFrequencyUOM) orderFrequency installmentFrequency installmentCount orderCount}}</span></label></p>
+                    {{/if}}
+                    <div class="clear"></div>
+                    <button type="button" class="btn slim deleteItem removeItemButton" data-dismiss="modal" aria-hidden="true" data-id="{{itemID}}" >{{pageLabelMap 'Action_Delete'}}</button>
+                </div>
+            {{else}}
+                <div class="quantity" data-id="{{itemID}}">
+                    {{#ifNotEquals cartItemType 'Coupon'}}
+                        <p class="section2 plus_minus" data-id="{{itemID}}">
+                            {{> cartItemsQty}}
+                        </p>
+                    {{/ifNotEquals}}
+                    <div class="price">
+                        <p class="price">
+                            {{#if price}}
+                             <!----- Commented For LOL ----->
+                                <!-- {{pageLabelMap 'CartInc_Price'}}: {{{price price}}}<br /> -->
+                                <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                            {{/if}}
+                            {{#if absoluteDiscount}}
+                                <span>{{pageLabelMap 'YouSave'}}: {{{price absoluteDiscount}}}</span><br/>
+                            {{/if}}
+                             <!----- Commented For LOL ----->
+                            <!-- <strong>{{pageLabelMap 'CartInc_Total'}}: {{{price itemTotal}}}</strong> -->
+                            <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                        </p>
+                    </div>
+                </div>
+                {{#ifEquals cartItemType 'Coupon'}}
+                    <p class="item_title coupon_title" data-id="{{mockProduct.sku}}">
+                        <span class="couponCartLabel">{{pageLabelMap 'CartInc_AppliedCoupon'}}</span>{{mockProduct.name}}
+                    </p>
+                {{else}}
+                    <div class="cart_item_viewport">
+                        <a href="#" class="prodLink" data-id="{{mockProduct.sku}}">{{{displayImage mediaWrapper 'cart'}}}</a>
+                    </div>
+                    <p class="item_title">
+                        <a href="#" class="prodLink" data-id="{{mockProduct.sku}}">{{displayProductName 'Aggregate_Display' displayProductBean.name mockProduct.name }}</a>
+                    </p>
+                    <p><span><strong>{{pageLabelMap 'SKU'}}:</strong> {{mockProduct.sku}}</span></p>
+
+
+                    {{#if showSubProdTerm}}
+                        <p>
+                            <span>
+                                {{insertTokens cartDisplayName displayName (price price) (price SubAmount) (price recurringPrice) (price recurringPriceSubAmount) (pageLabelPrefixMap 'Subscriptions_Frequency_' orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' installmentFrequencyUOM) orderFrequency installmentFrequency installmentCount orderCount}}
+                            </span>
+                        </p>
+                    {{else}}
+                        {{#if this.isSubscription}}
+                            <p class="subscriptionSummary">{{subscriptionSummary 'Cart_Subscription_' this.subscriptionFrequency mockProduct.sku itemTotal}}</p>
+                        {{/if}}
+                    {{/if}}
+
+                    <div class="cart-links">
+                        {{#if showIncludedItems }}
+                            <a href="#included_items{{itemID}}" class="includedItemsLink" id="includedItemsLink{{itemID}}" data-desktop="true" data-toggle="modal" data-id="{{itemID}}">{{pageLabelMap 'CartInc_IncludedItems'}}</a>
+                            {{#ifDisplay 'C.DsplAddtInfo'}} &nbsp;|&nbsp;{{/ifDisplay}}
+                            {{> includedDisplay}}
+                        {{/if}}
+                        {{#ifDisplay 'C.DsplAddtInfo'}}
+                            <a class="included_items" href="#additional_info{{itemID}}" id="additionalInfoLink" data-toggle="modal">{{pageLabelMap 'AdditionalInfo'}}</a>
+                            {{#ifDisplay 'C.DsplComments'}} &nbsp;|&nbsp;{{/ifDisplay}}
+                            {{> cartItemAdditional}}
+                        {{/ifDisplay}}
+                        {{#ifDisplay 'C.DsplComments'}}
+                            <a href="#comments_{{itemID}}" id="commentsLink" data-toggle="modal">{{pageLabelMap 'CartLineCommentLabel'}}</a>
+                            {{> cartItemComment}}
+                        {{/ifDisplay}}
+                    </div>
+
+                    
+                    
+                    {{#each minorLines}}
+                        {{#if showSubProdTerm}}
+                            <p><label class="subscriptionSummary">{{insertTokens cartDisplayName displayName (price price) (price SubAmount) (price recurringPrice) (price recurringPriceSubAmount) (pageLabelPrefixMap 'Subscriptions_Frequency_' orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' installmentFrequencyUOM) orderFrequency installmentFrequency installmentCount orderCount}}</span></label></p>
+                        {{else}}
+                            {{#if this.isSubscription}}
+                                <p class="subscriptionSummary">{{subscriptionSummary 'Cart_Subscription_' this.subscriptionFrequency mockProduct.sku itemTotal}}</p>
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                    <div class="clear"></div>
+                    <div class=" wishFinder" data-sku="{{mockProduct.sku}}">
+                        <button type="button" class="btn slim deleteItem removeItemButton" data-dismiss="modal" aria-hidden="true" data-id="{{itemID}}" >{{pageLabelMap 'Action_Delete'}}</button>
+                        {{#unless showSubProdTerm}}
+                                            <div class="wishButtons"></div>
+                                    {{/unless}}
+                    </div>
+                {{/ifEquals}}
+                <div class="alert alert-error messagingSection-{{itemID}}-Error" style="display: none"></div>
+                <div class="alert alert-info messagingSection-{{itemID}}-Info" style="display: none"></div>
+            {{/ifEquals}}
+        {{/with}}
+    </script>
+    
+    <script id="LOL-CartItemDetail-View-Mobile" type="text/template">
+        {{#with this.attributes}}
+            {{#ifEquals itemStatus 'Invalid'}}
+                <div class="alert alert-error">
+                    <div class="cart_1_row_medium_viewport">
+                        <a href="#">{{{displayImage mediaWrapper 'cart'}}}</a>
+                    </div>
+                    <p><a href="#" class="prodLink" data-id="{{mockProduct.sku}}">{{displayProductName 'Aggregate_Display' displayProductBean.name mockProduct.name }}</a></p>
+                    <p>SKU: {{mockProduct.sku}}</p>
+                    <div class="clear"></div>
+                    <button type="button" class="btn remove removeItemButton" data-id="{{itemID}}">{{pageLabelMap 'Action_Delete'}}</button>
+                </div>
+            {{else}}
+                {{#ifNotEquals cartItemType 'Coupon'}}
+                    <div class="cart_1_row_medium_viewport">
+                        <a href="#">{{{displayImage mediaWrapper 'cart'}}}</a>
+                    </div>
+                {{/ifNotEquals}}
+                <p>
+                    <a href="#" class="prodLink" data-id="{{mockProduct.sku}}">{{displayProductName 'Aggregate_Display' displayProductBean.name mockProduct.name }}</a>
+                </p>
+                {{#ifNotEquals cartItemType 'Coupon'}}
+                    <p>SKU: {{mockProduct.sku}}</p>
+                    <p class="included_items">
+                        {{#if showIncludedItems }}
+                            <a href="#included_items{{itemID}}" class="includedItemsLink" id="includedItemsLink{{itemID}}" data-desktop="false" data-toggle="modal" data-id="{{itemID}}">{{pageLabelMap 'CartInc_IncludedItems'}}</a>
+                            {{#ifDisplay 'C.DsplAddtInfo'}} |{{/ifDisplay}}
+                        {{/if}}
+                        {{#ifDisplay 'C.DsplAddtInfo'}}
+                            <a class="included_items" href="#additional_info{{itemID}}" id="additionalInfoLink" data-toggle="modal">{{pageLabelMap 'AdditionalInfo'}}</a>
+                            {{#ifDisplay 'C.DsplComments'}} |{{/ifDisplay}}
+                        {{/ifDisplay}}
+                        {{#ifDisplay 'C.DsplComments'}}
+                            <a href="#comments_{{itemID}}" id="commentsLink" data-toggle="modal">{{pageLabelMap 'CartLineCommentLabel'}}</a>
+                        {{/ifDisplay}}  
+                        {{#if showIncludedItems }}
+                            {{> includedDisplay}}
+                        {{/if}}
+                        {{#ifDisplay 'C.DsplAddtInfo'}}
+                            {{> cartItemAdditional}}
+                        {{/ifDisplay}}
+                        {{#ifDisplay 'C.DsplComments'}}
+                            {{> cartItemComment}}
+                        {{/ifDisplay}}
+                {{/ifNotEquals}}
+                {{#if showSubProdTerm}}
+                    <p><label class="subscriptionSummary">{{insertTokens cartDisplayName displayName (price price) (price SubAmount) (price recurringPrice) (price recurringPriceSubAmount) (pageLabelPrefixMap 'Subscriptions_Frequency_' orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' installmentFrequencyUOM) orderFrequency installmentFrequency installmentCount orderCount}}</span></label></p>
+                {{else}}
+                    {{#if this.isSubscription}}
+                       <p class="subscriptionSummary">{{subscriptionSummary 'Cart_Subscription_' this.subscriptionFrequency mockProduct.sku itemTotal}}</p>
+                    {{/if}}
+                {{/if}}
+                {{#each minorLines}}
+                    {{#if showSubProdTerm}}
+                        <p><label class="subscriptionSummary">{{insertTokens cartDisplayName displayName (price price) (price SubAmount) (price recurringPrice) (price recurringPriceSubAmount) (pageLabelPrefixMap 'Subscriptions_Frequency_' orderFrequencyUOM) (pageLabelPrefixMap 'Subscriptions_Frequency_' installmentFrequencyUOM) orderFrequency installmentFrequency installmentCount orderCount}}</span></label></p>
+                    {{else}}
+                        {{#if this.isSubscription}}
+                            <p class="subscriptionSummary">{{subscriptionSummary 'Cart_Subscription_' this.subscriptionFrequency mockProduct.sku itemTotal}}</p>
+                        {{/if}}
+                    {{/if}}
+                {{/each}}
+                <div class="clear"></div>
+                <div class="cart_figures">
+                    {{#ifNotEquals cartItemType 'Coupon'}}
+                     <!----- Commented For LOL ----->                      
+                        <!-- <div class="section1">{{pageLabelMap 'CartInc_Price'}}:</div> -->
+                        <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                        <div class="section2">{{pageLabelMap 'YouSave'}}:</div>
+                    {{/ifNotEquals}}
+                    <div class="section3">{{pageLabelMap 'CartInc_Total'}}:</div>
+                    {{#ifNotEquals cartItemType 'Coupon'}}                      
+                        <div class="section1">
+                         <!----- Commented For LOL ----->
+                            <!-- <strong>{{price price}}</strong> -->
+                            <p><span><strong>Price : <span class="lolCustomPrice">Retrieving Your Price...</span></strong></span></p>
+                        </div>
+                        <div class="section2">
+                            <strong>{{price absoluteDiscount}}</strong>
+                        </div>
+                    {{/ifNotEquals}}
+                    <div class="section3 totalAmount">
+                        <strong class="price">{{price itemTotal}}</strong>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                {{#ifNotEquals cartItemType 'Coupon'}}                      
+                    <div class="section2 plus_minus" data-id="{{itemID}}">
+                        {{> cartItemsQty}}
+                        <button type="button" class="btn remove removeItemButton" data-id="{{itemID}}">{{pageLabelMap 'Action_Delete'}}</button>
+                    </div>
+                                {{#unless showSubProdTerm}}
+                        <div class=" wishFinder" data-sku="{{mockProduct.sku}}">
+                            <div class="sectionWide wishButtons"></div>
+                        </div>
+                                {{/unless}}
+                {{/ifNotEquals}}
+                <div class="alert alert-error messagingSection-{{itemID}}-Error" style="display: none"></div>
+                <div class="alert alert-info messagingSection-{{itemID}}-Info" style="display: none"></div>
+            {{/ifEquals}}
+        {{/with}}
+    </script>
+    
+    <script id="CartDetail-ActionTotals-View" type="text/template">
+        <ul class="shopping_cart">
+            <li><button class="btn slim continueShoppingButton" name="" type="button" >{{pageLabelMap 'CartInc_ContinueShopping'}}</button></li>
+            {{#if {!ISPICKVAL($User.UserType, 'Guest')} }}
+            {{ else }}
+                {{#ifStoreSetting 'AutoCalcPriceAdjust__c'}}
+                {{else}}
+                    <li><button class="btn slim getExtPricingButton" type="button" >{{pageLabelMap 'CartInc_ApplyDiscounts'}}</button></li>
+                {{/ifStoreSetting}}
+                <li><button class="btn slim" data-toggle="modal" data-target="#wishMod" name="" type="button" >{{pageLabelMap 'Create_Cart_Wishlist'}}</button></li>
+            {{/if}}
+            <li><button class="btn slim updateCartButton" name="" type="button" >{{pageLabelMap 'CartInc_Update'}}</button></li>
+            {{#if {!ISPICKVAL($User.UserType, 'Guest')} }}
+                {{#ifDisplay 'C.EmailAnon'}}
+                    <li><a href="#emailModal" id="emailCartLink" data-toggle="modal"><button class="btn slim remove" type="button" >{{pageLabelMap 'CartOrderEmailer_Header'}}</button></a></li>
+                {{/ifDisplay}}
+            {{else}}
+                {{#ifDisplay 'C.EnableEmailCart'}}
+                    <li><a href="#emailModal" id="emailCartLink" data-toggle="modal"><button class="btn slim remove" type="button" >{{pageLabelMap 'CartOrderEmailer_Header'}}</button></a></li>
+                {{/ifDisplay}}
+            {{/if}}
+            <!-- rfq button -->
+            {{#if {!ISPICKVAL($User.UserType, 'Guest')} }}
+                {{#ifDisplay 'rfq.GuestUser'}}
+                    <li><a href="#rfqModal" id="rfqLink" data-toggle="modal"><button class="btn slim remove" type="button" >{{pageLabelMap 'CartRFQForm_Header'}}</button></a></li>
+                {{/ifDisplay}}
+            {{else}}
+                {{#ifDisplay 'rfq.LoggedIn'}}
+                    <li><a href="#rfqModal" id="rfqLink" data-toggle="modal"><button class="btn slim remove" type="button" >{{pageLabelMap 'CartRFQForm_Header'}}</button></a></li>
+                {{/ifDisplay}}
+            {{/if}}
+
+            <!-- rfq button -->
+        </ul>
+        <ul class="checkout clear_right">
+            {{#if subTotal}}
+                <!-- <li class="grand_total">{{pageLabelMap 'CartInc_Subtotal'}}: {{{price subTotal}}}</li> -->
+                <p><span><strong>SubTotal : <span class="subtotal">Retrieving Your Price...</span></strong></span></p>
+            {{/if}}
+            {{#if this.totalInfo}}
+                <li class="cart_total_amount">{{this.totalInfo}}</li>
+            {{/if}}
+            <li class="totalsmessagingSection"></li>
+            {{#if this.cartItems}}
+                {{#ifNotEquals this.cartItems.length 0}}
+                    {{#if this.allowCheckout}}
+                        {{#ifEquals this.preventCheckout false}}
+                            <li>
+                                <button type="button" class="btn btn-primary wide checkOutBtn">{{pageLabelMap 'CartInc_Checkout'}}</button>
+                            </li>
+                        {{/ifEquals}}
+                    {{/if}}
+                {{/ifNotEquals}}
+            {{/if}}
+        </ul>
+        
+        {{#ifStoreSetting 'Display_Cart_Coupon__c'}}
+            <div class="discount_code_container">
+            {{#if this.hasCoupon}}
+                <form id="couponClearForm">
+                <h2 class="title">{{pageLabelMap 'CartInc_discountCodes'}}</h2>
+                <div class="discount_code">
+                        <p>{{pageLabelMap 'CartInc_AppliedCoupon'}} {{this.couponName}}</p>
+                        <p><button id="clearCouponBtn" type="button">{{pageLabelMap 'CartInc_ClearCoupon'}}</button></p>
+                    </div>
+                </form>
+            {{else}}
+                <form id="couponAddForm">
+                    <h2 class="title">{{pageLabelMap 'CartInc_discountCodes'}}</h2>
+                    <div class="discount_code">
+                        <p id="couponAddError"></p>
+                    <p>{{pageLabelMap 'CartInc_EntercouponCode'}}</p>
+                        <p><input type="text" id="addCouponId" name="couponId" /></p>
+                        <div class="couponMessagingSection-Error"></div>
+                        <p><button id="addCouponBtn" type="button">{{pageLabelMap 'CartInc_ApplyCoupon'}}</button></p>
+                </div>
+                </form>
+            {{/if}}
+            </div>
+        {{/ifStoreSetting}}
+    </script>
+    
+    <script>
+      
+        jQuery(function($){
+            CCRZ.uiProperties.CartDetailView.partials.cartItemsDesktop = '#LOL-CartItemDetail-View-Desktop';
+            CCRZ.uiProperties.CartDetailView.partials.cartItemsMobile = '#LOL-CartItemDetail-View-Mobile';
+                
+                CCRZ.pubSub.on('view:CartDetailView:refresh', function(theView) {
+                var remoteCall = _.extend(CCRZ.RemoteInvocation,{className:'cc_lol_ctrl_CartProductListInclude'});
+                remoteCall.invokeCtx('getCartProductPrice',  
+                function(resp){
+                    
+                    if(resp && resp.success){
+                        var respData = resp.data;
+                        $('.lolCustomPrice').html(respData);
+                        
+                    var total = 0;
+                        $('.lolCustomPrice').each(function() {
+                            total += parseFloat($(".lolCustomPrice").text());
+                        });
+                            
+                        $(".subtotal").text(total.toFixed(2));
+                    }
+                },  {buffer:false,escape:false,nmsp:false} );  
+
+
+           })
+        });
+        
+    </script>
+    
+    
+
+</apex:component>

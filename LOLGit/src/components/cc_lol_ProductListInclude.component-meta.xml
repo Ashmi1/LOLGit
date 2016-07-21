@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>37.0</apiVersion>
+    <description>This Visual Force component overrides the default price component of the product list, to remove the pricing of the products.</description>
+    <label>cc_lol_ProductListInclude</label>
+</ApexComponent>

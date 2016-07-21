@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Holds information for each payment detail associated with the order.  This object should not longer be used for new implementations.  See ccrz__E_TransactionPayment__c.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds key information regarding the payment method such as po number, gift card number, etc.</description>
+        <externalId>false</externalId>
+        <label>Account Number</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CC_Order__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CC Order</label>
+        <referenceTo>E_Order__c</referenceTo>
+        <relationshipLabel>Payment Details</relationshipLabel>
+        <relationshipName>E_PaymentDetails</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cart__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>CC Cart</label>
+        <referenceTo>E_Cart__c</referenceTo>
+        <relationshipLabel>CC Payment Details</relationshipLabel>
+        <relationshipName>CC_Payment_Details</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Credit_Card_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Credit Card Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Visa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mastercard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>American Express</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Discover</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diners Club</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Month__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Expiration Month</label>
+        <picklist>
+            <picklistValues>
+                <fullName>01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Expiration Year</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Masked_Card_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Masked Card Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Method__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Payment Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>PO Number</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Debit Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wire Transfer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Token__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Payment Token</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transaction_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Transaction Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Transaction Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transaction_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date that the transaction was settled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date that the transaction was settled.</inlineHelpText>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>CC Payment Detail</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{00000}</displayFormat>
+        <label>Payment Details Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Payment Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>
